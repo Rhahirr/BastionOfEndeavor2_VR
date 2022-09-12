@@ -26,3 +26,6 @@ temp.dmi
 
 node_modules/
 package-lock.json
+
+# Bastion of Endeavor Specific
+tools/ru-merge-upstream-pull-request.sh
