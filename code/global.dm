@@ -29,6 +29,9 @@ var/diary				= null
 var/error_log			= null
 var/debug_log			= null
 var/href_logfile		= null
+// Bastion of Endeavor Addition: Adds grammar logging.
+var/grammar_log_ru		= null
+// End of Bastion of Endeavor Addition
 // var/station_name		= "Northern Star"
 // var/const/station_orig	= "Northern Star" //station_name can't be const due to event prefix/suffix
 // var/const/station_short	= "Northern Star"

@@ -149,8 +149,8 @@ var/global/list/basic_cases_list_ru = list(
 	return text
 
 /proc/log_grammar_ru(text)
-	//if (config.log_debug)
-		//WRITE_LOG(gender_rurammar_log, "ПАДЕЖИ: [text]")
+	if (config.log_debug)
+		WRITE_LOG(grammar_log_ru, "ПАДЕЖИ: [text]")
 	for(var/client/C in GLOB.admins)
 		to_chat(C, "<span class='filter_debuglog'>ПАДЕЖИ: [text]</span>")
 
