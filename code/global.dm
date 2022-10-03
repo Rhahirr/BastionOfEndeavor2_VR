@@ -197,9 +197,15 @@ var/list/station_departments = list("Командование", "Медицин�
 // End of Bastion of Endeavor Translation
 
 //Icons for in-game HUD glasses. Why don't we just share these a little bit?
+/* Bastion of Endeavor Edit: Russian icons.
 var/static/icon/ingame_hud = icon('icons/mob/hud.dmi')
 var/static/icon/ingame_hud_med = icon('icons/mob/hud_med.dmi')
 var/static/icon/buildmode_hud = icon('icons/misc/buildmode.dmi')
+*/
+var/static/icon/ingame_hud = icon('russian/icons/hud_ru.dmi')
+var/static/icon/ingame_hud_med = icon('icons/mob/hud_med.dmi')
+var/static/icon/buildmode_hud = icon('russian/icons/buildmode_ru.dmi')
+// End of Bastion of Endeavor Edit
 
 //Keyed list for caching icons so you don't need to make them for records, IDs, etc all separately.
 //Could be useful for AI impersonation or something at some point?
