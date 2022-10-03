@@ -67,6 +67,11 @@
 	name = "Пляжный мяч"
 	case_blueprint_ru = list("муж#пляжн;adj1a мяч;n4b")
 
+/obj/item/weapon/beach_ball/dodgeball
+	name = "Мяч для игры в вышибалы"
+	desc = "Думай быстро!"
+	case_blueprint_ru = list("муж#мяч;n4b")
+
 /obj/effect/spawner
 	name = "Спавнер объектов"
 	case_blueprint_ru = list("муж#спавнер;n1a объектов")

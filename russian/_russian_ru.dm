@@ -1,20 +1,5 @@
 // The following code is where most of the grammar magic happens.
 
-#define NCASE "ncase"
-#define GCASE "gcase"
-#define DCASE "dcase"
-#define ACASE "acase"
-#define ICASE "icase"
-#define PCASE "pcase"
-#define RUGENDER "rugender"
-#define PLURAL_NCASE "plural_ncase"
-#define PLURAL_GCASE "plural_gcase"
-#define PLURAL_DCASE "plural_dcase"
-#define PLURAL_ACASE "plural_acase"
-#define PLURAL_ICASE "plural_icase"
-#define PLURAL_PCASE "plural_pcase"
-#define PLURAL_RUGENDER "plural_rugender"
-
 /world
 	name = "Bastion of Endeavor - RU/18+/HRP/PB"
 

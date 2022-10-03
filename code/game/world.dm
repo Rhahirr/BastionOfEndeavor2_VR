@@ -2,7 +2,11 @@
 /world/New()
 	world_startup_time = world.timeofday
 	rollover_safety_date = world.realtime - world.timeofday // 00:00 today (ish, since floating point error with world.realtime) of today
+	/* Bastion of Endeavor Translation
 	to_world_log("Map Loading Complete")
+	*/
+	to_world_log("Загрузка карты завершена.")
+	// End of Bastion of Endeavor Translation
 	//logs
 	//VOREStation Edit Start
 	log_path += time2text(world.realtime, "YYYY/MM-Month/DD-Day/round-hh-mm-ss")
@@ -15,7 +19,11 @@
 	changelog_hash = md5('html/changelog.html')					//used for telling if the changelog has changed recently
 
 	if(byond_version < RECOMMENDED_VERSION)
+		/* Bastion of Endeavor Translation
 		to_world_log("Your server's byond version does not meet the recommended requirements for this server. Please update BYOND")
+		*/
+		to_world_log("Ваша версия BYOND не соответствует рекомендованной. Пожалуйста, обновите BYOND.")
+		// End of Bastion of Endeavor Translation
 
 	TgsNew()
 	VgsNew() // VOREStation Edit - VGS
@@ -43,8 +51,13 @@
 	. = ..()
 
 #if UNIT_TEST
+	/* Bastion of Endeavor Translation
 	log_unit_test("Unit Tests Enabled.  This will destroy the world when testing is complete.")
 	log_unit_test("If you did not intend to enable this please check code/__defines/unit_testing.dm")
+	*/
+	log_unit_test("Активирован тестовый режим. Мир будет уничтожен после завершения тестов.")
+	log_unit_test("Если это не было сделано умышленно, проверьте code/__defines/unit_testing.dm")
+	// End of Bastion of Endeavor Translation
 #endif
 
 	// This is kinda important. Set up details of what the hell things are made of.
@@ -79,6 +92,7 @@
 var/world_topic_spam_protect_ip = "0.0.0.0"
 var/world_topic_spam_protect_time = world.timeofday
 
+// Bastion of Endeavor TODO: Yeah no, might break things so check on this later.
 /world/Topic(T, addr, master, key)
 	TGS_TOPIC
 	VGS_TOPIC // VOREStation Edit - VGS
@@ -403,12 +417,22 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	if (reason || fast_track) //special reboot, do none of the normal stuff
 		if (usr)
+			/* Bastion of Endeavor Translation
 			log_admin("[key_name(usr)] Has requested an immediate world restart via client side debugging tools")
 			message_admins("[key_name_admin(usr)] Has requested an immediate world restart via client side debugging tools")
 			to_world("<span class='boldannounce'>[key_name_admin(usr)] has requested an immediate world restart via client side debugging tools</span>")
+			*/
+			log_admin("[key_name(usr)] запросил рестарт мира через инструменты дебага клиента.")
+			message_admins("[key_name_admin(usr)]запросил рестарт мира через инструменты дебага клиента.")
+			to_world("<span class='boldannounce'>[key_name_admin(usr)] запросил рестарт мира через инструменты дебага клиента.</span>")
+			// End of Bastion of Endeavor Translation
 
 		else
+			/* Bastion of Endeavor Translation
 			to_world("<span class='boldannounce'>Rebooting world immediately due to host request</span>")
+			*/
+			to_world("<span class='boldannounce'>Перезапуск мира по запросу хоста!</span>")
+			// End of Bastion of Endeavor Translation
 	else
 		Master.Shutdown()	//run SS shutdowns
 		for(var/client/C in GLOB.clients)
@@ -416,7 +440,11 @@ var/world_topic_spam_protect_time = world.timeofday
 				C << link("byond://[config.server]")
 
 	TgsReboot()
+	/* Bastion of Endeavor Translation
 	log_world("World rebooted at [time_stamp()]")
+	*/
+	log_world("Мир перезапущен [time_stamp()]")
+	// End of Bastion of Endeavor Translation
 	..()
 
 /hook/startup/proc/loadMode()
@@ -432,7 +460,11 @@ var/world_topic_spam_protect_time = world.timeofday
 	if(Lines.len)
 		if(Lines[1])
 			master_mode = Lines[1]
+			/* Bastion of Endeavor Translation
 			log_misc("Saved mode is '[master_mode]'")
+			*/
+			log_misc("Сохранённый режим: '[master_mode]'")
+			// End of Bastion of Endeavor Translation
 
 /world/proc/save_mode(var/the_mode)
 	var/F = file("data/mode.txt")
@@ -464,7 +496,11 @@ var/world_topic_spam_protect_time = world.timeofday
 	if(config.admin_legacy_system)
 		var/text = file2text("config/moderators.txt")
 		if (!text)
+			/* Bastion of Endeavor Translation
 			error("Failed to load config/mods.txt")
+			*/
+			error("Не удалось загрузить config/mods.txt")
+			// End of Bastion of Endeavor Translation
 		else
 			var/list/lines = splittext(text, "\n")
 			for(var/line in lines)
@@ -474,7 +510,11 @@ var/world_topic_spam_protect_time = world.timeofday
 				if (copytext(line, 1, 2) == ";")
 					continue
 
+				/* Bastion of Endeavor Translation
 				var/title = "Moderator"
+				*/
+				var/title = "Модератор"
+				// End of Bastion of Endeavor Translation
 				var/rights = admin_ranks[title]
 
 				var/ckey = copytext(line, 1, length(line)+1)
@@ -485,7 +525,11 @@ var/world_topic_spam_protect_time = world.timeofday
 	if(config.admin_legacy_system)
 		var/text = file2text("config/mentors.txt")
 		if (!text)
+			/* Bastion of Endeavor Translation
 			error("Failed to load config/mentors.txt")
+			*/
+			error("Не удалось загрузить config/mentors.txt")
+			// End of Bastion of Endeavor Translation
 		else
 			var/list/lines = splittext(text, "\n")
 			for(var/line in lines)
@@ -508,7 +552,11 @@ var/world_topic_spam_protect_time = world.timeofday
 	s += " ("
 	s += "<a href=\"http://\">" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
+	/* Bastion of Endeavor Translation: No clue if this ends up being ever used, w/e.
 	s += "Default"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+	*/
+	s += "[game_version]"
+	// End of Bastion of Endeavor Translation
 	s += "</a>"
 	s += ")"
 
@@ -518,36 +566,72 @@ var/world_topic_spam_protect_time = world.timeofday
 		if(master_mode)
 			features += master_mode
 	else
+		/* Bastion of Endeavor Translation
 		features += "<b>STARTING</b>"
+		*/
+		features += "<b>НАЧИНАЕТСЯ</b>"
+		// End of Bastion of Endeavor Translation
 
 	if (!config.enter_allowed)
+		/* Bastion of Endeavor Translation
 		features += "closed"
+		*/
+		features += "закрыт"
+		// End of Bastion of Endeavor Translation
 
+	/* Bastion of Endeavor Translation
 	features += config.abandon_allowed ? "respawn" : "no respawn"
+	*/
+	features += config.abandon_allowed ? "респаун" : "без респауна"
+	// End of Bastion of Endeavor Translation
 
+	/* Bastion of Endeavor Translation
 	features += config.persistence_disabled ? "persistence disabled" : "persistence enabled"
+	*/
+	features += config.persistence_disabled ? "сохранение отключено" : "сохранение включено"
+	// End of Bastion of Endeavor Translation
 
+	/* Bastion of Endeavor Translation
 	features += config.persistence_ignore_mapload ? "persistence mapload disabled" : "persistence mapload enabled"
+	*/
+	features += config.persistence_ignore_mapload ? "сохранение карты отключено" : "сохранение карты включено"
+	// End of Bastion of Endeavor Translation
 
 	if (config && config.allow_vote_mode)
+		/* Bastion of Endeavor Translation
 		features += "vote"
+		*/
+		features += "по голосованиям"
+		// End of Bastion of Endeavor Translation
 
 	if (config && config.allow_ai)
+		/* Bastion of Endeavor Translation
 		features += "AI allowed"
+		*/
+		features += "ИИ разрешён"
+		// End of Bastion of Endeavor Translation
 
 	var/n = 0
 	for (var/mob/M in player_list)
 		if (M.client)
 			n++
 
+	/* Bastion of Endeavor Translation: We got a better idea for this.
 	if (n > 1)
 		features += "~[n] players"
 	else if (n > 0)
 		features += "~[n] player"
+	*/
+	features += "~[count_ru(n, "игрок", "игрока", "игроков")]"
+	// End of Bastion of Endeavor Translation
 
 
 	if (config && config.hostedby)
+		/* Bastion of Endeavor Translation
 		features += "hosted by <b>[config.hostedby]</b>"
+		*/
+		features += "Хост: <b>[config.hostedby]</b>"
+		// End of Bastion of Endeavor Translation
 
 	if (features)
 		s += ": [jointext(features, ", ")]"
@@ -562,11 +646,23 @@ var/failed_old_db_connections = 0
 
 /hook/startup/proc/connectDB()
 	if(!config.sql_enabled)
+		/* Bastion of Endeavor Translation
 		to_world_log("SQL connection disabled in config.")
+		*/
+		to_world_log("Соединение с SQL отключено в конфигурации.")
+		// End of Bastion of Endeavor Translation
 	else if(!setup_database_connection())
+		/* Bastion of Endeavor Translation
 		to_world_log("Your server failed to establish a connection with the feedback database.")
+		*/
+		to_world_log("Серверу не удалось установить соединение с БД обратной связи.")
+		// End of Bastion of Endeavor Translation
 	else
+		/* Bastion of Endeavor Translation
 		to_world_log("Feedback database connection established.")
+		*/
+		to_world_log("Соединение с БД обратной связи установлено.")
+		// End of Bastion of Endeavor Translation
 	return 1
 
 /proc/setup_database_connection()
@@ -605,11 +701,23 @@ var/failed_old_db_connections = 0
 
 /hook/startup/proc/connectOldDB()
 	if(!config.sql_enabled)
+		/* Bastion of Endeavor Translation
 		to_world_log("SQL connection disabled in config.")
+		*/
+		to_world_log("Соединение с SQL отключено в конфигурации.")
+		// End of Bastion of Endeavor Translation
 	else if(!setup_old_database_connection())
+		/* Bastion of Endeavor Translation
 		to_world_log("Your server failed to establish a connection with the SQL database.")
+		*/
+		to_world_log("Серверу не удалось установить соединение с БД SQL.")
+		// End of Bastion of Endeavor Translation
 	else
+		/* Bastion of Endeavor Translation
 		to_world_log("SQL database connection established.")
+		*/
+		to_world_log("Соединение с БД SQL установлено.")
+		// End of Bastion of Endeavor Translation
 	return 1
 
 //These two procs are for the old database, while it's being phased out. See the tgstation.sql file in the SQL folder for more information.
@@ -649,28 +757,60 @@ var/failed_old_db_connections = 0
 
 // Cleans up DB connections and recreates them
 /proc/reset_database_connections()
+	/* Bastion of Endeavor Translation
 	var/list/results = list("-- Resetting DB connections --")
+	*/
+	var/list/results = list("-- Повторное соединение с БД --")
+	// End of Bastion of Endeavor Translation
 	failed_db_connections = 0
 
 	if(dbcon?.IsConnected())
 		dbcon.Disconnect()
+		/* Bastion of Endeavor Translation
 		results += "dbcon was connected and asked to disconnect"
+		*/
+		results += "dbcon соединён и запросил отключение"
+		// End of Bastion of Endeavor Translation
 	else
+		/* Bastion of Endeavor Translation
 		results += "dbcon was not connected"
+		*/
+		results += "dbcon не был соединён"
+		// End of Bastion of Endeavor Translation
 
 	if(dbcon_old?.IsConnected())
+		/* Bastion of Endeavor Translation
 		results += "WARNING: dbcon_old is connected, not touching it, but is this intentional?"
+		*/
+		results += "ВНИМАНИЕ: dbcon_old соединён, пропускаем его, но разве так надо?"
+		// End of Bastion of Endeavor Translation
 
 	if(!config.sql_enabled)
+		/* Bastion of Endeavor Translation
 		results += "stopping because config.sql_enabled = false"
+		*/
+		results += "останавливаемся, т.к. config.sql_enabled = false"
+		// End of Bastion of Endeavor Translation
 	else
 		. = setup_database_connection()
 		if(.)
+			/* Bastion of Endeavor Translation
 			results += "SUCCESS: set up a connection successfully with setup_database_connection()"
+			*/
+			results += "УСПЕШНО: установлено соединение с помощью setup_database_connection()"
+			// End of Bastion of Endeavor Translation
 		else
+			/* Bastion of Endeavor Translation
 			results += "FAIL: failed to connect to the database with setup_database_connection()"
+			*/
+			results += "ПРОВАЛ: не удалось установить соединение с помощью setup_database_connection()"
+			// End of Bastion of Endeavor Translation
 
+	/* Bastion of Endeavor Translation
 	results += "-- DB Reset End --"
+	*/
+	results += "-- Конец перезапуска БД --"
+	// End of Bastion of Endeavor Translation
 	to_world_log(results.Join("\n"))
 
 // Things to do when a new z-level was just made.
@@ -694,7 +834,11 @@ var/failed_old_db_connections = 0
 // Call this to change world.fps, don't modify it directly.
 /world/proc/change_fps(new_value = 20)
 	if(new_value <= 0)
+		/* Bastion of Endeavor Translation
 		CRASH("change_fps() called with [new_value] new_value.")
+		*/
+		CRASH("change_fps() вызван с [new_value] new_value.")
+		// End of Bastion of Endeavor Translation
 	if(fps == new_value)
 		return //No change required.
 

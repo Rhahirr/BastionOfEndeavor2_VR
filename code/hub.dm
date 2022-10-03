@@ -3,7 +3,11 @@
 	hub = "Exadv1.spacestation13"
 	//hub_password = "SORRYNOPASSWORD"
 	hub_password = "kMZy3U5jJHSiBQjr"
+	/* Bastion of Endeavor Translation
 	name = "VOREStation" //VOREStation Edit
+	*/
+	name = "Bastion of Endeavor"
+	// End of Bastion of Endeavor Translation
 	visibility = 0 //VOREStation Edit
 
 /* This is for any host that would like their server to appear on the main SS13 hub.

@@ -19,7 +19,11 @@ var/global/datum/universal_state/universe = new
 var/global/list/global_map = null
 
 // Noises made when hit while typing.
+/* Bastion of Endeavor Translation
 var/list/hit_appends	= list("-OOF", "-ACK", "-UGH", "-HRNK", "-HURGH", "-GLORF")
+*/
+var/list/hit_appends	= list("-УФ", "-АЙ", "-ЭЙ", "-ГХХ", "-КХХ", "-МХХ")
+// End of Bastion of Endeavor Translation
 var/log_path			= "data/logs/" //See world.dm for the full calculated path
 var/diary				= null
 var/error_log			= null
@@ -35,7 +39,11 @@ var/href_logfile		= null
 // var/const/company_short	= "NT"
 // var/const/star_name		= "Vir"
 // var/const/starsys_name	= "Vir"
+/* Bastion of Endeavor Translation
 var/const/game_version	= "VOREStation"
+*/
+var/const/game_version	= "Bastion of Endeavor"
+// End of Bastion of Endeavor Translation
 var/changelog_hash		= ""
 var/game_year			= (text2num(time2text(world.realtime, "YYYY")) + 300) //VOREStation Edit
 var/round_progressing = 1
@@ -134,6 +142,7 @@ var/DBConnection/dbcon_old = new() // /tg/station database (Old database) -- see
 var/global/list/alphabet_uppercase = list("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 
 
+// Bastion of Endeavor TODO: Yeah no, not until mobs are localized. If I touch this now, borgs will be borked.
 // Used by robots and robot preferences for regular modules.
 var/list/robot_module_types = list(
 	"Standard", "Engineering", "Surgeon",  "Crisis",
@@ -181,7 +190,11 @@ var/max_explosion_range = 14
 // Announcer intercom, because too much stuff creates an intercom for one message then hard del()s it.
 var/global/obj/item/device/radio/intercom/omni/global_announcer = new /obj/item/device/radio/intercom/omni(null)
 
+/* Bastion of Endeavor Translation: Probably unused but can still work as reference.
 var/list/station_departments = list("Command", "Medical", "Engineering", "Science", "Security", "Cargo", "Exploration", "Civilian") //VOREStation Edit
+*/
+var/list/station_departments = list("Командование", "Медицинский отдел", "Инженерный отдел", "Научный отдел", "Служба безопасности", "Грузовой отдел", "Экспедиционный отдел", "Гражданский персонал") //VOREStation Edit
+// End of Bastion of Endeavor Translation
 
 //Icons for in-game HUD glasses. Why don't we just share these a little bit?
 var/static/icon/ingame_hud = icon('icons/mob/hud.dmi')

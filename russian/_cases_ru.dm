@@ -52,4 +52,10 @@
 
 // Basically a quick mechanical interaction message constructor for a multitude of usages. Also helps eliminate human errors in localization.
 /proc/interact_ru(atom/user, var/use_verb, atom/target, var/case_user = NCASE, var/case_target = ACASE)
-	return "[cap_ru(user, case_user)] [verb_ru(user, use_verb)] [case_ru(target, case_target)]"
+	if(target) return "[cap_ru(user, case_user)] [verb_ru(user, use_verb)] [case_ru(target, case_target)]"
+	else return "[cap_ru(user, case_user)] [verb_ru(user, use_verb)]"
+
+// An alias for verb_ru + case_ru; despite the naming, verb_ru is good for adjectives/pronouns too
+/proc/concat_ru(var/word, atom/object, var/case = NCASE, var/capital = FALSE)
+	if(capital) return "[capitalize(verb_ru(object, word))] [case_ru(object, case)]"
+	else return "[verb_ru(object, word)] [case_ru(object, case)]"
