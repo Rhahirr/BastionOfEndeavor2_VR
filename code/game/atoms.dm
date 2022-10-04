@@ -248,13 +248,13 @@
 			/* Bastion of Endeavor Translation
 			f_name += "<span class='danger'>blood-stained</span> [name][infix]!"
 			*/
-			f_name += "<span class='danger'>[verb_ru(src, "окровавленн;ый;ая;ое;ые;;")]</span> [ncase_ru(src)][infix]!"
+			f_name += "<span class='danger'>[verb_ru(src, "окровавленн;ый;ая;ое;ые;")]</span> [ncase_ru(src)][infix]!"
 			// End of Bastion of Endeavor Translation
 		else
 			/* Bastion of Endeavor Translation
 			f_name += "oil-stained [name][infix]."
 			*/
-			f_name += "[verb_ru(src, "замасленн;ый;ая;ое;ые;;")] [ncase_ru(src)][infix]"
+			f_name += "[verb_ru(src, "замасленн;ый;ая;ое;ые;")] [ncase_ru(src)][infix]"
 			// End of Bastion of Endeavor Translation
 
 	/* Bastion of Endeavor Translation

@@ -220,13 +220,13 @@ var/global/list/consonants_ru = list("б", "в", "г", "д", "ж", "з", "й", "
 
 // An updated version of gender_ru that helps handle hardcoded messages, e.g. arrivals/cryo announcements and attack verbs.
 // Input template: "base/m_ending/f_ending/n_ending/p_ending/extra_text/case". Case defines the target's case, or hides target if unspecified.
-/proc/verb_ru(var/atom/verb_user, var/input, var/atom/target)
+/proc/verb_adv_ru(var/atom/verb_user, var/input, var/atom/target)
 	var/list/message_list = splittext_char(input, ";")
 	if(message_list.len == 1)
 		return "[gender_ru(verb_user, input)]" // If the template is omitted, use the default verb endings.
 	if(message_list.len < 6)
-		log_grammar_ru("ОШИБКА: Глагол verb_ru не соответствует шаблону! Ввод: [input], проверка выдала [message_list.len].")
-		error("Глагол verb_ru не соответствует шаблону! Ввод: [input], проверка выдала [message_list.len].")
+		log_grammar_ru("ОШИБКА: Глагол verb_adv_ru не соответствует шаблону! Ввод: [input], проверка выдала [message_list.len].")
+		error("Глагол verb_adv_ru не соответствует шаблону! Ввод: [input], проверка выдала [message_list.len].")
 		return message_list[1]
 	var/who = message_list[7] // these few lines might be redundant thanks to interact_ru but who knows
 	if (findtext_char(input, "case"))
@@ -234,6 +234,7 @@ var/global/list/consonants_ru = list("б", "в", "г", "д", "ж", "з", "й", "
 	return "[gender_ru(verb_user, message_list[1], message_list[2], message_list[3], message_list[4], message_list[5])][who? " [who] " : ""][message_list[6]]"
 
 // It looks silly, but it's very important for attack verbs that need custom cases that can't be provided with case_ru.
+// Actually this entire thing is just ancient code at this point and will need a rework with mob localization.
 /proc/attack_prep_ru(var/att_prep, var/att_case, var/ncase, var/gcase, var/dcase, var/acase, var/icase, var/pcase, var/obj/target)
 	if(target)
 		return "[prep_ru(target, att_prep)] [case_ru(target, att_case)]"

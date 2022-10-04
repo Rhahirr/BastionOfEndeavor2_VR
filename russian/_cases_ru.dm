@@ -79,8 +79,8 @@ var/global/list/self_cases_list_ru = list(
 /proc/pcase_ru(var/input, var/user, var/secondary = null, var/force_mode="normal")
 	return case_ru(input, PCASE, user, secondary, force_mode)
 
-// Largely a copypaste of verb_ru with the target removed. Meant to be used in the procs below.
-/proc/verb_simple_ru(var/atom/verb_user, var/input)
+// Largely a copypaste of verb_adv_ru with the target removed. Meant to be used in the procs below.
+/proc/verb_ru(var/atom/verb_user, var/input)
 	var/list/message_list = splittext_char(input, ";")
 	if(message_list.len == 1)
 		return "[gender_ru(verb_user, input)]" // If the template is omitted, use the default verb endings.
@@ -92,10 +92,10 @@ var/global/list/self_cases_list_ru = list(
 
 // Basically a quick mechanical interaction message constructor for a multitude of usages. Also helps eliminate human errors in localization.
 /proc/interact_ru(atom/user, var/use_verb, atom/target, var/case_target = ACASE, var/case_user = NCASE, var/secondary=null, var/force_mode="normal")
-	if(target) return "[cap_ru(user, case_user)] [verb_simple_ru(user, use_verb)] [case_ru(target, case_target, user, secondary, force_mode)]"
-	else return "[cap_ru(user, case_user)] [verb_simple_ru(user, use_verb)]"
+	if(target) return "[cap_ru(user, case_user)] [verb_ru(user, use_verb)] [case_ru(target, case_target, user, secondary, force_mode)]"
+	else return "[cap_ru(user, case_user)] [verb_ru(user, use_verb)]"
 
 // An alias for verb_ru + case_ru; despite the naming, verb_ru is good for adjectives/pronouns too
 /proc/concat_ru(var/word, atom/object, var/case = NCASE, var/capital = FALSE, var/secondary=null, var/force_mode="normal")
-	if(capital) return "[capitalize(verb_simple_ru(object, word))] [case_ru(object, case, secondary, force_mode)]"
-	else return "[verb_simple_ru(object, word)] [case_ru(object, case, secondary, force_mode)]"
+	if(capital) return "[capitalize(verb_ru(object, word))] [case_ru(object, case, secondary, force_mode)]"
+	else return "[verb_ru(object, word)] [case_ru(object, case, secondary, force_mode)]"
