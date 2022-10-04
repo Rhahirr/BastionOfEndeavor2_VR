@@ -15,6 +15,9 @@
 	error_log = start_log("[log_path]-error.log")
 	debug_log = start_log("[log_path]-debug.log")
 	//VOREStation Edit End
+	// Bastion of Endeavor Addition: Adds grammar logging.
+	grammar_log_ru = start_log("[log_path]-grammar_ru.log")
+	// End of Bastion of Endeavor Addition
 
 	changelog_hash = md5('html/changelog.html')					//used for telling if the changelog has changed recently
 
@@ -622,7 +625,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	else if (n > 0)
 		features += "~[n] player"
 	*/
-	features += "~[count_ru(n, "игрок", "игрока", "игроков")]"
+	features += "~[count_ru(n, "игрок;;а;ов")]"
 	// End of Bastion of Endeavor Translation
 
 

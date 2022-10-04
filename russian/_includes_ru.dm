@@ -9,6 +9,7 @@
 #include "_client_cases_ru.dm"
 #include "_overridden_procs_ru.dm"
 #include "_verbs_ru.dm"
+#include "_buckling_ru.dm"
 // Begin modular includes
 #include "defines\defines_ru.dm"
 #include "defines\obj_ru.dm"

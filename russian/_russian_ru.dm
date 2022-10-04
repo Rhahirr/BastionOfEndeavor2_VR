@@ -110,31 +110,26 @@
 	cases_ru["containername"][PCASE] = "ящике от [supply_pack_name_ru]"
 	containername = "Ящик от [supply_pack_name_ru]"
 
-/mob/self_user // This is a placeholder that comes in handy in verb_ru's that have the user as the target.
-
-/mob/self_user/New()
-	..()
-	cases_ru[GCASE] = "себя"
-	cases_ru[DCASE] = "себе"
-	cases_ru[ACASE] = "себя"
-	cases_ru[ICASE] = "собой"
-	cases_ru[PCASE] = "себе"
-
 // This proc handles the appropriate numeral word depending on the, well, number.
-/proc/count_ru(var/input, single_text = "единица", few_text = "единицы", many_text = "единиц", override = 0)
-	var/output
+/proc/count_ru(var/input, var/word, var/override = FALSE)
 	if(istype(input, /list))
 		var/list/input_list = input
-		output = input_list.len
-	else output = input
-	if(findtext_char(num2text(output), ".")) 			// if its a floating number
-		return "[override? "" : "[output] "][few_text]" // then apparently we dont bother with it because russian makes no sense
-	var/a = round(output) % 100
-	var/b = text2num(copytext_char(num2text(output), -1, 0)) // kinda ugly but we want that floating point
-	if (a > 10 && a < 20) return "[override? "" : "[output] "][many_text]"
-	if (b > 1 && b < 5) return "[override? "" : "[output] "][few_text]"
-	if (b == 1) return "[override? "" : "[output] "][single_text]"
-	return "[override? "" : "[output] "][many_text]"
+		input = input_list.len
+	var/output = "[override? "" : "[input] "]"
+	var/list/endings_list = splittext_char(word, ";")
+	output += endings_list[1]
+	if(endings_list.len != 4)
+		log_grammar_ru("ОШИБКА: Ввод count_ru не соответствует шаблону! Ввод: [input] [word], проверка выдала [endings_list.len].")
+		error("ОШИБКА: Ввод count_ru не соответствует шаблону! Ввод: [input] [word], проверка выдала [endings_list.len].")
+		return output
+	if(findtext_char(num2text(input), ".")) 					// if its a floating number
+		return "[output][endings_list[3]]" 						// then apparently we dont bother with it because russian makes no sense
+	var/a = round(input) % 100
+	var/b = text2num(copytext_char(num2text(input), -1, 0)) 	// kinda ugly but we want that floating point
+	if (a > 10 && a < 20) return "[output][endings_list[4]]"
+	if (b > 1 && b < 5) return "[output][endings_list[3]]"
+	if (b == 1) return "[output][endings_list[2]]"
+	return "[output][endings_list[4]]"
 
 // Backs up cases before changing them.
 /atom/proc/storecase_ru(atom/input)
@@ -168,120 +163,39 @@
 	if(mat.name_override_ru) return "[input][pre]" + mat.cases_ru["display_name"][GCASE]
 	else return "[adjective][(input)? " [input]" : ""]"
 
-// Has anyone ever stopped to question why the verb is always "buckle" even when you interact with a bed?
-// This proc may look awful, but it adds an immense amount of clarity in russian, as the actual verb used largely depends on the context and the target.
-/proc/buckleverb_ru(obj/seat, mob/user, tense = "present", mob/target)
-	var/who
-	if(target)
-		who = acase_ru(target)
-	else
-		who = "Вас"
-	if(istype(seat, /obj/structure/bed/chair/shuttle) || istype(seat, /obj/structure/bed/chair/bay/shuttle))
-		switch(tense)
-			//buckle
-			if("present") return "[verb_ru(user, "пристёгива;ет;ет;ет;ют;;")] [who] к [dcase_ru(seat)]"
-			if("self") return "[verb_ru(user, "пристегнул;ся;ась;ось;ись;;")] к [dcase_ru(seat)]"
-			if("past") return "[verb_ru(user, "пристегнул;;а;о;и;;")] [who] к [dcase_ru(seat)]"
-			if("participle") return "[verb_ru(user, "пристёгнут;;а;о;ы;;")] к [dcase_ru(seat)]"
-			if("action") return "пристёгиваете [who] к [dcase_ru(seat)]"
-			if("indefinite") return "пристегнуть [who] к [dcase_ru(seat)]"
-			if("you") return "пристегнулись к [dcase_ru(seat)]"
-			//unbuckle
-			if("upresent") return "[verb_ru(user, "отстёгива;ет;ет;ет;ют;;")] [who] от [gcase_ru(seat)]"
-			if("uself") return "[verb_ru(user, "отстегнул;ся;ась;ось;ись;;")] от [gcase_ru(seat)]"
-			if("upast") return "[verb_ru(user, "отстегнул;;а;о;и;;")] [who] от [gcase_ru(seat)]"
-			if("uyou") return "отстегнулись от [gcase_ru(seat)]"
-	else if(istype(seat, /obj/structure/bed/chair/comfy))
-		switch(tense)
-			//buckle
-			if("present") return "[verb_ru(user, "усажива;ет;ет;ет;ют;;")] [who] [prep_ru(seat, "в")] [acase_ru(seat)]"
-			if("self") return "[verb_ru(user, "сад;ит;ит;ит;ят;ся;")] [prep_ru(seat, "в")] [acase_ru(seat)]"
-			if("past") return "[verb_ru(user, "посадил;;а;о;и;;")] [who] [prep_ru(seat, "в")] [acase_ru(seat)]"
-			if("participle") return "[verb_ru(user, "сид;ит;ит;ит;ят;;")] [prep_ru(seat, "в")] [pcase_ru(seat)]"
-			if("action") return "усаживаете [who] [prep_ru(seat, "в")] [acase_ru(seat)]"
-			if("indefinite") return "усадить [who] [prep_ru(seat, "в")] [acase_ru(seat)]"
-			if("you") return "сели [prep_ru(seat, "в")] [acase_ru(seat)]"
-			//unbuckle
-			if("upresent") return "[verb_ru(user, "поднима;ет;ет;ет;ют;;")] [who] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("uself") return "[verb_ru(user, "вста;ёт;ёт;ёт;ют;;")] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("upast") return "[verb_ru(user, "поднял;;а;о;и;;")] [who] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("uyou") return "встали [prep_ru(seat, "с")] [gcase_ru(seat)]"
-	else if(istype(seat, /obj/structure/bed/chair))
-		switch(tense)
-			//buckle
-			if("present") return "[verb_ru(user, "усажива;ет;ет;ет;ют;;")] [who] на [acase_ru(seat)]"
-			if("self") return "[verb_ru(user, "сад;ит;ит;ит;ят;ся;")] на [acase_ru(seat)]"
-			if("past") return "[verb_ru(user, "усадил;;а;о;и;;")] [who] на [acase_ru(seat)]"
-			if("participle") return "[verb_ru(user, "сид;ит;ит;ит;ят;;")] на [pcase_ru(seat)]"
-			if("action") return "усаживаете [who] на [acase_ru(seat)]"
-			if("indefinite") return "усадить [who] на [acase_ru(seat)]"
-			if("you") return "сели на [acase_ru(seat)]"
-			//unbuckle
-			if("upresent") return "[verb_ru(user, "поднима;ет;ет;ет;ют;;")] [who] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("uself") return "[verb_ru(user, "вста;ёт;ёт;ёт;ют;;")] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("upast") return "[verb_ru(user, "поднял;;а;о;и;;")] [who] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("uyou") return "встали [prep_ru(seat, "с")] [gcase_ru(seat)]"
-	else if(istype(seat, /obj/structure/bed) || istype(seat, /obj/structure/dogbed))
-		switch(tense)
-			//buckle
-			if("present") return "[verb_ru(user, "укладыва;ет;ет;ет;ют;;")] [who] на [acase_ru(seat)]"
-			if("self") return "[verb_ru(user, "лож;ит;ит;ит;ат;ся;")] на [acase_ru(seat)]"
-			if("past") return "[verb_ru(user, "положил;;а;о;и;;")] [who] на [acase_ru(seat)]"
-			if("participle") return "[verb_ru(user, "леж;ит;ит;ит;ат;;")] на [pcase_ru(seat)]"
-			if("action") return "укладываете [who] на [acase_ru(seat)]"
-			if("indefinite") return "положить [who] на [acase_ru(seat)]"
-			if("you") return "легли на [acase_ru(seat)]"
-			//unbuckle
-			if("upresent") return "[verb_ru(user, "поднима;ет;ет;ет;ют;;")] [who] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("uself") return "[verb_ru(user, "вста;ёт;ёт;ёт;ют;;")] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("upast") return "[verb_ru(user, "поднял;;а;о;и;;")] [who] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("uyou") return "встали [prep_ru(seat, "с")] [gcase_ru(seat)]"
-	else
-		switch(tense)
-			//buckle
-			if("present") return "[verb_ru(user, "усажива;ет;ет;ет;ют;;")] [who] на [acase_ru(seat)]"
-			if("self") return "[verb_ru(user, "сад;ит;ит;ит;ат;ся;")] на [acase_ru(seat)]"
-			if("past") return "[verb_ru(user, "усадил;;а;о;и;;")] [who] на [acase_ru(seat)]"
-			if("participle") return "[verb_ru(user, "сид;ит;ит;ит;ят;;")] на [pcase_ru(seat)]"
-			if("action") return "усаживаете [who] на [acase_ru(seat)]"
-			if("indefinite") return "усадить [who] на [acase_ru(seat)]"
-			if("you") return "сели на [acase_ru(seat)]"
-			//unbuckle
-			if("upresent") return "[verb_ru(user, "поднима;ет;ет;ет;ют;;")] [who] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("uself") return "[verb_ru(user, "вста;ёт;ёт;ёт;ют;;")] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("upast") return "[verb_ru(user, "поднял;;а;о;и;;")] [who] [prep_ru(seat, "с")] [gcase_ru(seat)]"
-			if("uyou") return "встали [prep_ru(seat, "с")] [gcase_ru(seat)]"
-
 // The following proc adjusts a preposition to be used before a word. The list of consonants is provided for this very cause.
 var/global/list/consonants_ru = list("б", "в", "г", "д", "ж", "з", "й", "к", "л", "м", "н", "п", "р", "с", "т", "ф", "х", "ц", "ч", "ш", "щ")
 
-/proc/prep_ru(atom/input, var/preposition = "", var/capital = 0)
-	var/first_letter = lowertext(copytext_char(case_ru(input, NCASE), 1, 2))
-	var/second_letter = lowertext(copytext_char(case_ru(input, NCASE), 2, 3))
-	switch(preposition)
+/proc/prep_ru(atom/input, var/preposition = "")
+	var/first_letter = lowertext(copytext_char(ncase_ru(input), 1, 2))
+	var/second_letter = lowertext(copytext_char(ncase_ru(input), 2, 3))
+	var/is_capital = FALSE
+	if((preposition == "С") || preposition == "В")
+		is_capital = TRUE
+	switch(lowertext(preposition))
 		if("с")
 			var/list/c_letter = list("с", "ж", "з", "ш", "л", "р", "м", "в", "щ")
 			for(var/let_s in c_letter)
-				if (first_letter == "щ") return "[capital? "Со" : "со"]"
+				if (first_letter == "щ") return "[is_capital? "Со" : "со"]"
 				else if (first_letter == let_s)
 					for(var/cons_s in consonants_ru)
-						if (second_letter == cons_s) return "[capital? "Со" : "со"]"
-			return "[capital? "С" : "с"]"
+						if (second_letter == cons_s) return "[is_capital? "Со" : "со"]"
+			return "[is_capital? "С" : "с"]"
 		if("в")
 			var/list/v_letter = list("в", "ф")
 			for(var/let_v in v_letter)
 				if (first_letter == let_v)
 					for(var/cons_v in consonants_ru)
-						if (second_letter == cons_v) return "[capital? "Во" : "в"]"
-			return "[capital? "В" : "в"]"
+						if (second_letter == cons_v) return "[is_capital? "Во" : "в"]"
+			return "[is_capital? "В" : "в"]"
 		else
 			log_grammar_ru("ОШИБКА: Проку prep_ru передан недопустимый предлог: [preposition].")
 			error("Проку prep_ru передан недопустимый предлог: [preposition].")
-			return "[capital? "[capitalize(preposition)]" : "[preposition]"]"
+			return "[is_capital? "[capitalize(preposition)]" : "[preposition]"]"
 
 // Basically a better prep_ru
-/proc/prep_adv_ru(atom/input, var/preposition = "", var/case = "gcase", var/capital = 0)
-	return "[prep_ru(input, preposition, capital)] [case_ru(input, case)]"
+/proc/prep_adv_ru(var/preposition = "", atom/input, var/case = "gcase")
+	return "[prep_ru(input, preposition)] [case_ru(input, case)]"
 
 // This is a simple proc that adds an apropriate ending to a verb depending on the user's gender. This is core.
 /proc/gender_ru(input, base_verb = "", he_end = "", she_end = "а", it_end = "о", they_end = "и")
@@ -314,7 +228,7 @@ var/global/list/consonants_ru = list("б", "в", "г", "д", "ж", "з", "й", "
 		log_grammar_ru("ОШИБКА: Глагол verb_ru не соответствует шаблону! Ввод: [input], проверка выдала [message_list.len].")
 		error("Глагол verb_ru не соответствует шаблону! Ввод: [input], проверка выдала [message_list.len].")
 		return message_list[1]
-	var/who = message_list[7]
+	var/who = message_list[7] // these few lines might be redundant thanks to interact_ru but who knows
 	if (findtext_char(input, "case"))
 		who = case_ru(target, message_list[7])
 	return "[gender_ru(verb_user, message_list[1], message_list[2], message_list[3], message_list[4], message_list[5])][who? " [who] " : ""][message_list[6]]"

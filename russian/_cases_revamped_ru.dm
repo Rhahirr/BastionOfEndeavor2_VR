@@ -1,19 +1,4 @@
 // Weird grammar bullshit goes here
-var/global/list/basic_cases_list_ru = list(
-	RUGENDER = "", \
-	NCASE = "", \
-	GCASE = "", \
-	DCASE = "", \
-	ACASE = "", \
-	ICASE = "", \
-	PCASE = "")
-
-/datum
-	var/list/case_blueprint_ru
-	var/list/cases_ru
-	var/number_lock_ru
-	var/always_plural_ru
-
 /atom/New() // radical? yes. will it break things? won't know until we try.
 	..()
 	cases_ru = new /list()
