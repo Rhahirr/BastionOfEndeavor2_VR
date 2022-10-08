@@ -55,9 +55,10 @@
 	if(!case && using_map.station_name)
 		return using_map.station_name
 	switch(case)
-		if(NCASE) return "НБН \"Адефагия\""
-		if(GCASE) return "НБН \"Адефагии\""
-		if(DCASE) return "НБН \"Адефагии\""
-		if(ACASE) return "НБН \"Адефагию\""
-		if(ICASE) return "НБН \"Адефагией\""
-		if(PCASE) return "НБН \"Адефагии\""
+		// Научно-Исследовательская База НаноТрейсен
+		if(NCASE) return "НИБ-НТ Адефагия"
+		if(GCASE) return "НИБ-НТ Адефагии"
+		if(DCASE) return "НИБ-НТ Адефагии"
+		if(ACASE) return "НИБ-НТ Адефагию"
+		if(ICASE) return "НИБ-НТ Адефагией"
+		if(PCASE) return "НИБ-НТ Адефагии"

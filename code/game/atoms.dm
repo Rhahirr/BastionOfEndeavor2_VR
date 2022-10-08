@@ -15,7 +15,7 @@
 	/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: Might wanna come back to this after mobs are localized!
 	var/atom_say_verb = "says"
 	*/
-	var/atom_say_verb = "говор;ит;ит;ит;ят;;"
+	var/atom_say_verb = "говор;ит;ит;ит;ят;"
 	// End of Bastion of Endeavor Translation
 	var/bubble_icon = "normal" ///what icon the atom uses for speechbubbles
 	var/fluorescent // Shows up under a UV light.
@@ -758,7 +758,11 @@
 		return
 	var/list/speech_bubble_hearers = list()
 	for(var/mob/M in get_mobs_in_view(7, src))
+		/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: A little iffy on changing [src] to capitalized n-case atm, but might be worth considering later on.
 		M.show_message("<span class='game say'><span class='name'>[src]</span> [atom_say_verb], \"[message]\"</span>", 2, null, 1)
+		*/
+		M.show_message("<span class='game say'><span class='name'>[src]</span> [verb_ru(src, atom_say_verb)], \"[message]\"</span>", 2, null, 1)
+		// End of Bastion of Endeavor Translation
 		if(M.client)
 			speech_bubble_hearers += M.client
 

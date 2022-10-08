@@ -426,7 +426,7 @@ var/world_topic_spam_protect_time = world.timeofday
 			to_world("<span class='boldannounce'>[key_name_admin(usr)] has requested an immediate world restart via client side debugging tools</span>")
 			*/
 			log_admin("[key_name(usr)] запросил рестарт мира через инструменты дебага клиента.")
-			message_admins("[key_name_admin(usr)]запросил рестарт мира через инструменты дебага клиента.")
+			message_admins("[key_name_admin(usr)] запросил рестарт мира через инструменты дебага клиента.")
 			to_world("<span class='boldannounce'>[key_name_admin(usr)] запросил рестарт мира через инструменты дебага клиента.</span>")
 			// End of Bastion of Endeavor Translation
 

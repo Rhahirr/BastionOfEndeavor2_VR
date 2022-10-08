@@ -1,7 +1,7 @@
 // This is basically a copypaste of Spawn + Case Editor + Delete verbs
 // this is incredibly convenient for debugging without having to find objects to click on
 /client/proc/debug_cases_ru(var/object as text)
-	set name = "Проверить Падежи"
+	set name = "Проверить падежи"
 	set category = "Дебаг"
 	set desc = "Заспавнить и проверить падежи объекта."
 	var/list/types = typesof(/atom)

@@ -103,7 +103,7 @@ var/global/list/classic_vore_sounds = list(
 		"Шуршание одежды 3"	= 'sound/effects/rustle3.ogg',
 		"Шуршание одежды 4"	= 'sound/effects/rustle4.ogg',
 		"Шуршание одежды 5"	= 'sound/effects/rustle5.ogg',
-		"Застёжка" = 'sound/items/zip.ogg',
+		"Застежка" = 'sound/items/zip.ogg',
 		"Нет" = null)
 		// End of Bastion of Endeavor Translation
 
@@ -123,7 +123,7 @@ var/global/list/classic_release_sounds = list(
 		"Шуршание одежды 3" = 'sound/effects/rustle3.ogg',
 		"Шуршание одежды 4" = 'sound/effects/rustle4.ogg',
 		"Шуршание одежды 5" = 'sound/effects/rustle5.ogg',
-		"Застёжка" = 'sound/items/zip.ogg',
+		"Застежка" = 'sound/items/zip.ogg',
 		"Выплескивание" = 'sound/effects/splat.ogg',
 		"Нет" = null
 		// End of Bastion of Endeavor Translation
@@ -190,7 +190,7 @@ var/global/list/fancy_release_sounds = list(
 		"Шуршание одежды 3" = 'sound/effects/rustle3.ogg',
 		"Шуршание одежды 4" = 'sound/effects/rustle4.ogg',
 		"Шуршание одежды 5" = 'sound/effects/rustle5.ogg',
-		"Застёжка" = 'sound/items/zip.ogg',
+		"Застежка" = 'sound/items/zip.ogg',
 		"Внутренние движения" = 'sound/vore/sunesound/pred/stomachmove.ogg',
 		"Побег из хищника" = 'sound/vore/sunesound/pred/escape.ogg',
 		"Выплескивание" = 'sound/effects/splat.ogg',

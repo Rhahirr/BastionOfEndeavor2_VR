@@ -192,11 +192,11 @@
 
 //Returns null if there is any bad text in the string
 /proc/reject_bad_text(var/text, var/max_length=512)
-	/* Bastion of Endeavor Translation
+	/* Bastion of Endeavor Unicode Edit
 	if(length(text) > max_length)	return			//message too long
 	*/
 	if(length_char(text) > max_length)	return			//message too long
-	// End of Bastion of Endeavor Translation
+	// End of Bastion of Endeavor Unicode Edit
 	var/non_whitespace = 0
 	/* Bastion of Endeavor Unicode Edit
 	for(var/i=1, i<=length(text), i++)
@@ -276,11 +276,11 @@
 	var/start = length_char(text) - length_char(suffix)
 	// End of Bastion of Endeavor Unicode Edit
 	if(start)
-		/* Bastion of Endeavor Translation
+		/* Bastion of Endeavor Unicode Edit
 		return findtext(text, suffix, start, null)
 		*/
 		return findtext_char(text, suffix, start, null)
-		// End of Bastion of Endeavor Translation
+		// End of Bastion of Endeavor Unicode Edit
 	return
 
 //Checks the end of a string for a specified substring. This proc is case sensitive
@@ -655,7 +655,7 @@
 	t = replacetext_char(t, "\[redlogo\]", "<img src = redntlogo.png>")
 	t = replacetext_char(t, "\[sglogo\]", "<img src = sglogo.png>")
 	t = replacetext_char(t, "\[editorbr\]", "")
-	// End of Bastion of Endeavor Translation
+	// End of Bastion of Endeavor Unicode Edit
 	return t
 
 //pencode translation to html for tags exclusive to digital files (currently email, nanoword, report editor fields,
@@ -682,7 +682,7 @@
 
 //Will kill most formatting; not recommended.
 /proc/html2pencode(t)
-	/* Bastion of Endeavor Translation
+	/* Bastion of Endeavor Unicode Edit
 	t = replacetext(t, "<pre>", "\[pre\]")
 	t = replacetext(t, "</pre>", "\[/pre\]")
 	t = replacetext(t, "<font color=\"red\">", "\[fontred\]")//</font> to pass html tag integrity unit test
@@ -754,7 +754,7 @@
 	t = replacetext_char(t, "<img src = sglogo.png>", "\[sglogo\]")
 	t = replacetext_char(t, "<span class=\"paper_field\"></span>", "\[field\]")
 	t = replacetext_char(t, "<span class=\"redacted\">У Д А Л Е Н О</span>", "\[redacted\]")
-	// End of Bastion of Endeavor Translation
+	// End of Bastion of Endeavor Unicode Edit
 	t = strip_html_properly(t)
 	return t
 

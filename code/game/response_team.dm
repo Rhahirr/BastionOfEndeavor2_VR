@@ -49,7 +49,7 @@ var/silent_ert = 0
 	/* Bastion of Endeavor Translation
 	if(tgui_alert(usr, "Do you want to dispatch an Emergency Response Team?","ERT",list("Yes","No")) != "Yes")
 	*/
-	if(tgui_alert(usr, "Вы действительно хотите отправить Группу Экстренного Реагирования?","ГЭР",list("Да","Нет")) != "Да")
+	if(tgui_alert(usr, "Вы действительно хотите отправить Группу экстренного реагирования?","ГЭР",list("Да","Нет")) != "Да")
 	// End of Bastion of Endeavor Translation
 		return
 	/* Bastion of Endeavor Translation

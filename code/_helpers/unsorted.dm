@@ -1494,17 +1494,17 @@ var/mob/dview/dview_mob = new
 			return "Юг — Юго-Восток"
 			// End of Bastion of Endeavor Translation
 		if(225)
-			/* Bastion of Endeavor Unicode Edit
+			/* Bastion of Endeavor Translation
 			return "Southwest"
 			*/
 			return "Юго-Запад"
-			// End of Bastion of Endeavor Unicode Edit
+			// End of Bastion of Endeavor Translation
 		if(247.5)
-			/* Bastion of Endeavor Unicode Edit
+			/* Bastion of Endeavor Translation
 			return "West-Southwest"
 			*/
 			return "Запад — Юго-Запад"
-			// End of Bastion of Endeavor Unicode Edit
+			// End of Bastion of Endeavor Translation
 		if(270)
 			/* Bastion of Endeavor Translation
 			return "West"
@@ -1535,7 +1535,7 @@ var/mob/dview/dview_mob = new
 		/* Bastion of Endeavor Translation
 		value = tgui_input_text(usr, "Enter type to find (blank for all, cancel to cancel)", "Search for type")
 		*/
-		value = tgui_input_text("Введите искомый тип (или пропуск для выведения всех)", "Поиск типа")
+		value = tgui_input_text("Введите искомый тип (или пропуск для вывода всех)", "Поиск типа")
 		// End of Bastion of Endeavor Translation
 		if (isnull(value))
 			return

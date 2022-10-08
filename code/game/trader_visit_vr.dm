@@ -19,5 +19,5 @@ GLOBAL_VAR(trader_loaded)
 			/* Bastion of Endeavor Translation
 			log_and_message_admins("Loaded the trade shuttle just now.")
 			 */
-			log_and_message_admins("Загружен шаттл ГЭР.")
+			log_and_message_admins("Только что был загружен торговый шаттл.")
 			// End of Bastion of Endeavor Translation

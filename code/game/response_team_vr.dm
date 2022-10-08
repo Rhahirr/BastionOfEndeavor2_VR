@@ -19,5 +19,5 @@ GLOBAL_VAR(ert_loaded)
 			/* Bastion of Endeavor Translation
 			log_and_message_admins("Loaded the ERT shuttle just now.")
 			*/
-			log_and_message_admins("загрузил шаттл ГЭР.")
+			log_and_message_admins("Только что был загружен шаттл ГЭР.")
 			// End of Bastion of Endeavor Translation
