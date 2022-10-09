@@ -1,5 +1,9 @@
 SUBSYSTEM_DEF(overlays)
+	/* Bastion of Endeavor Translation
 	name = "Overlay"
+	*/
+	name = "Оверлеи"
+	// End of Bastion of Endeavor Translation
 	flags = SS_TICKER
 	wait = 1
 	priority = FIRE_PRIORITY_OVERLAYS
@@ -29,7 +33,11 @@ SUBSYSTEM_DEF(overlays)
 	..()
 
 /datum/controller/subsystem/overlays/stat_entry()
+	/* Bastion of Endeavor Translation
 	..("Ov:[length(queue)]")
+	*/
+	..("Ов:[length(queue)]")
+	// End of Bastion of Endeavor Translation
 
 
 /datum/controller/subsystem/overlays/Shutdown()

@@ -53,7 +53,7 @@
 		/* Bastion of Endeavor Translation
 		results += "<span class='notice'>\The [target] is empty!</span>"
 		*/
-		results += "<span class='notice'>[prep_adv_ru("в", target, PCASE, TRUE)] пусто!</span>"
+		results += "<span class='notice'>[prep_adv_ru("в", target, PCASE)] пусто!</span>"
 		// End of Bastion of Endeavor Translation
 
 	return results

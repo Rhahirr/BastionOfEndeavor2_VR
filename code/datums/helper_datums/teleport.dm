@@ -182,7 +182,7 @@ var/bluespace_item_types = newlist(/obj/item/weapon/storage/backpack/holding,
 			/* Bastion of Endeavor Translation
 			to_chat(MM, "<span class='danger'>The Bluespace interface on your [teleatom] interferes with the teleport!</span>")
 			*/
-			to_chat(MM, "<span class='danger'>Блюспейсовый интерфейс на [concat_ru("Ваш;ем;ей;ем;их;;", teleatom)] вмешался в процесс телепортации!</span>")
+			to_chat(MM, "<span class='danger'>Блюспейсовый интерфейс на [concat_ru("Ваш;ем;ей;ем;их;;", teleatom, PCASE)] вмешался в процесс телепортации!</span>")
 			// End of Bastion of Endeavor Translation
 	return 1
 

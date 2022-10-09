@@ -1,5 +1,9 @@
 SUBSYSTEM_DEF(garbage)
+	/* Bastion of Endeavor Translation
 	name = "Garbage"
+	*/
+	name = "Мусоросборщик"
+	// End of Bastion of Endeavor Translation
 	priority = FIRE_PRIORITY_GARBAGE
 	wait = 2 SECONDS
 	flags = SS_POST_FIRE_TIMING|SS_BACKGROUND|SS_NO_INIT
@@ -42,20 +46,49 @@ SUBSYSTEM_DEF(garbage)
 	var/list/counts = list()
 	for (var/list/L in queues)
 		counts += length(L)
+	/* Bastion of Endeavor Translation
 	msg += "Q:[counts.Join(",")]|D:[delslasttick]|G:[gcedlasttick]|"
 	msg += "GR:"
+	*/
+	msg += "О:[counts.Join(",")]|У:[delslasttick]|М:[gcedlasttick]|"
+	msg += "М:"
+	// End of Bastion of Endeavor Translation
 	if (!(delslasttick+gcedlasttick))
+		/* Bastion of Endeavor Translation
 		msg += "n/a|"
+		*/
+		msg += "нет|"
+		// End of Bastion of Endeavor Translation
 	else
 		msg += "[round((gcedlasttick/(delslasttick+gcedlasttick))*100, 0.01)]%|"
 
+	/* Bastion of Endeavor Translation
 	msg += "TD:[totaldels]|TG:[totalgcs]|"
+	*/
+	msg += "ВУ:[totaldels]|ВМ:[totalgcs]|"
+	// End of Bastion of Endeavor Translation
 	if (!(totaldels+totalgcs))
+		/* Bastion of Endeavor Translation
 		msg += "n/a|"
+		*/
+		msg += "нет|"
+		// End of Bastion of Endeavor Translation
 	else
+		/* Bastion of Endeavor Translation
 		msg += "TGR:[round((totalgcs/(totaldels+totalgcs))*100, 0.01)]%"
+		*/
+		msg += "ВМУ:[round((totalgcs/(totaldels+totalgcs))*100, 0.01)]%"
+		// End of Bastion of Endeavor Translation
+	/* Bastion of Endeavor Translation
 	msg += " P:[pass_counts.Join(",")]"
+	*/
+	msg += " П:[pass_counts.Join(",")]"
+	// End of Bastion of Endeavor Translation
+	/* Bastion of Endeavor Translation
 	msg += "|F:[fail_counts.Join(",")]"
+	*/
+	msg += "|Н:[fail_counts.Join(",")]"
+	// End of Bastion of Endeavor Translation
 	return ..()
 
 /datum/controller/subsystem/garbage/Shutdown()
@@ -66,25 +99,64 @@ SUBSYSTEM_DEF(garbage)
 	sortTim(items, cmp=/proc/cmp_qdel_item_time, associative = TRUE)
 	for(var/path in items)
 		var/datum/qdel_item/I = items[path]
+		/* Bastion of Endeavor Translation
 		dellog += "Path: [path]"
+		*/
+		dellog += "ПУТЬ: [path]"
+		// End of Bastion of Endeavor Translation
 		if (I.qdel_flags & QDEL_ITEM_SUSPENDED_FOR_LAG)
+			/* Bastion of Endeavor Translation
 			dellog += "\tSUSPENDED FOR LAG"
+			*/
+			dellog += "\tЗАДЕРЖАН ИЗ-ЗА ЛАГА"
+			// End of Bastion of Endeavor Translation
 		if (I.failures)
+			/* Bastion of Endeavor Translation
 			dellog += "\tFailures: [I.failures]"
+			*/
+			dellog += "\tНеудач: [I.failures]"
+			// End of Bastion of Endeavor Translation
+		/* Bastion of Endeavor Translation
 		dellog += "\tqdel() Count: [I.qdels]"
 		dellog += "\tDestroy() Cost: [I.destroy_time]ms"
+		*/
+		dellog += "\tСчётчик qdel(): [I.qdels]"
+		dellog += "\tСтоимость Destroy(): [I.destroy_time]мс"
+		// End of Bastion of Endeavor Translation
 		if (I.hard_deletes)
+			/* Bastion of Endeavor Translation
 			dellog += "\tTotal Hard Deletes: [I.hard_deletes]"
 			dellog += "\tTime Spent Hard Deleting: [I.hard_delete_time]ms"
 			dellog += "\tHighest Time Spent Hard Deleting: [I.hard_delete_max]ms"
+			*/
+			dellog += "\tВсего хард-удалений: [I.hard_deletes]"
+			dellog += "\tЗатрачено на хард-удаления: [I.hard_delete_time]мс"
+			dellog += "\tНаибольшие затраты: [I.hard_delete_max]мс"
+			// End of Bastion of Endeavor Translation
 			if (I.hard_deletes_over_threshold)
+				/* Bastion of Endeavor Translation
 				dellog += "\tHard Deletes Over Threshold: [I.hard_deletes_over_threshold]"
+				*/
+				dellog += "\tХард-удалений за чертой: [I.hard_deletes_over_threshold]"
+				// End of Bastion of Endeavor Translation
 		if (I.slept_destroy)
+			/* Bastion of Endeavor Translation
 			dellog += "\tSleeps: [I.slept_destroy]"
+			*/
+			dellog += "\tСпящих: [I.slept_destroy]"
+			// End of Bastion of Endeavor Translation
 		if (I.no_respect_force)
+			/* Bastion of Endeavor Translation
 			dellog += "\tIgnored force: [I.no_respect_force] times"
+			*/
+			dellog += "\tПринуждение проигнорировано: [count_ru(I.no_respect_force, "раз;;а;")]"
+			// End of Bastion of Endeavor Translation
 		if (I.no_hint)
+			/* Bastion of Endeavor Translation
 			dellog += "\tNo hint: [I.no_hint] times"
+			*/
+			dellog += "\tБез намёка: [count_ru(I.no_hint, "раз;;а;")]"
+			// End of Bastion of Endeavor Translation
 	text2file(dellog.Join(), "[log_path]-qdel.log")
 
 /datum/controller/subsystem/garbage/fire()
@@ -170,12 +242,20 @@ SUBSYSTEM_DEF(garbage)
 				var/type = D.type
 				var/datum/qdel_item/I = items[type]
 
+				/* Bastion of Endeavor Translation
 				log_world("## TESTING: GC: -- \ref[D] | [type] was unable to be GC'd --")
+				*/
+				log_world("## ТЕСТ: МУСОР: Не удалось очистить \ref[D] | [type]")
+				// End of Bastion of Endeavor Translation
 				#ifdef TESTING
 				for(var/client/admin as anything in GLOB.admins) //Using testing() here would fill the logs with ADMIN_VV garbage
 					if(!check_rights_for(admin, R_ADMIN))
 						continue
+					/* Bastion of Endeavor Translation
 					to_chat(admin, "## TESTING: GC: -- [ADMIN_VV(D)] | [type] was unable to be GC'd --")
+					*/
+					to_chat(admin, "## ТЕСТ: МУСОР: Не удалось очистить [ADMIN_VV(D)] | [type]")
+					// End of Bastion of Endeavor Translation
 				#endif
 				I.failures++
 
@@ -245,7 +325,11 @@ SUBSYSTEM_DEF(garbage)
 	var/threshold = 0.5 // Default, make a config
 	if (threshold && (time > threshold SECONDS))
 		if (!(I.qdel_flags & QDEL_ITEM_ADMINS_WARNED))
+			/* Bastion of Endeavor Translation
 			log_and_message_admins("Error: [type]([refID]) took longer than [threshold] seconds to delete (took [round(time/10, 0.1)] seconds to delete)")
+			*/
+			log_and_message_admins("Ошибка: Тип [type]([refID]) занял больше [count_ru(threshold, "секунд;ы;;")] на удаление ([count_ru(round(time/10, 0.1), "секунд;у;ы;")])")
+			// End of Bastion of Endeavor Translation
 			I.qdel_flags |= QDEL_ITEM_ADMINS_WARNED
 		I.hard_deletes_over_threshold++
 		var/overrun_limit = 0 // Default, make a config
@@ -317,11 +401,18 @@ SUBSYSTEM_DEF(garbage)
 				// indicates the objects Destroy() does not respect force
 				#ifdef TESTING
 				if(!I.no_respect_force)
+					/* Bastion of Endeavor Translation
 					testing("WARNING: [D.type] has been force deleted, but is \
 						returning an immortal QDEL_HINT, indicating it does \
 						not respect the force flag for qdel(). It has been \
 						placed in the queue, further instances of this type \
 						will also be queued.")
+					*/
+					testing("Тип [D.type] был принудительно удалён, но \
+						возвращается в качестве бессмертного QDEL_HINT, т.е. \
+						игнорирует флаг принудительного qdel(). Он был отправлен в очередь, \
+						и в очередь будут отправлены все его будущие инстанции.")
+					// End of Bastion of Endeavor Translation
 				#endif
 				I.no_respect_force++
 
@@ -341,9 +432,17 @@ SUBSYSTEM_DEF(garbage)
 			else
 				#ifdef TESTING
 				if(!I.no_hint)
+					/* Bastion of Endeavor Translation
 					testing("WARNING: [D.type] is not returning a qdel hint. It is being placed in the queue. Further instances of this type will also be queued.")
+					*/
+					testing("ВНИМАНИЕ: [D.type] не возвращает намёк qdel. Он отправляется в очередь, и в очередь будут отправлены все его будущие инстанции.")
+					// End of Bastion of Endeavor Translation
 				#endif
 				I.no_hint++
 				SSgarbage.Queue(D)
 	else if(D.gc_destroyed == GC_CURRENTLY_BEING_QDELETED)
+		/* Bastion of Endeavor Translation
 		CRASH("[D.type] destroy proc was called multiple times, likely due to a qdel loop in the Destroy logic")
+		*/
+		CRASH("Destroy() типа [D.type] был вызван несколько раз, вероятно из-за цикла qdel в логике прока Destroy.")
+		// End of Bastion of Endeavor Translation
