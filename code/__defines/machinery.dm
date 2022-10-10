@@ -107,7 +107,7 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define NETWORK_ALARM_POWER "Перебои электричества"
 #define NETWORK_ALARM_FIRE "Пожарные тревоги"
 #define NETWORK_TALON_HELMETS "Шлемы Когтя"
-#define NETWORK_TALON_SHIP "Корабль Когтя"
+#define NETWORK_TALON_SHIP "НТС Коготь"
 // End of Bastion of Endeavor Translation
 
 // Those networks can only be accessed by pre-existing terminals. AIs and new terminals can't use them.
