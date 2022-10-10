@@ -70,6 +70,7 @@
 #define RADIATION_GLOWS   0x40   // Radiation causes this character to glow.
 
 // Languages.
+// Bastion of Endeavor TODO: Come back to this when localizing mobs! Do we need to redefine?
 #define LANGUAGE_GALCOM "Galactic Common"
 #define LANGUAGE_EAL "Encoded Audio Language"
 #define LANGUAGE_SWARMBOT "Ancient Audio Encryption"

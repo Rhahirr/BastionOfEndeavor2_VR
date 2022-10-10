@@ -1,3 +1,4 @@
+// Bastion of Endeavor TODO: Do we care about these, or do we only translate the names in dedicated datums?
 #define WEATHER_CLEAR				"clear"
 #define WEATHER_OVERCAST			"overcast"
 #define WEATHER_LIGHT_SNOW			"light snow"

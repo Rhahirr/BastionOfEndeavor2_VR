@@ -43,6 +43,7 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define AI_CAMERA_LUMINOSITY 6
 
 // Camera networks
+/* Bastion of Endeavor Translation: I imagine that these will either need changing all across the map code, or some other workaround.
 #define NETWORK_CRESCENT "Spaceport"
 // #define NETWORK_CAFE_DOCK "Cafe Dock"
 #define NETWORK_CARGO "Cargo"
@@ -76,9 +77,45 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define NETWORK_ALARM_FIRE "Fire Alarms"
 #define NETWORK_TALON_HELMETS "TalonHelmets" //VOREStation Add
 #define NETWORK_TALON_SHIP "TalonShip" //VOREStation Add
+*/
+#define NETWORK_CRESCENT "Космопорт"
+#define NETWORK_CARGO "Отдел снабжения"
+#define NETWORK_CIRCUITS "Схемы"
+#define NETWORK_CIVILIAN "Гражданский персонал"
+#define NETWORK_COMMAND "Управление"
+#define NETWORK_ENGINE "Двигатель"
+#define NETWORK_ENGINEERING "Инженерный отдел"
+#define NETWORK_ENGINEERING_OUTPOST "Инженерный аванпост"
+#define NETWORK_ERT "ГЭР"
+#define NETWORK_DEFAULT "Станция"
+#define NETWORK_MEDICAL "Медицинский отдел"
+#define NETWORK_MERCENARY "Наёмники"
+#define NETWORK_MINE "Шахтёрский аванпост"
+#define NETWORK_NORTHERN_STAR "Северная Звезда"
+#define NETWORK_RESEARCH "Научный отдел"
+#define NETWORK_RESEARCH_OUTPOST "Научный аванпост"
+#define NETWORK_ROBOTS "Роботы"
+#define NETWORK_PRISON "Тюрьма"
+#define NETWORK_SECURITY "Служба безопасности"
+#define NETWORK_INTERROGATION "Допросная"
+#define NETWORK_TELECOM "Телекоммуникации"
+#define NETWORK_EXPLORATION "Экспедиционный отдел"
+#define NETWORK_XENOBIO "Ксенобиология"
+#define NETWORK_THUNDER "Развлечения"
+#define NETWORK_COMMUNICATORS "Коммуникаторы"
+#define NETWORK_ALARM_ATMOS "Атмосферные тревоги"
+#define NETWORK_ALARM_POWER "Перебои электричества"
+#define NETWORK_ALARM_FIRE "Пожарные тревоги"
+#define NETWORK_TALON_HELMETS "Шлемы Когтя"
+#define NETWORK_TALON_SHIP "Корабль Когтя"
+// End of Bastion of Endeavor Translation
 
 // Those networks can only be accessed by pre-existing terminals. AIs and new terminals can't use them.
+/* Bastion of Endeavor Translation: Unsure about this but oh well
 var/list/restricted_camera_networks = list(NETWORK_ERT,NETWORK_MERCENARY,"Secret", NETWORK_COMMUNICATORS)
+*/
+var/list/restricted_camera_networks = list(NETWORK_ERT,NETWORK_MERCENARY,"Секретная сеть", NETWORK_COMMUNICATORS)
+// End of Bastion of Endeavor Translation
 
 #define TRANSMISSION_WIRE		0 //Is this ever used? I don't think it is.
 #define TRANSMISSION_RADIO		1 //Radio transmissions (like airlock controller to pump)
@@ -170,17 +207,3 @@ if (!(DATUM.datum_flags & DF_ISPROCESSING)) {\
 #define LOGIN_TYPE_NORMAL 1
 #define LOGIN_TYPE_AI 2
 #define LOGIN_TYPE_ROBOT 3
-
-// Computer Hardware
-#define  PART_CPU  		/obj/item/weapon/computer_hardware/processor_unit				// CPU. Without it the computer won't run. Better CPUs can run more programs at once.
-#define  PART_NETWORK  	/obj/item/weapon/computer_hardware/network_card					// Network Card component of this computer. Allows connection to NTNet
-#define  PART_HDD 		/obj/item/weapon/computer_hardware/hard_drive					// Hard Drive component of this computer. Stores programs and files.
-
-// Optional hardware (improves functionality, but is not critical for computer to work in most cases)
-#define  PART_BATTERY  	/obj/item/weapon/computer_hardware/battery_module				// An internal power source for this computer. Can be recharged.
-#define  PART_CARD  	/obj/item/weapon/computer_hardware/card_slot				// ID Card slot component of this computer. Mostly for HoP modification console that needs ID slot for modification.
-#define  PART_PRINTER  	/obj/item/weapon/computer_hardware/nano_printer					// Nano Printer component of this computer, for your everyday paperwork needs.
-//#define  PART_DRIVE  	/obj/item/weapon/computer_hardware/hard_drive/portable			// Portable data storage
-//#define  PART_AI  		/obj/item/weapon/computer_hardware/ai_slot						// AI slot, an intellicard housing that allows modifications of AIs.
-#define  PART_TESLA  	/obj/item/weapon/computer_hardware/tesla_link					// Tesla Link, Allows remote charging from nearest APC.
-//#define  PART_SCANNER  	/obj/item/weapon/computer_hardware/scanner						// One of several optional scanner attachments.
