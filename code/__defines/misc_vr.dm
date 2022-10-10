@@ -74,6 +74,7 @@
 #define PTO_TALON			"Talon Contractor"
 
 #define DEPARTMENT_TALON	"ITV Talon"
+
 */
 #define PTO_SECURITY		"Служба безопасности"
 #define PTO_MEDICAL			"Медицинский отдел"
