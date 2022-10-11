@@ -149,6 +149,7 @@
 #define PROGRAM_STATE_BACKGROUND 1
 #define PROGRAM_STATE_ACTIVE 2
 
+/* Bastion of Endeavor Translation
 #define PROG_MISC  		"Miscellaneous"
 #define PROG_ENG  		"Engineering"
 #define PROG_OFFICE  	"Office Work"
@@ -158,6 +159,17 @@
 #define PROG_UTIL 		"Utility"
 #define PROG_SEC 		"Security"
 #define PROG_MONITOR	"Monitoring"
+*/
+#define PROG_MISC  		"Другое"
+#define PROG_ENG  		"Инженерный софт"
+#define PROG_OFFICE  	"Офисный пакет"
+#define PROG_COMMAND  	"Командование"
+#define PROG_SUPPLY  	"Поставки и шаттлы"
+#define PROG_ADMIN  	"Администрация Сети-НТ"
+#define PROG_UTIL 		"Утилиты"
+#define PROG_SEC 		"Безопасность"
+#define PROG_MONITOR	"Мониторинг"
+// End of Bastion of Endeavor Translation
 
 // Caps for NTNet logging. Less than 10 would make logging useless anyway, more than 500 may make the log browser too laggy. Defaults to 100 unless user changes it.
 #define MAX_NTNET_LOGS 500
@@ -180,11 +192,18 @@
 #define CAT_COIN   4
 
 //Antag Faction Visbility
+/* Bastion of Endeavor Translation
 #define ANTAG_HIDDEN	"Hidden"
 #define ANTAG_SHARED	"Shared"
 #define ANTAG_KNOWN		"Known"
+*/
+#define ANTAG_HIDDEN	"Скрытый"
+#define ANTAG_SHARED	"Малоизвестный"
+#define ANTAG_KNOWN		"Известный"
+// End of Bastion of Endeavor Translation
 
 // Departments.
+/* Bastion of Endeavor Translation
 #define DEPARTMENT_COMMAND			"Command"
 #define DEPARTMENT_SECURITY			"Security"
 #define DEPARTMENT_ENGINEERING		"Engineering"
@@ -194,12 +213,29 @@
 #define DEPARTMENT_CIVILIAN			"Civilian"
 #define DEPARTMENT_PLANET			"Exploration" //VOREStation Edit // I hate having this be here and not in a SC file. Hopefully someday the manifest can be rewritten to be map-agnostic.
 #define DEPARTMENT_SYNTHETIC		"Synthetic"
+*/
+#define DEPARTMENT_COMMAND			"Управление"
+#define DEPARTMENT_SECURITY			"Служба безопасности"
+#define DEPARTMENT_ENGINEERING		"Инженерный отдел"
+#define DEPARTMENT_MEDICAL			"Медицинский отдел"
+#define DEPARTMENT_RESEARCH			"Научный отдел"
+#define DEPARTMENT_CARGO			"Отдел снабжения"
+#define DEPARTMENT_CIVILIAN			"Гражданский персонал"
+#define DEPARTMENT_PLANET			"Экспедиционный отдел"
+#define DEPARTMENT_SYNTHETIC		"Синтетический персонал"
+// End of Bastion of Endeavor Translation
 
 // These are mostly for the department guessing code and event system.
+/* Bastion of Endeavor Translation
 #define DEPARTMENT_UNKNOWN			"Unknown"
 #define DEPARTMENT_EVERYONE			"Everyone"
+*/
+#define DEPARTMENT_UNKNOWN			"Неизвестно"
+#define DEPARTMENT_EVERYONE			"Весь персонал"
+// End of Bastion of Endeavor Translation
 
 // Canonical spellings of TSCs, so typos never have to happen again due to human error.
+/* Bastion of Endeavor Translation: Yes, these NEED to be translated due to potential consistency issues - ship names are one such case
 #define TSC_NT		"NanoTrasen"
 #define TSC_HEPH	"Hephaestus" // Because everyone misspells it
 #define TSC_VM		"Vey Med"
@@ -209,6 +245,17 @@
 #define TSC_MORPH	"Morpheus"
 #define TSC_XION	"Xion" // Not really needed but consistancy I guess.
 #define TSC_GIL 	"Gilthari"
+*/
+#define TSC_NT		"НаноТрейсен"
+#define TSC_HEPH	"Гефест"
+#define TSC_VM		"Вей-Мед"
+#define TSC_ZH		"Дзен-Ху"
+#define TSC_WT		"Вард-Такахаши"
+#define TSC_BC		"Бишоп"
+#define TSC_MORPH	"Морфей"
+#define TSC_XION	"Ксайон"
+#define TSC_GIL 	"Гилтари"
+// End of Bastion of Endeavor Translation
 
 #define MIDNIGHT_ROLLOVER		864000	//number of deciseconds in a day
 
@@ -285,10 +332,17 @@ var/global/list/##LIST_NAME = list();\
 #define SECOND_DIAG_STEP 2
 
 // RCD modes. Used on the RCD, and gets passed to an object's rcd_act() when an RCD is used on it, to determine what happens.
+/* Bastion of Endeavor Translation
 #define RCD_FLOORWALL		"Floor / Wall"		// Builds plating on space/ground/open tiles. Builds a wall when on floors. Finishes walls when used on girders.
 #define RCD_AIRLOCK			"Airlock"			// Builds an airlock on the tile if one isn't already there.
 #define RCD_WINDOWGRILLE	"Window / Grille" 	// Builds a full tile window and grille pair on floors.
 #define RCD_DECONSTRUCT		"Deconstruction"	// Removes various things. Still consumes compressed matter.
+*/
+#define RCD_FLOORWALL		"Пол / Стена"
+#define RCD_AIRLOCK			"Шлюз"
+#define RCD_WINDOWGRILLE	"Окно / Решётка"
+#define RCD_DECONSTRUCT		"Деконструкция"
+// End of Bastion of Endeavor Translation
 
 #define RCD_VALUE_MODE		"mode"
 #define RCD_VALUE_DELAY		"delay"
@@ -328,6 +382,7 @@ var/global/list/##LIST_NAME = list();\
 	The color on the left is the one used as the actual color of the wire, but it doesn't look good when written.
 	So, we need to replace the name to something that looks better.
 */
+/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: Kinda reluctant to do this but will have to see how this pans out
 #define LIST_COLOR_RENAME 				\
 	list(								\
 		"rebeccapurple" = "dark purple",\
@@ -343,8 +398,26 @@ var/global/list/##LIST_NAME = list();\
 		"steelblue" 	= "blue",		\
 		"goldenrod"	 	= "gold"		\
 	)
+*/
+#define LIST_COLOR_RENAME 				\
+	list(								\
+		"rebeccapurple" = "тёмно-фиолетовый",\
+		"darkslategrey" = "тёмно-серый",	\
+		"darkolivegreen"= "тёмно-зелёный",	\
+		"darkslateblue" = "тёмно-синий",	\
+		"darkkhaki" 	= "хаки",		\
+		"darkseagreen" 	= "светло-зелёный",\
+		"midnightblue" 	= "синий",		\
+		"lightgrey" 	= "светло-серый",	\
+		"darkgrey" 		= "тёмно-серый",	\
+		"darkmagenta"	= "тёмно-лиловый",\
+		"steelblue" 	= "синий",		\
+		"goldenrod"	 	= "золотой"		\
+	)
+// End of Bastion of Endeavor Translation
 
 /// Pure Black and white colorblindness. Every species except Vulpkanins and Tajarans will have this.
+/* Bastion of Endeavor Translation
 #define GREYSCALE_COLOR_REPLACE		\
 	list(							\
 		"red"		= "grey",		\
@@ -358,6 +431,21 @@ var/global/list/##LIST_NAME = list();\
 		"purple"	= "grey",		\
 		"pink"		= "light grey"	\
 	)
+*/
+#define GREYSCALE_COLOR_REPLACE		\
+	list(							\
+		"red"		= "серый",		\
+		"blue"		= "серый",		\
+		"green"		= "серый",		\
+		"orange"	= "светло-серый",	\
+		"brown"		= "серый",		\
+		"gold"		= "светло-серый",	\
+		"cyan"		= "серебряный",		\
+		"magenta"	= "серый",		\
+		"purple"	= "серый",		\
+		"pink"		= "светло-серый"	\
+	)
+// End of Bastion of Endeavor Translation
 
 /// Red colorblindness. Vulpkanins/Wolpins have this.
 #define PROTANOPIA_COLOR_REPLACE		\
@@ -432,12 +520,21 @@ var/global/list/##LIST_NAME = list();\
 
 // Volume Channel Defines
 
+/* Bastion of Endeavor Translation
 #define VOLUME_CHANNEL_MASTER "Master"
 #define VOLUME_CHANNEL_AMBIENCE "Ambience"
 #define VOLUME_CHANNEL_ALARMS "Alarms"
 #define VOLUME_CHANNEL_VORE "Vore"
 #define VOLUME_CHANNEL_DOORS "Doors"
 #define VOLUME_CHANNEL_INSTRUMENTS "Instruments"
+*/
+#define VOLUME_CHANNEL_MASTER "Общая громкость"
+#define VOLUME_CHANNEL_AMBIENCE "Окружение"
+#define VOLUME_CHANNEL_ALARMS "Тревоги"
+#define VOLUME_CHANNEL_VORE "Звуки Vore"
+#define VOLUME_CHANNEL_DOORS "Двери"
+#define VOLUME_CHANNEL_INSTRUMENTS "Инструменты"
+// End of Bastion of Endeavor Translation
 
 // Make sure you update this or clients won't be able to adjust the channel
 GLOBAL_LIST_INIT(all_volume_channels, list(
@@ -449,6 +546,7 @@ GLOBAL_LIST_INIT(all_volume_channels, list(
 	VOLUME_CHANNEL_INSTRUMENTS
 ))
 
+/* Bastion of Endeavor Translation
 #define APPEARANCECHANGER_CHANGED_RACE "Race"
 #define APPEARANCECHANGER_CHANGED_GENDER "Gender"
 #define APPEARANCECHANGER_CHANGED_GENDER_ID "Gender Identity"
@@ -459,6 +557,18 @@ GLOBAL_LIST_INIT(all_volume_channels, list(
 #define APPEARANCECHANGER_CHANGED_F_HAIRSTYLE "Facial Hair Style"
 #define APPEARANCECHANGER_CHANGED_F_HAIRCOLOR "Facial Hair Color"
 #define APPEARANCECHANGER_CHANGED_EYES "Eye Color"
+*/
+#define APPEARANCECHANGER_CHANGED_RACE "Раса"
+#define APPEARANCECHANGER_CHANGED_GENDER "Пол"
+#define APPEARANCECHANGER_CHANGED_GENDER_ID "Половая идентификация"
+#define APPEARANCECHANGER_CHANGED_SKINTONE "Тон кожи"
+#define APPEARANCECHANGER_CHANGED_SKINCOLOR "Цвет кожи"
+#define APPEARANCECHANGER_CHANGED_HAIRSTYLE "Причёска"
+#define APPEARANCECHANGER_CHANGED_HAIRCOLOR "Цвет волос"
+#define APPEARANCECHANGER_CHANGED_F_HAIRSTYLE "Лицевая растительность"
+#define APPEARANCECHANGER_CHANGED_F_HAIRCOLOR "Цвет лицевой растительности"
+#define APPEARANCECHANGER_CHANGED_EYES "Цвет глаз"
+// End of Bastion of Endeavor Translation
 
 #define GET_DECL(D) (ispath(D, /decl) ? (decls_repository.fetched_decls[D] || decls_repository.get_decl(D)) : null)
 

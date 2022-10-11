@@ -7,7 +7,11 @@
 #define SSAIR_DONE 6
 
 SUBSYSTEM_DEF(air)
+	/* Bastion of Endeavor Translation
 	name = "Air"
+	*/
+	name = "Воздух"
+	// End of Bastion of Endeavor Translation
 	init_order = INIT_ORDER_AIR
 	priority = FIRE_PRIORITY_AIR
 	wait = 2 SECONDS // seconds (We probably can speed this up actually)
@@ -34,7 +38,11 @@ SUBSYSTEM_DEF(air)
 	air_master = src
 
 /datum/controller/subsystem/air/Initialize(timeofday)
+	/* Bastion of Endeavor Translation
 	report_progress("Processing Geometry...")
+	*/
+	report_progress("Обработка геометрии карты...")
+	// End of Bastion of Endeavor Translation
 
 	current_cycle = 0
 	var/simulated_turf_count = 0
@@ -43,6 +51,7 @@ SUBSYSTEM_DEF(air)
 		S.update_air_properties()
 		CHECK_TICK
 
+	/* Bastion of Endeavor Translation
 	admin_notice({"<span class='danger'>Geometry initialized in [round(0.1*(REALTIMEOFDAY-timeofday),0.1)] seconds.</span>
 <span class='info'>
 Total Simulated Turfs: [simulated_turf_count]
@@ -51,6 +60,16 @@ Total Edges: [edges.len]
 Total Active Edges: [active_edges.len ? "<span class='danger'>[active_edges.len]</span>" : "None"]
 Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_count]
 </span>"}, R_DEBUG)
+	*/
+	admin_notice({"<span class='danger'>Геометрия инициализирована за [count_ru(round(0.1*(REALTIMEOFDAY-timeofday),0.1), "секунд;у;ы;")].</span>
+<span class='info'>
+Всего симулируемых тюрфов: [simulated_turf_count]
+Всего зон: [zones.len]
+Всего краёв: [edges.len]
+Всего активных краёв: [active_edges.len ? "<span class='danger'>[active_edges.len]</span>" : "Нет"]
+Всего несимулируемых тюрфов: [world.maxx*world.maxy*world.maxz - simulated_turf_count]
+</span>"}, R_DEBUG)
+	// End of Bastion of Endeavor Translation
 
 	// Note - Baystation settles the air by running for one tick.  We prefer to not have active edges.
 	// Maps should not have active edges on boot.  If we've got some, log it so it can get fixed.
@@ -83,19 +102,38 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 			if(istype(E, /connection_edge/unsimulated))
 				var/connection_edge/unsimulated/U = E
 				b_temp = U.B.temperature
+				/* Bastion of Endeavor Translation
 				b_moles = "Unsim"
 				b_vol = "Unsim"
+				*/
+				b_moles = "Несим."
+				b_vol = "Несим."
+				// End of Bastion of Endeavor Translation
 				for(var/gas in U.air.gas)
 					b_gas += "[gas]=[U.air.gas[gas]]"
 			
+			/* Bastion of Endeavor Translation
 			edge_log += "Active Edge [E] ([E.type])"
 			edge_log += "Edge side A: T:[a_temp], Mol:[a_moles], Vol:[a_vol], Gas:[a_gas]"
 			edge_log += "Edge side B: T:[b_temp], Mol:[b_moles], Vol:[b_vol], Gas:[b_gas]"
+			*/
+			edge_log += "Активный край [E] ([E.type])"
+			edge_log += "Сторона края А: T:[a_temp], молей:[a_moles], объём:[a_vol], газ:[a_gas]"
+			edge_log += "Сторона края Б: T:[b_temp], молей:[b_moles], объём:[b_vol], газ:[b_gas]"
+			// End of Bastion of Endeavor Translation
 			
 			for(var/turf/T in E.connecting_turfs)
+				/* Bastion of Endeavor Translation
 				edge_log += "+--- Connecting Turf [T] ([T.type]) @ [T.x], [T.y], [T.z] ([T.loc])"
+				*/
+				edge_log += "+--- Соединяющий тюрф [T] ([T.type]) @ [T.x], [T.y], [T.z] ([T.loc])"
+				// End of Bastion of Endeavor Translation
 				
+		/* Bastion of Endeavor Translation
 		log_debug("Active Edges on ZAS Startup\n" + edge_log.Join("\n"))
+		*/
+		log_debug("Активные края при загрузке ZAS\n" + edge_log.Join("\n"))
+		// End of Bastion of Endeavor Translation
 		startup_active_edge_log = edge_log.Copy()
 
 	..()
@@ -106,7 +144,11 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 		// Santity checks to make sure we don't somehow have items left over from last cycle
 		// Or somehow didn't finish all the steps from last cycle
 		if(LAZYLEN(currentrun) || current_step)
+			/* Bastion of Endeavor Translation
 			log_and_message_admins("SSair: Was told to start a new run, but the previous run wasn't finished! currentrun.len=[currentrun.len], current_step=[current_step]")
+			*/
+			log_and_message_admins("SSair: Сказано начать новый цикл, но предыдущий ещё не закончен! currentrun.len=[currentrun.len], current_step=[current_step].")
+			// End of Bastion of Endeavor Translation
 			resumed = TRUE
 		else
 			current_cycle++ // Begin a new air_master cycle!
@@ -120,7 +162,11 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 
 	// Okay, we're done! Woo! Got thru a whole air_master cycle!
 	if(LAZYLEN(currentrun) || current_step != SSAIR_DONE)
+		/* Bastion of Endeavor Translation
 		log_and_message_admins("SSair: Was not able to complete a full air cycle despite reaching the end of fire(). This shouldn't happen.")
+		*/
+		log_and_message_admins("SSair: Не удалось завершить полный атмосферный цикл несмотря на достижение конца fire(). Этого не должно происходить.")
+		// End of Bastion of Endeavor Translation
 	else
 		currentrun = null
 		current_step = null
@@ -246,6 +292,7 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 
 /datum/controller/subsystem/air/stat_entry(msg_prefix)
 	var/list/msg = list(msg_prefix)
+	/* Bastion of Endeavor Translation
 	msg += "S:[current_step ? part_names[current_step] : ""] "
 	msg += "C:{"
 	msg += "T [round(cost_turfs, 1)] | "
@@ -263,6 +310,25 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 	msg += "H [active_hotspots.len] | "
 	msg += "Z [zones_to_update.len] "
 	msg += "}"
+	*/
+	msg += "Ш:[current_step ? part_names[current_step] : ""] "
+	msg += "С:{"
+	msg += "Т [round(cost_turfs, 1)] | "
+	msg += "К [round(cost_edges, 1)] | "
+	msg += "П [round(cost_firezones, 1)] | "
+	msg += "Г [round(cost_hotspots, 1)] | "
+	msg += "З [round(cost_zones, 1)] "
+	msg += "}"
+	msg += "З: [zones.len] "
+	msg += "К: [edges.len] "
+	msg += "Цикл: [current_cycle] {"
+	msg += "Т [tiles_to_update.len] | "
+	msg += "К [active_edges.len] | "
+	msg += "П [active_fire_zones.len] | "
+	msg += "Г [active_hotspots.len] | "
+	msg += "З [zones_to_update.len] "
+	msg += "}"
+	// End of Bastion of Endeavor Translation
 	..(msg.Join())
 
 // ZAS might displace objects as the map loads if an air tick is processed mid-load.
@@ -282,7 +348,11 @@ Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_coun
 	can_fire = FALSE // Pause processing while we reboot
 	// If we should happen to be in the middle of processing... wait until that finishes.
 	if (state != SS_IDLE)
+		/* Bastion of Endeavor Translation
 		report_progress("ZAS Rebuild initiated. Waiting for current air tick to complete before continuing.")
+		*/
+		report_progress("Инициирована перестройка ZAS. Ожидаем окончания текущего тика атмосферы перед тем, как продолжить.")
+		// End of Bastion of Endeavor Translation
 		while (state != SS_IDLE)
 			stoplag()
 

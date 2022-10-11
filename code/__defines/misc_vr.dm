@@ -14,9 +14,17 @@
 #define VANTAG_KIDNAP  "vantag_kidnap"
 #define VANTAG_KILL    "vantag_kill"
 
+/* Bastion of Endeavor Translation
 #define DEPARTMENT_OFFDUTY			"Off-Duty"
+*/
+#define DEPARTMENT_OFFDUTY			"На отгуле"
+// End of Bastion of Endeavor Translation
 
+/* Bastion of Endeavor Translation
 #define ANNOUNCER_NAME "Facility PA"
+*/
+#define ANNOUNCER_NAME "Система объявлений"
+// End of Bastion of Endeavor Translation
 
 //For custom species
 #define STARTING_SPECIES_POINTS 2
@@ -38,7 +46,11 @@
 #define BLUE_SHIELDED 2 // Shield from bluespace teleportation (telescience)
 
 //Assistant/Visitor/Whatever
+/* Bastion of Endeavor Translation
 #define USELESS_JOB "Visitor"
+*/
+#define USELESS_JOB "Посетитель"
+// End of Bastion of Endeavor Translation
 
 //Herm Gender
 #define HERM "herm"
@@ -50,6 +62,7 @@
 #define SHELTER_DEPLOY_ANCHORED_OBJECTS "anchored objects"
 #define SHELTER_DEPLOY_SHIP_SPACE "ship not in space"
 
+/* Bastion of Endeavor Translation
 #define PTO_SECURITY		"Security"
 #define PTO_MEDICAL			"Medical"
 #define PTO_ENGINEERING 	"Engineering"
@@ -62,6 +75,21 @@
 
 #define DEPARTMENT_TALON	"ITV Talon"
 
+*/
+#define PTO_SECURITY		"Служба безопасности"
+#define PTO_MEDICAL			"Медицинский отдел"
+#define PTO_ENGINEERING 	"Инженерный отдел"
+#define PTO_SCIENCE			"Научный отдел"
+#define PTO_EXPLORATION 	"Экспедиционный отдел"
+#define PTO_CARGO			"Отдел снабжения"
+#define PTO_CIVILIAN		"Гражданский персонал"
+#define PTO_CYBORG			"Киборг"
+#define PTO_TALON			"Подрядчик Когтя"
+
+#define DEPARTMENT_TALON	"НТС Коготь"
+// End of Bastion of Endeavor Translation
+
+// Bastion of Endeavor TODO: No clue if these will need to be changed when mats are localized
 #define MAT_TITANIUMGLASS		"ti-glass"
 #define MAT_PLASTITANIUM		"plastitanium"
 #define MAT_PLASTITANIUMHULL		"plastitanium hull"

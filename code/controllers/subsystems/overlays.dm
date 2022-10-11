@@ -1,5 +1,9 @@
 SUBSYSTEM_DEF(overlays)
+	/* Bastion of Endeavor Translation
 	name = "Overlay"
+	*/
+	name = "Оверлеи"
+	// End of Bastion of Endeavor Translation
 	flags = SS_TICKER
 	wait = 1 // SS_TICKER - Ticks
 	priority = FIRE_PRIORITY_OVERLAYS
@@ -33,7 +37,11 @@ SUBSYSTEM_DEF(overlays)
 	..()
 
 /datum/controller/subsystem/overlays/stat_entry()
+	/* Bastion of Endeavor Translation
 	..("Queued Atoms: [queue.len], Cache Size: [cache_size]")
+	*/
+	..("Атомов в очереди: [queue.len], Кэш: [cache_size]")
+	// End of Bastion of Endeavor Translation
 
 
 /datum/controller/subsystem/overlays/fire(resumed, no_mc_tick)

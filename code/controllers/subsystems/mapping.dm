@@ -1,6 +1,10 @@
 // Handles map-related tasks, mostly here to ensure it does so after the MC initializes.
 SUBSYSTEM_DEF(mapping)
+	/* Bastion of Endeavor Translation
 	name = "Mapping"
+	*/
+	name = "Маппинг"
+	// End of Bastion of Endeavor Translation
 	init_order = INIT_ORDER_MAPPING
 	flags = SS_NO_FIRE
 
@@ -47,7 +51,11 @@ SUBSYSTEM_DEF(mapping)
 
 	var/turf/T = get_turf(engine_loader)
 	if(!isturf(T))
+		/* Bastion of Endeavor Translation
 		to_world_log("[log_info_line(engine_loader)] not on a turf! Cannot place engine template.")
+		*/
+		to_world_log("[log_info_line(engine_loader)] не на тюрфе! Нельзя расположить шаблон двигателя.")
+		// End of Bastion of Endeavor Translation
 		return
 
 	// Choose an engine type
@@ -56,7 +64,11 @@ SUBSYSTEM_DEF(mapping)
 		var/chosen_name = pick(config.engine_map)
 		chosen_type = map_templates[chosen_name]
 		if(!istype(chosen_type))
+			/* Bastion of Endeavor Translation
 			error("Configured engine map [chosen_name] is not a valid engine map name!")
+			*/
+			error("В конфигурации указана карта двигателя [chosen_name], но это имя не является допустимым!")
+			// End of Bastion of Endeavor Translation
 	if(!istype(chosen_type))
 		var/list/engine_types = list()
 		for(var/map in map_templates)
@@ -64,8 +76,13 @@ SUBSYSTEM_DEF(mapping)
 			if(istype(MT))
 				engine_types += MT
 		chosen_type = pick(engine_types)
+	/* Bastion of Endeavor Translation
 	to_world_log("Chose Engine Map: [chosen_type.name]")
 	admin_notice("<span class='danger'>Chose Engine Map: [chosen_type.name]</span>", R_DEBUG)
+	*/
+	to_world_log("Выбранная карта двигателя: [chosen_type.name]")
+	admin_notice("<span class='danger'>Выбранная карта двигателя: [chosen_type.name]</span>", R_DEBUG)
+	// End of Bastion of Endeavor Translation
 
 	// Annihilate movable atoms
 	engine_loader.annihilate_bounds()
@@ -82,12 +99,20 @@ SUBSYSTEM_DEF(mapping)
 
 	for(var/list/maplist in deffo_load)
 		if(!islist(maplist))
+			/* Bastion of Endeavor Translation
 			error("Lateload Z level [maplist] is not a list! Must be in a list!")
+			*/
+			error("Поздно загруженный Z-уровень [maplist] не является листом, хотя должен!")
+			// End of Bastion of Endeavor Translation
 			continue
 		for(var/mapname in maplist)
 			var/datum/map_template/MT = map_templates[mapname]
 			if(!istype(MT))
+				/* Bastion of Endeavor Translation
 				error("Lateload Z level \"[mapname]\" is not a valid map!")
+				*/
+				error("Поздно загруженный Z-уровень \"[mapname]\" не является допустимой картой!")
+				// End of Bastion of Endeavor Translation
 				continue
 			MT.load_new_z(centered = FALSE)
 			CHECK_TICK
@@ -99,7 +124,11 @@ SUBSYSTEM_DEF(mapping)
 			return
 
 		if(!islist(picklist)) //So you can have a 'chain' of z-levels that make up one away mission
+			/* Bastion of Endeavor Translation
 			error("Randompick Z level [picklist] is not a list! Must be in a list!")
+			*/
+			error("Случайно выбранный Z-уровень [picklist] не является листом, хотя должен!")
+			// End of Bastion of Endeavor Translation
 			return
 
 		for(var/map in picklist)
@@ -109,7 +138,11 @@ SUBSYSTEM_DEF(mapping)
 				map = pick(map)
 			var/datum/map_template/MT = map_templates[map]
 			if(!istype(MT))
+				/* Bastion of Endeavor Translation
 				error("Randompick Z level \"[map]\" is not a valid map!")
+				*/
+				error("Случайно выбранный Z-уровень \"[map]\" не является допустимой картой!")
+				// End of Bastion of Endeavor Translation
 			else
 				MT.load_new_z(centered = FALSE)
 	
@@ -120,7 +153,11 @@ SUBSYSTEM_DEF(mapping)
 			return
 
 		if(!islist(picklist)) //So you can have a 'chain' of z-levels that make up one away mission
+			/* Bastion of Endeavor Translation
 			error("Randompick Z level [picklist] is not a list! Must be in a list!")
+			*/
+			error("Случайно выбранный Z-уровень [picklist] не является листом, хотя должен!")
+			// End of Bastion of Endeavor Translation
 			return
 
 		for(var/map in picklist)
@@ -130,7 +167,11 @@ SUBSYSTEM_DEF(mapping)
 				map = pick(map)
 			var/datum/map_template/MT = map_templates[map]
 			if(!istype(MT))
+				/* Bastion of Endeavor Translation
 				error("Randompick Z level \"[map]\" is not a valid map!")
+				*/
+				error("Случайно выбранный Z-уровень \"[map]\" не является допустимой картой!")
+				// End of Bastion of Endeavor Translation
 			else
 				MT.load_new_z(centered = FALSE)
 

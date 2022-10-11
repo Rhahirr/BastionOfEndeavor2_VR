@@ -45,6 +45,7 @@
 #define BE_CURSEDSWORD	0x100000
 //VOREStation Add End
 
+// Bastion of Endeavor TODO: I forget if these can be safely changed, but I don't see the need to risk it until antag localization happens
 var/list/be_special_flags = list(
 	"Traitor"          = BE_TRAITOR,
 	"Operative"        = BE_OPERATIVE,

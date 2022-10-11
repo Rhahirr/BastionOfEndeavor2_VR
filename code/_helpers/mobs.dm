@@ -1,5 +1,9 @@
 /proc/random_hair_style(gender, species = SPECIES_HUMAN)
+	/* Bastion of Endeavor Translation: Fairly certain this is safe to translate, knowing all of those will likely be hardcoded in later.
 	var/h_style = "Bald"
+	*/
+	var/h_style = "Лысая голова"
+	// End of Bastion of Endeavor Translation
 
 	var/list/valid_hairstyles = list()
 	for(var/hairstyle in hair_styles_list)
@@ -18,7 +22,11 @@
 	return h_style
 
 /proc/random_facial_hair_style(gender, species = SPECIES_HUMAN)
+	/* Bastion of Endeavor Translation
 	var/f_style = "Shaved"
+	*/
+	var/f_style = "Бритое лицо"
+	// End of Bastion of Endeavor Translation
 
 	var/list/valid_facialhairstyles = list()
 	for(var/facialhairstyle in facial_hair_styles_list)
@@ -121,12 +129,24 @@ Proc for attack log creation, because really why not
 	var/target_str = key_name(target)
 
 	if(ismob(user))
+		/* Bastion of Endeavor Translation
 		user.attack_log += text("\[[time_stamp()]\] <font color='red'>Attacked [target_str]: [what_done]</font>")
+		*/
+		user.attack_log += text("\[[time_stamp()]\] <font color='red'>Атаковал игрока [target_str]: [what_done]</font>")
+		// End of Bastion of Endeavor Translation
 	if(ismob(target))
+		/* Bastion of Endeavor Translation
 		target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Attacked by [user_str]: [what_done]</font>")
+		*/
+		target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Атакован игроком [user_str]: [what_done]</font>")
+		// End of Bastion of Endeavor Translation
 	log_attack(user_str,target_str,what_done)
 	if(admin_notify)
+		/* Bastion of Endeavor Translation
 		msg_admin_attack("[key_name_admin(user)] vs [target_str]: [what_done]")
+		*/
+		msg_admin_attack("Игрок [key_name_admin(user)] против игрока [target_str]: [what_done]")
+		// End of Bastion of Endeavor Translation
 
 //checks whether this item is a module of the robot it is located in.
 /proc/is_robot_module(var/obj/item/thing)
@@ -148,10 +168,18 @@ Proc for attack log creation, because really why not
 	if(!time)
 		return TRUE //Done!
 	if(user.status_flags & DOING_TASK)
+		/* Bastion of Endeavor Translation
 		to_chat(user, "<span class='warning'>You're in the middle of doing something else already.</span>")
+		*/ 
+		to_chat(user, "<span class='warning'>Вы уже делаете что-то другое.</span>")
+		// End of Bastion of Endeavor Translation
 		return FALSE //Performing an exclusive do_after or do_mob already
 	if(target?.flags & IS_BUSY)
+		/* Bastion of Endeavor Translation
 		to_chat(user, "<span class='warning'>Someone is already doing something with \the [target].</span>")
+		*/
+		to_chat(user, "<span class='warning'>Кто-то уже что-то делает с [icase_ru(target)].</span>")
+		// End of Bastion of Endeavor Translation
 		return FALSE
 	var/user_loc = user.loc
 	var/target_loc = target.loc
@@ -214,10 +242,18 @@ Proc for attack log creation, because really why not
 	if(!delay)
 		return TRUE //Okay. Done.
 	if(user.status_flags & DOING_TASK)
+		/* Bastion of Endeavor Translation
 		to_chat(user, "<span class='warning'>You're in the middle of doing something else already.</span>")
+		*/
+		to_chat(user, "<span class='warning'>Вы уже делаете что-то другое.</span>")
+		// End of Bastion of Endeavor Translation
 		return FALSE //Performing an exclusive do_after or do_mob already
 	if(target?.flags & IS_BUSY)
+		/* Bastion of Endeavor Translation
 		to_chat(user, "<span class='warning'>Someone is already doing something with \the [target].</span>")
+		*/
+		to_chat(user, "<span class='warning'>Кто-то уже что-то делает с [icase_ru(target)]].</span>")
+		// End of Bastion of Endeavor Translation
 		return FALSE
 		
 	var/atom/target_loc = null
@@ -307,6 +343,7 @@ Proc for attack log creation, because really why not
 
 	return humans
 
+// Bastion of Endeavor Note: I THINK all of this works fine with russian names and stuff...?
 /proc/cached_character_icon(var/mob/desired)
 	var/cachekey = "\ref[desired][desired.real_name]"
 

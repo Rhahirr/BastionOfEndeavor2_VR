@@ -1,3 +1,4 @@
+// Bastion of Endeavor TODO: Leaving these as is for now, probably going to work around the defines
 #define MAT_IRON			"iron"
 #define MAT_MARBLE			"marble"
 #define MAT_STEEL			"steel"
