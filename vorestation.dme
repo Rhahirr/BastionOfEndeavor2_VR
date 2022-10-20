@@ -26,6 +26,7 @@
 #include "code\__datastructures\globals.dm"
 #include "code\__defines\__513_compatibility.dm"
 #include "code\__defines\__outdated_compatibility.dm"
+#include "code\__defines\_case_defines_ru.dm"
 #include "code\__defines\_compile_options.dm"
 #include "code\__defines\_lists.dm"
 #include "code\__defines\_planes+layers.dm"
@@ -4178,4 +4179,5 @@
 #include "maps\submaps\surface_submaps\wilderness\wilderness.dm"
 #include "maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
 #include "maps\~map_system\maps.dm"
+#include "russian\_includes_ru.dm"
 // END_INCLUDE

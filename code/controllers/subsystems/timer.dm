@@ -4,7 +4,11 @@
 #define TIMER_ID_MAX (2**24) //max float with integer precision
 
 SUBSYSTEM_DEF(timer)
+	/* Bastion of Endeavor Translation
 	name = "Timer"
+	*/
+	name = "Таймер"
+	// End of Bastion of Endeavor Translation
 	wait = 1 //SS_TICKER subsystem, so wait is in ticks
 	init_order = INIT_ORDER_TIMER
 
@@ -34,7 +38,11 @@ SUBSYSTEM_DEF(timer)
 	bucket_resolution = world.tick_lag
 
 /datum/controller/subsystem/timer/stat_entry(msg)
+	/* Bastion of Endeavor Translation
 	..("B:[bucket_count] P:[length(second_queue)] H:[length(hashes)] C:[length(clienttime_timers)] S:[length(timer_id_dict)]")
+	*/
+	..("В:[bucket_count] О:[length(second_queue)] Х:[length(hashes)] К:[length(clienttime_timers)] С:[length(timer_id_dict)]")
+	// End of Bastion of Endeavor Translation
 
 /datum/controller/subsystem/timer/fire(resumed = FALSE)
 	var/lit = last_invoke_tick
@@ -46,19 +54,31 @@ SUBSYSTEM_DEF(timer)
 
 	if(lit && lit < last_check && head_offset < last_check && last_invoke_warning < last_check)
 		last_invoke_warning = world.time
+		/* Bastion of Endeavor Translation
 		var/msg = "No regular timers processed in the last [BUCKET_LEN*1.5] ticks[bucket_auto_reset ? ", resetting buckets" : ""]!"
+		*/
+		var/msg = "За [count_ru(BUCKET_LEN*1.5, "последн;ий;ие;ие", TRUE)] [count_ru(BUCKET_LEN*1.5, "тик;;а;ов")] не обрабатывались регулярные таймеры[bucket_auto_reset ? ", обнуляем вёдра таймеров" : ""]!"
+		// End of Bastion of Endeavor Translation
 		message_admins(msg)
 		WARNING(msg)
 		if(bucket_auto_reset)
 			bucket_resolution = 0
 
+		/* Bastion of Endeavor Translation
 		log_world("Timer bucket reset. world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+		*/
+		log_world("Сброс вёдер таймера. world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+		// End of Bastion of Endeavor Translation
 		for (var/i in 1 to length(bucket_list))
 			var/datum/timedevent/bucket_head = bucket_list[i]
 			if (!bucket_head)
 				continue
 
+			/* Bastion of Endeavor Translation
 			log_world("Active timers at index [i]:")
+			*/
+			log_world("Активные таймеры по индексу [i]:")
+			// End of Bastion of Endeavor Translation
 
 			var/datum/timedevent/bucket_node = bucket_head
 			var/anti_loop_check = 1000
@@ -67,7 +87,11 @@ SUBSYSTEM_DEF(timer)
 				bucket_node = bucket_node.next
 				anti_loop_check--
 			while(bucket_node && bucket_node != bucket_head && anti_loop_check)
+		/* Bastion of Endeavor Translation
 		log_world("Active timers in the second_queue queue:")
+		*/
+		log_world("Активные таймеры в очереди second_queue:")
+		// End of Bastion of Endeavor Translation
 		for(var/I in second_queue)
 			log_world(get_timer_debug_string(I))
 
@@ -86,7 +110,11 @@ SUBSYSTEM_DEF(timer)
 		var/datum/callback/callBack = ctime_timer.callBack
 		if (!callBack)
 			clienttime_timers.Cut(next_clienttime_timer_index,next_clienttime_timer_index+1)
+			/* Bastion of Endeavor Translation
 			CRASH("Invalid timer: [get_timer_debug_string(ctime_timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset], REALTIMEOFDAY: [REALTIMEOFDAY]")
+			*/
+			CRASH("Недопустимый таймер: [get_timer_debug_string(ctime_timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset], REALTIMEOFDAY: [REALTIMEOFDAY]")
+			// End of Bastion of Endeavor Translation
 
 		ctime_timer.spent = REALTIMEOFDAY
 		callBack.InvokeAsync()
@@ -130,7 +158,11 @@ SUBSYSTEM_DEF(timer)
 			var/datum/callback/callBack = timer.callBack
 			if (!callBack)
 				bucket_resolution = null //force bucket recreation
+				/* Bastion of Endeavor Translation
 				CRASH("Invalid timer: [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+				*/
+				CRASH("Недопустимый таймер: [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+				// End of Bastion of Endeavor Translation
 
 			if (!timer.spent)
 				spent += timer
@@ -159,7 +191,11 @@ SUBSYSTEM_DEF(timer)
 
 			if (timer.timeToRun < head_offset)
 				bucket_resolution = null //force bucket recreation
+				/* Bastion of Endeavor Translation
 				stack_trace("[i] Invalid timer state: Timer in long run queue with a time to run less then head_offset. [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+				*/
+				stack_trace("[i] Недопустимое состояние таймера: Таймер в очереди длительного цикла с временем на исполнение короче, чем head_offset. [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+				// End of Bastion of Endeavor Translation
 				if (timer.callBack && !timer.spent)
 					timer.callBack.InvokeAsync()
 					spent += timer
@@ -170,7 +206,11 @@ SUBSYSTEM_DEF(timer)
 
 			if (timer.timeToRun < head_offset + TICKS2DS(practical_offset-1))
 				bucket_resolution = null //force bucket recreation
+				/* Bastion of Endeavor Translation
 				stack_trace("[i] Invalid timer state: Timer in long run queue that would require a backtrack to transfer to short run queue. [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+				*/
+				stack_trace("[i] Недопустимое состояние таймера: Таймер в очереди длительного цикла потребовал бы откат для переноса в очередь короткого цикла. [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+				// End of Bastion of Endeavor Translation
 				if (timer.callBack && !timer.spent)
 					timer.callBack.InvokeAsync()
 					spent += timer
@@ -222,14 +262,31 @@ SUBSYSTEM_DEF(timer)
 
 //formated this way to be runtime resistant
 /datum/controller/subsystem/timer/proc/get_timer_debug_string(datum/timedevent/TE)
+	/* Bastion of Endeavor Translation
 	. = "Timer: [TE]"
 	. += "Prev: [TE.prev ? TE.prev : "NULL"], Next: [TE.next ? TE.next : "NULL"]"
+	*/
+	. = "Таймер: [TE]"
+	. += "Пред.: [TE.prev ? TE.prev : "НЕТ"], След.: [TE.next ? TE.next : "НЕТ"]"
+	// End of Bastion of Endeavor Translation
 	if(TE.spent)
+		/* Bastion of Endeavor Translation
 		. += ", SPENT([TE.spent])"
+		*/
+		. += ", ЗАТРАЧЕНО([TE.spent])"
+		// End of Bastion of Endeavor Translation
 	if(QDELETED(TE))
+		/* Bastion of Endeavor Translation
 		. += ", QDELETED"
+		*/
+		. += ", QDEL'НУТ"
+		// End of Bastion of Endeavor Translation
 	if(!TE.callBack)
+		/* Bastion of Endeavor Translation
 		. += ", NO CALLBACK"
+		*/
+		. += ", БЕЗ ВОЗВРАТА"
+		// End of Bastion of Endeavor Translation
 
 /datum/controller/subsystem/timer/proc/reset_buckets()
 	var/list/bucket_list = src.bucket_list
@@ -277,7 +334,11 @@ SUBSYSTEM_DEF(timer)
 
 
 		if (!timer.callBack || timer.spent)
+			/* Bastion of Endeavor Translation
 			WARNING("Invalid timer: [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+			*/
+			WARNING("Недопустимый таймер: [get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
+			// End of Bastion of Endeavor Translation
 			if (timer.callBack)
 				qdel(timer)
 			continue
@@ -345,10 +406,18 @@ SUBSYSTEM_DEF(timer)
 			nextid++
 		SStimer.timer_id_dict[id] = src
 
+	/* Bastion of Endeavor Translation
 	name = "Timer: [id] (\ref[src]), TTR: [timeToRun], Flags: [jointext(bitfield2list(flags, list("TIMER_UNIQUE", "TIMER_OVERRIDE", "TIMER_CLIENT_TIME", "TIMER_STOPPABLE", "TIMER_NO_HASH_WAIT", "TIMER_LOOP")), ", ")], callBack: \ref[callBack], callBack.object: [callBack.object]\ref[callBack.object]([getcallingtype()]), callBack.delegate:[callBack.delegate]([callBack.arguments ? callBack.arguments.Join(", ") : ""])"
+	*/
+	name = "Таймер: [id] (\ref[src]), TTR: [timeToRun], флаги: [jointext(bitfield2list(flags, list("TIMER_UNIQUE", "TIMER_OVERRIDE", "TIMER_CLIENT_TIME", "TIMER_STOPPABLE", "TIMER_NO_HASH_WAIT", "TIMER_LOOP")), ", ")], callBack: \ref[callBack], callBack.object: [callBack.object]\ref[callBack.object]([getcallingtype()]), callBack.delegate:[callBack.delegate]([callBack.arguments ? callBack.arguments.Join(", ") : ""])"
+	// End of Bastion of Endeavor Translation
 
 	if ((timeToRun < world.time || timeToRun < SStimer.head_offset) && !(flags & TIMER_CLIENT_TIME))
+		/* Bastion of Endeavor Translation
 		CRASH("Invalid timer state: Timer created that would require a backtrack to run (addtimer would never let this happen): [SStimer.get_timer_debug_string(src)]")
+		*/
+		CRASH("Недопустимое состояние таймера: Создан таймер, требующий откат для исполнения (addtimer такое бы не допустил): [SStimer.get_timer_debug_string(src)]")
+		// End of Bastion of Endeavor Translation
 
 	if (callBack.object != GLOBAL_PROC && !QDESTROYING(callBack.object))
 		LAZYADD(callBack.object.active_timers, src)
@@ -446,7 +515,11 @@ SUBSYSTEM_DEF(timer)
 	prev.next = src
 
 /datum/timedevent/proc/getcallingtype()
+	/* Bastion of Endeavor Translation
 	. = "ERROR"
+	*/
+	. = "ОШИБКА"
+	// End of Bastion of Endeavor Translation
 	if (callBack.object == GLOBAL_PROC)
 		. = "GLOBAL_PROC"
 	else
@@ -454,18 +527,34 @@ SUBSYSTEM_DEF(timer)
 
 /proc/addtimer(datum/callback/callback, wait = 0, flags = 0)
 	if (!callback)
+		/* Bastion of Endeavor Translation
 		CRASH("addtimer called without a callback")
+		*/
+		CRASH("Вызван addtimer без возврата.")
+		// End of Bastion of Endeavor Translation
 
 	if (wait < 0)
+		/* Bastion of Endeavor Translation
 		stack_trace("addtimer called with a negative wait. Converting to [world.tick_lag]")
+		*/
+		stack_trace("Вызван addtimer с отрицательным wait. Конвертируем в [world.tick_lag].")
+		// End of Bastion of Endeavor Translation
 
 	if (callback.object != GLOBAL_PROC && QDELETED(callback.object) && !QDESTROYING(callback.object))
+		/* Bastion of Endeavor Translation
 		stack_trace("addtimer called with a callback assigned to a qdeleted object. In the future such timers will not be supported and may refuse to run or run with a 0 wait")
+		*/
+		stack_trace("Вызван addtimer без возврата и закреплённый за qdel'нутым объектом. В будущем такие таймеры не будут поддерживаться и могут перестать работать, либо будут запускаться с нулевым параметром wait.")
+		// End of Bastion of Endeavor Translation
 
 	wait = max(CEILING(wait, world.tick_lag), world.tick_lag)
 
 	if(wait >= INFINITY)
+		/* Bastion of Endeavor Translation
 		CRASH("Attempted to create timer with INFINITY delay")
+		*/
+		CRASH("Попытка создать таймер с задержкой в INFINITY")
+		// End of Bastion of Endeavor Translation
 
 	var/hash
 
@@ -491,7 +580,11 @@ SUBSYSTEM_DEF(timer)
 						. = hash_timer.id
 					return
 	else if(flags & TIMER_OVERRIDE)
+		/* Bastion of Endeavor Translation
 		stack_trace("TIMER_OVERRIDE used without TIMER_UNIQUE")
+		*/
+		stack_trace("TIMER_OVERRIDE использован без TIMER_UNIQUE")
+		// End of Bastion of Endeavor Translation
 
 	var/datum/timedevent/timer = new(callback, wait, flags, hash)
 	return timer.id
@@ -500,7 +593,11 @@ SUBSYSTEM_DEF(timer)
 	if (!id)
 		return FALSE
 	if (id == TIMER_ID_NULL)
+		/* Bastion of Endeavor Translation
 		CRASH("Tried to delete a null timerid. Use TIMER_STOPPABLE flag")
+		*/
+		CRASH("Попытка удалить нулевой timerid. Используйте флаг TIMER_STOPPABLE.")
+		// End of Bastion of Endeavor Translation
 	if (!istext(id))
 		if (istype(id, /datum/timedevent))
 			qdel(id)

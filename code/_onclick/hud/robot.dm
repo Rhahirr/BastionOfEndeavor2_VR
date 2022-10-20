@@ -4,10 +4,19 @@ var/obj/screen/robot_inventory
 	..()
 
 	// Don't care about your prefs! Our icon is more important
+	/* Bastion of Endeavor Edit: Russian icons. The statement will be broken till we get client icons.
 	if(HUD.ui_style == 'icons/mob/screen/minimalist.dmi')
 		HUD.ui_style = 'icons/mob/screen1_robot_minimalist.dmi'
+	*/
+	if(HUD.ui_style == 'russian/icons/minimalist_ru.dmi')
+		HUD.ui_style = 'russian/icons/screen1_robot_minimalist_ru.dmi'
+	// End of Bastion of Endeavor Edit
 	else
+		/* Bastion of Endeavor Edit: 
 		HUD.ui_style = 'icons/mob/screen1_robot.dmi'
+		*/
+		HUD.ui_style = 'russian/icons/screen1_robot_ru.dmi'
+		// End of Bastion of Endeavor Edit
 
 	var/list/adding = list()
 	var/list/other = list()
@@ -19,7 +28,11 @@ var/obj/screen/robot_inventory
 
 //Radio
 	using = new /obj/screen()
+	/* Bastion of Endeavor Translation
 	using.name = "radio"
+	*/
+	using.name = "Рация"
+	// End of Bastion of Endeavor Translation
 	using.set_dir(SOUTHWEST)
 	using.icon = HUD.ui_style
 	using.color = HUD.ui_color
@@ -32,7 +45,11 @@ var/obj/screen/robot_inventory
 //Module select
 
 	using = new /obj/screen()
+	/* Bastion of Endeavor Translation
 	using.name = "module1"
+	*/
+	using.name = "Модуль 1"
+	// End of Bastion of Endeavor Translation
 	using.set_dir(SOUTHWEST)
 	using.icon = HUD.ui_style
 	using.color = HUD.ui_color
@@ -44,7 +61,11 @@ var/obj/screen/robot_inventory
 	inv1 = using
 
 	using = new /obj/screen()
+	/* Bastion of Endeavor Translation
 	using.name = "module2"
+	*/
+	using.name = "Модуль 2"
+	// End of Bastion of Endeavor Translation
 	using.set_dir(SOUTHWEST)
 	using.icon = HUD.ui_style
 	using.color = HUD.ui_color
@@ -56,7 +77,11 @@ var/obj/screen/robot_inventory
 	inv2 = using
 
 	using = new /obj/screen()
+	/* Bastion of Endeavor Translation
 	using.name = "module3"
+	*/
+	using.name = "Модуль 3"
+	// End of Bastion of Endeavor Translation
 	using.set_dir(SOUTHWEST)
 	using.icon = HUD.ui_style
 	using.color = HUD.ui_color
@@ -71,7 +96,11 @@ var/obj/screen/robot_inventory
 
 //Intent
 	using = new /obj/screen()
+	/* Bastion of Endeavor Translation
 	using.name = "act_intent"
+	*/
+	using.name = "Намерение"
+	// End of Bastion of Endeavor Translation
 	using.set_dir(SOUTHWEST)
 	using.icon = HUD.ui_style
 	using.alpha = HUD.ui_alpha
@@ -86,7 +115,11 @@ var/obj/screen/robot_inventory
 	healths.icon = HUD.ui_style
 	healths.icon_state = "health0"
 	healths.alpha = HUD.ui_alpha
+	/* Bastion of Endeavor Translation
 	healths.name = "health"
+	*/
+	healths.name = "Здоровье"
+	// End of Bastion of Endeavor Translation
 	healths.screen_loc = ui_borg_health
 	other += healths
 
@@ -95,13 +128,21 @@ var/obj/screen/robot_inventory
 	hands.icon = HUD.ui_style
 	hands.icon_state = "nomod"
 	hands.alpha = HUD.ui_alpha
+	/* Bastion of Endeavor Translation
 	hands.name = "module"
+	*/
+	hands.name = "Модуль"
+	// End of Bastion of Endeavor Translation
 	hands.screen_loc = ui_borg_module
 	other += hands
 
 //Module Panel
 	using = new /obj/screen()
+	/* Bastion of Endeavor Translation
 	using.name = "panel"
+	*/
+	using.name = "Панель"
+	// End of Bastion of Endeavor Translation
 	using.icon = HUD.ui_style
 	using.icon_state = "panel"
 	using.alpha = HUD.ui_alpha
@@ -115,13 +156,21 @@ var/obj/screen/robot_inventory
 	throw_icon.icon_state = "store"
 	throw_icon.alpha = HUD.ui_alpha
 	throw_icon.color = HUD.ui_color
+	/* Bastion of Endeavor Translation
 	throw_icon.name = "store"
+	*/
+	throw_icon.name = "Убрать в инвентарь"
+	// End of Bastion of Endeavor Translation
 	throw_icon.screen_loc = ui_borg_store
 	other += throw_icon
 
 //Inventory
 	robot_inventory = new /obj/screen()
+	/* Bastion of Endeavor Translation
 	robot_inventory.name = "inventory"
+	*/
+	robot_inventory.name = "Инвентарь"
+	// End of Bastion of Endeavor Translation
 	robot_inventory.icon = HUD.ui_style
 	robot_inventory.icon_state = "inventory"
 	robot_inventory.alpha = HUD.ui_alpha
@@ -134,7 +183,11 @@ var/obj/screen/robot_inventory
 	pullin.icon_state = "pull0"
 	pullin.alpha = HUD.ui_alpha
 	pullin.color = HUD.ui_color
+	/* Bastion of Endeavor Translation
 	pullin.name = "pull"
+	*/
+	pullin.name = "Потянуть"
+	// End of Bastion of Endeavor Translation
 	pullin.screen_loc = ui_borg_pull
 	other += pullin
 
@@ -186,11 +239,19 @@ var/obj/screen/robot_inventory
 		//r.client.screen += robot_inventory	//"store" icon
 
 		if(!r.module)
+			/* Bastion of Endeavor Translation
 			to_chat(usr, "<span class='danger'>No module selected</span>")
+			*/
+			to_chat(usr, "<span class='danger'>Не выбран модуль.</span>")
+			// End of Bastion of Endeavor Translation
 			return
 
 		if(!r.module.modules)
+			/* Bastion of Endeavor Translation
 			to_chat(usr, "<span class='danger'>Selected module has no modules to select</span>")
+			*/
+			to_chat(usr, "<span class='danger'>В данном модуле отсутствуют модули.</span>")
+			// End of Bastion of Endeavor Translation
 			return
 
 		if(!r.robot_modules_background)
@@ -240,5 +301,6 @@ var/obj/screen/robot_inventory
 
 /mob/living/silicon/robot/update_hud()
 	if(modtype)
+		// Bastion of Endeavor TODO: This may or may not break depending on how we handle modtypes.
 		hands.icon_state = lowertext(modtype)
 	..()

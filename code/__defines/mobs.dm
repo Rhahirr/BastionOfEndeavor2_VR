@@ -68,6 +68,7 @@
 #define GETPULSE_TOOL 1 // More accurate. (med scanner, sleeper, etc.)
 
 //intent flags, why wasn't this done the first time?
+// Bastion of Endeavor TODO: If I translate these before localizing mobs, intents will break. I definitely want these in russian though
 #define I_HELP		"help"
 #define I_DISARM	"disarm"
 #define I_GRAB		"grab"
@@ -131,11 +132,19 @@
 #define INV_MASK_DEF_ICON 'icons/inventory/face/mob.dmi'
 
 // Character's economic class
+/* Bastion of Endeavor Translation
 #define CLASS_UPPER 		"Wealthy"
 #define CLASS_UPMID			"Well-off"
 #define CLASS_MIDDLE 		"Average"
 #define CLASS_LOWMID		"Underpaid"
 #define CLASS_LOWER			"Poor"
+*/
+#define CLASS_UPPER 		"Олигарх"
+#define CLASS_UPMID			"Высокий доход"
+#define CLASS_MIDDLE 		"Средний доход"
+#define CLASS_LOWMID		"Низкий доход"
+#define CLASS_LOWER			"Нищета"
+// End of Bastion of Endeavor Translation
 
 #define ECONOMIC_CLASS		list(CLASS_UPPER,CLASS_UPMID,CLASS_MIDDLE,CLASS_LOWMID,CLASS_LOWER)
 
@@ -180,6 +189,7 @@
 #define MODIFIER_GENETIC	1	// Modifiers with this flag will be copied to mobs who get cloned.
 
 // Bodyparts and organs.
+// Bastion of Endeavor TODO: I have no clue if we care about these. I'm leaving them as is for now, but will have to come back to this later.
 #define O_EYES     "eyes"
 #define O_HEART    "heart"
 #define O_LUNGS    "lungs"
@@ -277,19 +287,34 @@
 
 // If they're in an FBP, what braintype.
 #define FBP_NONE	""
+/* Bastion of Endeavor Translation
 #define FBP_CYBORG	"Cyborg"
 #define FBP_POSI	"Positronic"
 #define FBP_DRONE	"Drone"
+*/
+#define FBP_CYBORG	"Киборг"
+#define FBP_POSI	"Позитроник"
+#define FBP_DRONE	"Дрон"
+// End of Bastion of Endeavor Translation
 
 // Similar to above but for borgs.
 // Seperate defines are unfortunately required since borgs display the brain differently for some reason.
+/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: Supposedly, these are used in naming, therefore they could benefit from having cases.
 #define BORG_BRAINTYPE_CYBORG	"Cyborg"
 #define BORG_BRAINTYPE_POSI		"Robot"
 #define BORG_BRAINTYPE_DRONE	"Drone"
 #define BORG_BRAINTYPE_PLATFORM	"Platform"
 #define BORG_BRAINTYPE_AI_SHELL	"AI Shell"
+*/
+#define BORG_BRAINTYPE_CYBORG	"Киборг"
+#define BORG_BRAINTYPE_POSI		"Робот"
+#define BORG_BRAINTYPE_DRONE	"Дрон"
+#define BORG_BRAINTYPE_PLATFORM	"Платформа"
+#define BORG_BRAINTYPE_AI_SHELL	"Оболочка ИИ"
+// End of Bastion of Endeavor Translation
 
 // 'Regular' species.
+// Bastion of Endeavor TODO: Come back to this when localizing mobs. Will we have to overwrite these?
 #define SPECIES_HUMAN			"Human"
 #define SPECIES_HUMAN_VATBORN	"Vatborn"
 #define SPECIES_UNATHI			"Unathi"

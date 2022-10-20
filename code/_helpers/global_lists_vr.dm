@@ -13,7 +13,11 @@ var/global/list/traits_costs = list()		// Just path = cost list, saves time in c
 var/global/list/all_traits = list()			// All of 'em at once (same instances)
 var/global/list/active_ghost_pods = list()
 
+/* Bastion of Endeavor Translation
 var/global/list/sensorpreflist = list("Off", "Binary", "Vitals", "Tracking", "No Preference")
+*/
+var/global/list/sensorpreflist = list("Датчики отключены", "Бинарный датчик", "Датчик состояния", "Маячок отслеживания", "Нет предпочтения")
+// End of Bastion of Endeavor Translation
 
 // Used by the ban panel to determine what departments are offmap departments. All these share an 'offmap roles' ban.
 var/global/list/offmap_departments = list(DEPARTMENT_TALON)
@@ -23,18 +27,33 @@ GLOBAL_LIST_EMPTY(closet_appearances)
 
 //stores numeric player size options indexed by name
 var/global/list/player_sizes_list = list(
+		/* Bastion of Endeavor Translation
 		"Macro" 	= RESIZE_HUGE,
 		"Big" 		= RESIZE_BIG,
 		"Normal" 	= RESIZE_NORMAL,
 		"Small" 	= RESIZE_SMALL,
 		"Tiny" 		= RESIZE_TINY)
+		*/
+		"Огромный" 		= RESIZE_HUGE,
+		"Большой" 		= RESIZE_BIG,
+		"Нормальный" 	= RESIZE_NORMAL,
+		"Маленький" 	= RESIZE_SMALL,
+		"Крохотный" 	= RESIZE_TINY)
+		// End of Bastion of Endeavor Translation
 
 //stores vantag settings indexed by name
 var/global/list/vantag_choices_list = list(
+		/* Bastion of Endeavor Translation
 		VANTAG_NONE		=	"No Involvement",
 		VANTAG_VORE		=	"Be Prey",
 		VANTAG_KIDNAP	=	"Be Kidnapped",
 		VANTAG_KILL		=	"Be Killed")
+		*/
+		VANTAG_NONE		=	"Не участвовать",
+		VANTAG_VORE		=	"Жертва съедения",
+		VANTAG_KIDNAP	=	"Жертва похищения",
+		VANTAG_KILL		=	"Жертва убийства")
+		// End of Bastion of Endeavor Translation
 
 //Blacklist to exclude items from object ingestion. Digestion blacklist located in digest_act_vr.dm
 var/global/list/item_vore_blacklist = list(
@@ -50,6 +69,7 @@ var/global/list/item_vore_blacklist = list(
 
 //Classic Vore sounds
 var/global/list/classic_vore_sounds = list(
+		/* Bastion of Endeavor Translation
 		"Gulp" = 'sound/vore/gulp.ogg',
 		"Insert" = 'sound/vore/insert.ogg',
 		"Insertion1" = 'sound/vore/insertion1.ogg',
@@ -67,8 +87,28 @@ var/global/list/classic_vore_sounds = list(
 		"Rustle 5 (cloth)"	= 'sound/effects/rustle5.ogg',
 		"Zipper" = 'sound/items/zip.ogg',
 		"None" = null)
+		*/
+		"Глоток" = 'sound/vore/gulp.ogg',
+		"Вставление 1" = 'sound/vore/insert.ogg',
+		"Вставление 2" = 'sound/vore/insertion1.ogg',
+		"Вставление 3" = 'sound/vore/insertion2.ogg',
+		"Вставление 4" = 'sound/vore/insertion3.ogg',
+		"Бульк" = 'sound/vore/schlorp.ogg',
+		"Журчание 1" = 'sound/vore/squish1.ogg',
+		"Журчание 2" = 'sound/vore/squish2.ogg',
+		"Журчание 3" = 'sound/vore/squish3.ogg',
+		"Журчание 4" = 'sound/vore/squish4.ogg',
+		"Шуршание одежды 1"	= 'sound/effects/rustle1.ogg',
+		"Шуршание одежды 2"	= 'sound/effects/rustle2.ogg',
+		"Шуршание одежды 3"	= 'sound/effects/rustle3.ogg',
+		"Шуршание одежды 4"	= 'sound/effects/rustle4.ogg',
+		"Шуршание одежды 5"	= 'sound/effects/rustle5.ogg',
+		"Застежка" = 'sound/items/zip.ogg',
+		"Нет" = null)
+		// End of Bastion of Endeavor Translation
 
 var/global/list/classic_release_sounds = list(
+		/* Bastion of Endeavor Translation
 		"Rustle (cloth)" = 'sound/effects/rustle1.ogg',
 		"Rustle 2 (cloth)" = 'sound/effects/rustle2.ogg',
 		"Rustle 3 (cloth)" = 'sound/effects/rustle3.ogg',
@@ -77,10 +117,21 @@ var/global/list/classic_release_sounds = list(
 		"Zipper" = 'sound/items/zip.ogg',
 		"Splatter" = 'sound/effects/splat.ogg',
 		"None" = null
+		*/
+		"Шуршание одежды 1" = 'sound/effects/rustle1.ogg',
+		"Шуршание одежды 2" = 'sound/effects/rustle2.ogg',
+		"Шуршание одежды 3" = 'sound/effects/rustle3.ogg',
+		"Шуршание одежды 4" = 'sound/effects/rustle4.ogg',
+		"Шуршание одежды 5" = 'sound/effects/rustle5.ogg',
+		"Застежка" = 'sound/items/zip.ogg',
+		"Выплескивание" = 'sound/effects/splat.ogg',
+		"Нет" = null
+		// End of Bastion of Endeavor Translation
 		)
 
 //Poojy's Fancy Sounds
 var/global/list/fancy_vore_sounds = list(
+		/* Bastion of Endeavor Translation
 		"Gulp" = 'sound/vore/sunesound/pred/swallow_01.ogg',
 		"Swallow" = 'sound/vore/sunesound/pred/swallow_02.ogg',
 		"Insertion1" = 'sound/vore/sunesound/pred/insertion_01.ogg',
@@ -99,9 +150,30 @@ var/global/list/fancy_vore_sounds = list(
 		"Rustle 5 (cloth)"	= 'sound/effects/rustle5.ogg',
 		"Zipper" = 'sound/items/zip.ogg',
 		"None" = null
+		*/
+		"Глотки 1" = 'sound/vore/sunesound/pred/swallow_01.ogg',
+		"Глотки 2" = 'sound/vore/sunesound/pred/swallow_02.ogg',
+		"Вставление 1" = 'sound/vore/sunesound/pred/insertion_01.ogg',
+		"Вставление 2" = 'sound/vore/sunesound/pred/insertion_02.ogg',
+		"Глотки тавра" = 'sound/vore/sunesound/pred/taurswallow.ogg',
+		"Внутренние движения" = 'sound/vore/sunesound/pred/stomachmove.ogg',
+		"Бульк" = 'sound/vore/sunesound/pred/schlorp.ogg',
+		"Журчание 1" = 'sound/vore/sunesound/pred/squish_01.ogg',
+		"Журчание 2" = 'sound/vore/sunesound/pred/squish_02.ogg',
+		"Журчание 3" = 'sound/vore/sunesound/pred/squish_03.ogg',
+		"Журчание 4" = 'sound/vore/sunesound/pred/squish_04.ogg',
+		"Шуршание одежды 1" = 'sound/effects/rustle1.ogg',
+		"Шуршание одежды 2" = 'sound/effects/rustle2.ogg',
+		"Шуршание одежды 3" = 'sound/effects/rustle3.ogg',
+		"Шуршание одежды 4" = 'sound/effects/rustle4.ogg',
+		"Шуршание одежды 5" = 'sound/effects/rustle5.ogg',
+		"Застежка" = 'sound/items/zip.ogg',
+		"Нет" = null
+		// End of Bastion of Endeavor Translation
 		)
 
 var/global/list/fancy_release_sounds = list(
+		/* Bastion of Endeavor Translation
 		"Rustle (cloth)" = 'sound/effects/rustle1.ogg',
 		"Rustle 2 (cloth)" = 'sound/effects/rustle2.ogg',
 		"Rustle 3 (cloth)" = 'sound/effects/rustle3.ogg',
@@ -112,9 +184,22 @@ var/global/list/fancy_release_sounds = list(
 		"Pred Escape" = 'sound/vore/sunesound/pred/escape.ogg',
 		"Splatter" = 'sound/effects/splat.ogg',
 		"None" = null
+		*/
+		"Шуршание одежды 1" = 'sound/effects/rustle1.ogg',
+		"Шуршание одежды 2" = 'sound/effects/rustle2.ogg',
+		"Шуршание одежды 3" = 'sound/effects/rustle3.ogg',
+		"Шуршание одежды 4" = 'sound/effects/rustle4.ogg',
+		"Шуршание одежды 5" = 'sound/effects/rustle5.ogg',
+		"Застежка" = 'sound/items/zip.ogg',
+		"Внутренние движения" = 'sound/vore/sunesound/pred/stomachmove.ogg',
+		"Побег из хищника" = 'sound/vore/sunesound/pred/escape.ogg',
+		"Выплескивание" = 'sound/effects/splat.ogg',
+		"Нет" = null
+		// End of Bastion of Endeavor Translation
 		)
 
 var/global/list/global_vore_egg_types = list(
+	/* Bastion of Endeavor Translation
 	"Unathi",
 	"Tajara",
 	"Akula",
@@ -148,8 +233,44 @@ var/global/list/global_vore_egg_types = list(
 	"Red",
 	"Rainbow",
 	"Spotted pink")
+	*/
+	"Унати",
+	"Таджара",
+	"Акула",
+	"Скрелл",
+	"Сергал",
+	"Невреан",
+	"Человек",
+	"Слизень",
+	"Яйцо",
+	"Ксенохимера",
+	"Ксеноморф",
+	"Шоколадное",
+	"Костяное",
+	"Глыба слизи",
+	"Курица",
+	"Синтетик",
+	"Блюспейсовая дискета",
+	"Блюспейсовый архив",
+	"Блюспейсовый диск",
+	"Капсула",
+	"Кулинарный инцидент",
+	"Паучий кокон",
+	"Соты",
+	"Жучий кокон",
+	"Камень",
+	"Жёлтое",
+	"Синее",
+	"Зелёное",
+	"Оранжевое",
+	"Розовое",
+	"Красное",
+	"Радужное",
+	"Пятнистое розовое")
+	// End of Bastion of Endeavor Translation
 
 var/global/list/tf_vore_egg_types = list(
+	/* Bastion of Endeavor Translation
 	"Unathi" 		= /obj/item/weapon/storage/vore_egg/unathi,
 	"Tajara" 		= /obj/item/weapon/storage/vore_egg/tajaran,
 	"Akula" 		= /obj/item/weapon/storage/vore_egg/shark,
@@ -183,6 +304,41 @@ var/global/list/tf_vore_egg_types = list(
 	"Red"			= /obj/item/weapon/storage/vore_egg/red,
 	"Rainbow"		= /obj/item/weapon/storage/vore_egg/rainbow,
 	"Spotted pink"	= /obj/item/weapon/storage/vore_egg/pinkspots)
+	*/
+	"Унати"					= /obj/item/weapon/storage/vore_egg/unathi,
+	"Таджара"				= /obj/item/weapon/storage/vore_egg/tajaran,
+	"Акула"					= /obj/item/weapon/storage/vore_egg/shark,
+	"Скрелл"				= /obj/item/weapon/storage/vore_egg/skrell,
+	"Сергал"				= /obj/item/weapon/storage/vore_egg/sergal,
+	"Невреан"				= /obj/item/weapon/storage/vore_egg/nevrean,
+	"Человек"				= /obj/item/weapon/storage/vore_egg/human,
+	"Слизень"				= /obj/item/weapon/storage/vore_egg/slime,
+	"Яйцо"					= /obj/item/weapon/storage/vore_egg,
+	"Ксенохимера"			= /obj/item/weapon/storage/vore_egg/scree,
+	"Ксеноморф"				= /obj/item/weapon/storage/vore_egg/xenomorph,
+	"Шоколадное"			= /obj/item/weapon/storage/vore_egg/chocolate,
+	"Костяное"				= /obj/item/weapon/storage/vore_egg/owlpellet,
+	"Глыба слизи"			= /obj/item/weapon/storage/vore_egg/slimeglob,
+	"Курица"				= /obj/item/weapon/storage/vore_egg/chicken,
+	"Синтетик"				= /obj/item/weapon/storage/vore_egg/synthetic,
+	"Блюспейсовая дискета"	= /obj/item/weapon/storage/vore_egg/floppy,
+	"Блюспейсовый архив"	= /obj/item/weapon/storage/vore_egg/file,
+	"Блюспейсовый диск"		= /obj/item/weapon/storage/vore_egg/cd,
+	"Капсула"				= /obj/item/weapon/storage/vore_egg/escapepod,
+	"Кулинарный инцидент"	= /obj/item/weapon/storage/vore_egg/badrecipe,
+	"Паучий кокон"			= /obj/item/weapon/storage/vore_egg/cocoon,
+	"Соты" 					= /obj/item/weapon/storage/vore_egg/honeycomb,
+	"Жучий кокон"			= /obj/item/weapon/storage/vore_egg/bugcocoon,
+	"Камень"				= /obj/item/weapon/storage/vore_egg/rock,
+	"Жёлтое"				= /obj/item/weapon/storage/vore_egg/yellow,
+	"Синее"					= /obj/item/weapon/storage/vore_egg/blue,
+	"Зелёное"				= /obj/item/weapon/storage/vore_egg/green,
+	"Оранжевое"				= /obj/item/weapon/storage/vore_egg/orange,
+	"Розовое"				= /obj/item/weapon/storage/vore_egg/purple,
+	"Красное"				= /obj/item/weapon/storage/vore_egg/red,
+	"Радужное"				= /obj/item/weapon/storage/vore_egg/rainbow,
+	"Пятнистое розовое"		= /obj/item/weapon/storage/vore_egg/pinkspots)
+	// End of Bastion of Endeavor Translation
 
 var/global/list/edible_trash = list(/obj/item/broken_device,
 				/obj/item/clothing/accessory/collar,
@@ -240,6 +396,7 @@ var/global/list/edible_trash = list(/obj/item/broken_device,
 				/obj/item/roulette_ball
 				)
 
+// Bastion of Endeavor TODO: Could be done now via verb_ru templates, but too much work. Will get to these after vore systems are localized.
 var/global/list/contamination_flavors = list(
 				"Generic" = contamination_flavors_generic,
 				"Acrid" = contamination_flavors_acrid,
@@ -503,6 +660,7 @@ var/global/list/remainless_species = list(SPECIES_PROMETHEAN,
 				SPECIES_GOLEM,					//Some special species that may or may not be ever used in event too,
 				SPECIES_SHADEKIN)			//Shadefluffers just poof away
 
+// Bastion of Endeavor TODO: Will need to get to these after jobs are localized.
 /var/global/list/alt_titles_with_icons = list(
 				"Virologist",
 				"Apprentice Engineer",

@@ -2,7 +2,11 @@
 // The logic that determines what events get chosen is held inside a seperate subsystem.
 
 SUBSYSTEM_DEF(event_ticker)
+	/* Bastion of Endeavor Translation
 	name = "Events (Ticker)"
+	*/
+	name = "Эвенты (Тикер)"
+	// End of Bastion of Endeavor Translation
 	wait = 2 SECONDS
 	runlevels = RUNLEVEL_GAME
 
@@ -27,10 +31,18 @@ SUBSYSTEM_DEF(event_ticker)
 	event_started(E)
 
 /datum/controller/subsystem/event_ticker/proc/event_started(datum/event2/event/E)
+	/* Bastion of Endeavor Translation
 	log_debug("Event [E.type] is now being ran.")
+	*/
+	log_debug("Начинается эвент '[E.type]'.")
+	// End of Bastion of Endeavor Translation
 	active_events += E
 
 /datum/controller/subsystem/event_ticker/proc/event_finished(datum/event2/event/E)
+	/* Bastion of Endeavor Translation
 	log_debug("Event [E.type] has finished.")
+	*/
+	log_debug("Эвент '[E.type]' завершён.")
+	// End of Bastion of Endeavor Translation
 	active_events -= E
 	finished_events += E
