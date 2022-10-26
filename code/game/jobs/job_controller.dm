@@ -320,7 +320,7 @@ var/global/datum/controller/occupations/job_master
 			/* Bastion of Endeavor Define Edit
 			if(A.title == "AI")
 			*/
-			if(A.title == RU_ROLE_AI)
+			if(A.title == "ИИ")
 			// End of Bastion of Endeavor Define Edit
 				A.spawn_positions = 3
 				break
