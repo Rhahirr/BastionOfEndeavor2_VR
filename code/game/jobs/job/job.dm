@@ -37,7 +37,11 @@
 	var/mob_type = JOB_CARBON 		      // Bitflags representing mob type this job spawns
 
 	// Description of the job's role and minimum responsibilities.
+	/* Bastion of Endeavor Translation
 	var/job_description = "This Job doesn't have a description! Please report it!"
+	*/
+	var/job_description = "У этой работы нет описания! Сообщите об этом админам!"
+	// End of Bastion of Endeavor Translation
 
 /datum/job/New()
 	. = ..()
@@ -76,18 +80,32 @@
 	var/datum/money_account/M = create_account(H.real_name, money_amount, null, offmap_spawn)
 	if(H.mind)
 		var/remembered_info = ""
+		/* Bastion of Endeavor Translation
 		remembered_info += "<b>Your account number is:</b> #[M.account_number]<br>"
 		remembered_info += "<b>Your account pin is:</b> [M.remote_access_pin]<br>"
 		remembered_info += "<b>Your account funds are:</b> $[M.money]<br>"
+		*/
+		remembered_info += "<b>Номер Вашего счёта:</b> #[M.account_number]<br>"
+		remembered_info += "<b>PIN-код Вашего счёта:</b> [M.remote_access_pin]<br>"
+		remembered_info += "<b>Баланс Вашего счёта:</b> $[M.money]<br>"
+		// End of Bastion of Endeavor Translation
 
 		if(M.transaction_log.len)
 			var/datum/transaction/T = M.transaction_log[1]
+			/* Bastion of Endeavor Translation
 			remembered_info += "<b>Your account was created:</b> [T.time], [T.date] at [T.source_terminal]<br>"
+			*/
+			remembered_info += "<b>Ваш счёт создан </b> [T.time], [T.date] ([T.source_terminal])<br>"
+			// End of Bastion of Endeavor Translation
 		H.mind.store_memory(remembered_info)
 
 		H.mind.initial_account = M
 
+	/* Bastion of Endeavor Translation
 	to_chat(H, "<span class='notice'><b>Your account number is: [M.account_number], your account pin is: [M.remote_access_pin]</b></span>")
+	*/
+	to_chat(H, "<span class='notice'><b>Номер Вашего счёта - [M.account_number], PIN-код - [M.remote_access_pin].</b></span>")
+	// End of Bastion of Endeavor Translation
 
 // overrideable separately so AIs/borgs can have cardborg hats without unneccessary new()/qdel()
 /datum/job/proc/equip_preview(mob/living/carbon/human/H, var/alt_title)
