@@ -750,7 +750,7 @@ var/global/datum/controller/occupations/job_master
 		/* Bastion of Endeavor Translation: supervisors var has more text so yeah
 		to_chat(H, "<b>As the [alt_title ? alt_title : rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>")
 		*/
-		to_chat(H, "<b>[job.supervisors]</b>")
+		to_chat(H, "<b>[job.supervisors] Особые обстоятельства могут это изменить.</b>")
 		// End of Bastion of Endeavor Translation
 	if(job.has_headset)
 		H.equip_to_slot_or_del(new /obj/item/device/radio/headset(H), slot_l_ear)
