@@ -21,7 +21,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "absolutely everyone"
 	*/
-	supervisors = "Вы починяетесь каждому члену персонала."
+	supervisors = "Вы подчиняетесь каждому члену персонала."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#515151"
 	economic_modifier = 1

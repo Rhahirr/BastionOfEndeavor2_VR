@@ -117,7 +117,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 						of the crew, including their money and access. If necessary, the Head of Personnel is first in line to assume Acting Command."
 	alt_titles = list("Crew Resources Officer" = /datum/alt_title/cro)
 	*/
-	job_description = "Глава персонала управляет отделом обслуживания, экспедиционным отделом и большинством гражданского персонала, \
+	job_description = "Глава персонала управляет отделом обслуживания, экспедиционным отделом и практически всем гражданским персоналом, \
 						а также отвечает за грузовой отдел через Квартирмейстера. Помимо этого Глава персонала распоряжается уровнями доступа членов персонала и отвечает за их реквизиты. \
 						В случае необходимости Глава персонала первым принимает на себя роль действующего главы."
 	alt_titles = list("Директор по персоналу" = /datum/alt_title/cro)
@@ -182,7 +182,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	job_description = "A Command Secretary handles paperwork duty for the Heads of Staff, so they can better focus on managing their departments. \
 						They are not Heads of Staff, and have no real authority."
 	*/
-	job_description = "Секретарь командования занимается оформлением документов для глав отделов, чтобы помочь снизить их нагрузку. \
+	job_description = "Секретарь командования занимается оформлением документов для глав отделов, что способствует снижению их нагрузки и позволяет им сфокусировать внимание на управлении своими отделами. \
 						Он не является главой отдела сам и не обладает никакой реальной властью на станции."
 	// End of Bastion of Endeavor Translation
 

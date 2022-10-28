@@ -43,7 +43,7 @@
 	*/
 	alt_titles = list("Помощник инженера" = /datum/alt_title/intern_eng,
 					  "Врач-интерн" = /datum/alt_title/intern_med,
-					  "Лаборант" = /datum/alt_title/intern_sci,
+					  "Интерн-лаборант" = /datum/alt_title/intern_sci,
 					  "Кадет службы безопасности" = /datum/alt_title/intern_sec,
 					  "Младший грузчик" = /datum/alt_title/intern_crg,
 					  "Младший исследователь" = /datum/alt_title/intern_exp,
@@ -85,8 +85,8 @@
 	title_blurb = "A Research Intern attempts to provide whatever the Research department needs. They are not proper Scientists, and are \
 					often in training to become a Scientist. A Research Intern has no real authority."
 	*/
-	title = "Лаборант"
-	title_blurb = "Лаборант обязан выполнять поручения научного отдела. Он пока не является полноценным учёным, \
+	title = "Интерн-лаборант"
+	title_blurb = "Интерн-лаборант обязан выполнять поручения научного отдела. Он пока не является полноценным учёным, \
 					но набирает знания, чтобы им стать. Лаборант не обладает никакой реальной властью на станции."
 	// End of Bastion of Endeavor Translation
 	title_outfit = /decl/hierarchy/outfit/job/assistant/scientist

@@ -413,7 +413,7 @@ var/global/datum/controller/occupations/job_master
 					/* Bastion of Endeavor Translation
 					Debug("DO isbanned failed, Player: [player], Job:[job.title]")
 					*/
-					Debug("DivideOccupations: не пройден isbanned, игрок: [player], работа:[job.title]")
+					Debug("DivideOccupations: не пройден isbanned, игрок: [player], работа: [job.title]")
 					// End of Bastion of Endeavor Translation
 					continue
 
@@ -421,7 +421,7 @@ var/global/datum/controller/occupations/job_master
 					/* Bastion of Endeavor Translation
 					Debug("DO player not old enough, Player: [player], Job:[job.title]")
 					*/
-					Debug("DivideOccupations: низкий возраст аккаунта, игрок: [player], работа:[job.title]")
+					Debug("DivideOccupations: низкий возраст аккаунта, игрок: [player], работа: [job.title]")
 					// End of Bastion of Endeavor Translation
 					continue
 
@@ -443,7 +443,7 @@ var/global/datum/controller/occupations/job_master
 						/* Bastion of Endeavor Translation
 						Debug("DO pass, Player: [player], Level:[level], Job:[job.title]")
 						*/
-						Debug("DivideOccupations пройден, игрок: [player], уровень:[level], работа:[job.title]")
+						Debug("DivideOccupations пройден, игрок: [player], уровень: [level], работа: [job.title]")
 						// End of Bastion of Endeavor Translation
 						AssignRole(player, job.title)
 						unassigned -= player
@@ -719,7 +719,7 @@ var/global/datum/controller/occupations/job_master
 				/* Bastion of Endeavor Translation
 				to_chat(H, "<span class='danger'>Failed to locate a storage object on your mob, either you spawned with no arms and no backpack or this is a bug.</span>")
 				*/
-				to_chat(H, "<span class='danger'>Не удалсоь найти свободное место на Вашем мобе; либо Вы заспавнились без рук и рюкзака, либо это баг.</span>")
+				to_chat(H, "<span class='danger'>Не удалось найти свободное место на Вашем мобе; либо Вы заспавнились без рук и рюкзака, либо это баг.</span>")
 				// End of Bastion of Endeavor Translation
 
 	if(istype(H)) //give humans wheelchairs, if they need them.

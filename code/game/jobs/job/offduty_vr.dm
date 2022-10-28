@@ -6,7 +6,7 @@
 	/* Bastion of Endeavor Translation: I really don't like this one given that this is a service role and the wording is weird
 	title = "Off-duty Worker"
 	*/
-	title = "Обслуживающий на отгуле"
+	title = "Работник на отгуле"
 	// End of Bastion of Endeavor Translation
 	latejoin_only = TRUE
 	timeoff_factor = -1
