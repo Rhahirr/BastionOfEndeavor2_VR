@@ -76,7 +76,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "your Laws and the AI"	//Nodrak
 	*/
-	supervisors = 	//Nodrak""
+	supervisors = "Вы подчиняетесь непосредственно своим Законам и ИИ." //Nodrak
 	// End of Bastion of Endeavor Translation
 	selection_color = "#254C25"
 	minimal_player_age = 1
