@@ -2,16 +2,28 @@
 //		Head of Security
 //////////////////////////////////
 /datum/job/hos
+	/* Bastion of Endeavor Translation
 	title = "Head of Security"
+	*/
+	title = "Глава службы безопасности"
+	// End of Bastion of Endeavor Translation
 	flag = HOS
 	departments_managed = list(DEPARTMENT_SECURITY)
 	departments = list(DEPARTMENT_SECURITY, DEPARTMENT_COMMAND)
 	sorting_order = 2
 	department_flag = ENGSEC
+	/* Bastion of Endeavor Translation
 	faction = "Station"
+	*/
+	faction = "Станция"
+	// End of Bastion of Endeavor Translation
 	total_positions = 1
 	spawn_positions = 1
+	/* Bastion of Endeavor Translation
 	supervisors = "the Site Manager"
+	*/
+	supervisors = "Вы отвечаете перед Менеджером объекта."
+	// End of Bastion of Endeavor Translation
 	selection_color = "#8E2929"
 	req_admin_notify = 1
 	economic_modifier = 10
@@ -31,18 +43,36 @@
 	banned_job_species = list(SPECIES_TESHARI, SPECIES_DIONA, SPECIES_PROMETHEAN, SPECIES_ZADDAT, "digital", SPECIES_UNATHI, "mechanical")
 
 	outfit_type = /decl/hierarchy/outfit/job/security/hos
+	/* Bastion of Endeavor Translation
 	job_description = "	The Head of Security manages the Security Department, keeping the station safe and making sure the rules are followed. They are expected to \
 						keep the other Department Heads, and the rest of the crew, aware of developing situations that may be a threat. If necessary, the HoS may \
 						perform the duties of absent Security roles, such as distributing gear from the Armory."
+	*/
+	job_description = "Глава службы безопасности отвечает за службу безопасности и обеспечивает на станции порядок и соблюдение правил. \
+						От него ожидается своевременное информирование других Глав отделов, как и всего остального персонала, об угрозах на территории станции. \
+						При необходимости Глава службы безопасности также может выполнять обязанности недостающего персонала СБ - например, выдачу снаряжения из Арсенала."
+	// End of Bastion of Endeavor Translation
+	/* Bastion of Endeavor Translation
 	alt_titles = list("Security Commander" = /datum/alt_title/sec_commander, "Chief of Security" = /datum/alt_title/sec_chief)
+	*/
+	alt_titles = list("Командир службы безопасности" = /datum/alt_title/sec_commander, "Начальник службы безопасности" = /datum/alt_title/sec_chief)
+	// End of Bastion of Endeavor Translation
 
 
 // Head of Security Alt Titles
 /datum/alt_title/sec_commander
+	/* Bastion of Endeavor Translation
 	title = "Security Commander"
+	*/
+	title = "Командир службы безопасности"
+	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/sec_chief
+	/* Bastion of Endeavor Translation
 	title = "Chief of Security"
+	*/
+	title = "Начальник службы безопасности"
+	// End of Bastion of Endeavor Translation
 
 //////////////////////////////////
 //			Warden

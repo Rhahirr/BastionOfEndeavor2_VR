@@ -63,7 +63,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "the Head of Personnel"
 	*/
-	supervisors = "Вы отвечаете непосредственно перед Главой персонала."
+	supervisors = "Вы отвечаете перед Главой персонала."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#d6d05c"
 	economic_modifier = 8
@@ -122,7 +122,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "the Pathfinder and the Head of Personnel"
 	*/
-	supervisors = "Вы отвечаете непосредственно перед Первопроходцем и Главой персонала"
+	supervisors = "Вы отвечаете перед Первопроходцем и Главой персонала."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#999440"
 	economic_modifier = 6
@@ -172,7 +172,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "the Pathfinder and the Chief Medical Officer"
 	*/
-	supervisors = "Вы отвечаете непосредственно перед Первооткрывателем и Главным врачом."
+	supervisors = "Вы отвечаете перед Первооткрывателем и Главным врачом."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#999440"
 	economic_modifier = 6

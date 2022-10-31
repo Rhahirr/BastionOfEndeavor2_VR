@@ -22,7 +22,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "your Laws"
 	*/
-	supervisors = "Вы подчиняетесь непосредственно своим Законам."
+	supervisors = "Вы подчиняетесь своим Законам."
 	// End of Bastion of Endeavor Translation
 	req_admin_notify = 1
 	minimal_player_age = 7
@@ -76,7 +76,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "your Laws and the AI"	//Nodrak
 	*/
-	supervisors = "Вы подчиняетесь непосредственно своим Законам и ИИ." //Nodrak
+	supervisors = "Вы подчиняетесь своим Законам и ИИ." //Nodrak
 	// End of Bastion of Endeavor Translation
 	selection_color = "#254C25"
 	minimal_player_age = 1

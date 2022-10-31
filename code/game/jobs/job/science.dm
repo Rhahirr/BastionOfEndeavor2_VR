@@ -22,7 +22,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "the Site Manager"
 	*/
-	supervisors = "Вы отвечаете непосредственно перед Менеджером объекта."
+	supervisors = "Вы отвечаете перед Менеджером объекта."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#AD6BAD"
 	req_admin_notify = 1
@@ -88,7 +88,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "the Research Director"
 	*/
-	supervisors = "Вы отвечаете непосредственно перед Директором по исследованиям."
+	supervisors = "Вы отвечаете перед Директором по исследованиям."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#633D63"
 	economic_modifier = 7
@@ -152,7 +152,11 @@
 //			Xenobiologist
 //////////////////////////////////
 /datum/job/xenobiologist
+	/* Bastion of Endeavor Translation
 	title = "Xenobiologist"
+	*/
+	title = "Ксенобиолог"
+	// End of Bastion of Endeavor Translation
 	flag = XENOBIOLOGIST
 	departments = list(DEPARTMENT_RESEARCH)
 	department_flag = MEDSCI
@@ -166,7 +170,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "the Research Director"
 	*/
-	supervisors = "Вы отвечаете непосредственно перед Директором по исследованиям."
+	supervisors = "Вы отвечаете перед Директором по исследованиям."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#633D63"
 	economic_modifier = 7
@@ -217,7 +221,7 @@ VR edit end*/
 	/* Bastion of Endeavor Translation
 	supervisors = "the Research Director"
 	*/
-	supervisors = "Вы отвечаете непосредственно перед Директором по исследованиям."
+	supervisors = "Вы отвечаете перед Директором по исследованиям."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#633D63"
 	economic_modifier = 5
@@ -233,7 +237,7 @@ VR edit end*/
 						They can also assist the station by producing simple robots and even pilotable exosuits."
 	alt_titles = list("Biomechanical Engineer" = /datum/alt_title/biomech, "Mechatronic Engineer" = /datum/alt_title/mech_tech)
 	*/
-	job_description = "Робототехник занимается обслуживанием и ремонтов синтетических форм жизни на станции, а также протезов членов персонала. \
+	job_description = "Робототехник занимается обслуживанием и ремонтом синтетических форм жизни на станции, а также протезов членов персонала. \
 						Более того, они могут помочь станции, создавая как простых роботов, так и пилотируемые экзокостюмы."
 	alt_titles = list("Инженер-биомеханик" = /datum/alt_title/biomech, "Инженер-мехатроник" = /datum/alt_title/mech_tech)
 	// End of Bastion of Endeavor Translation

@@ -97,7 +97,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	/* Bastion of Endeavor Translation
 	supervisors = "the Site Manager"
 	*/
-	supervisors = "Вы отвечаете непосредственно перед Менеджером объекта."
+	supervisors = "Вы отвечаете перед Менеджером объекта."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#1D1D4F"
 	req_admin_notify = 1
@@ -168,7 +168,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	/* Bastion of Endeavor Translation
 	supervisors = "command staff"
 	*/
-	supervisors = "Вы отвечаете непосредственно перед персоналом Командования."
+	supervisors = "Вы отвечаете перед персоналом Командования."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#1D1D4F"
 	minimal_player_age = 5

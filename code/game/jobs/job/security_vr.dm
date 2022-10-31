@@ -11,13 +11,25 @@
 						access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
 						access_construction,
 						access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_external_airlocks)
+	/* Bastion of Endeavor Translation
 	alt_titles = list("Security Commander" = /datum/alt_title/sec_commander, "Chief of Security" = /datum/alt_title/sec_chief, "Security Manager" = /datum/alt_title/security_manager)
+	*/
+	alt_titles = list("Командир службы безопасности" = /datum/alt_title/sec_commander, "Начальник службы безопасности" = /datum/alt_title/sec_chief, "Начальник охраны" = /datum/alt_title/security_manager)
+	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/security_manager
+	/* Bastion of Endeavor Translation
 	title = "Security Manager"
+	*/
+	title = "Начальник охраны"
+	// End of Bastion of Endeavor Translation
 
 /datum/job/hos/get_request_reasons()
+	/* Bastion of Endeavor Translation
 	return list("Wildlife management", "Forensic investigation", "Training crew")
+	*/
+	return list("Борьба с фауной", "Судебно-медицинская экспертиза", "Обучение персонала")
+	// End of Bastion of Endeavor Translation
 
 
 /datum/job/warden

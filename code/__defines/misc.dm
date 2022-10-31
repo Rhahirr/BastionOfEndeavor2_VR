@@ -214,7 +214,7 @@
 #define DEPARTMENT_PLANET			"Exploration" //VOREStation Edit // I hate having this be here and not in a SC file. Hopefully someday the manifest can be rewritten to be map-agnostic.
 #define DEPARTMENT_SYNTHETIC		"Synthetic"
 */
-#define DEPARTMENT_COMMAND			"Управление"
+#define DEPARTMENT_COMMAND			"Командование"
 #define DEPARTMENT_SECURITY			"Служба безопасности"
 #define DEPARTMENT_ENGINEERING		"Инженерный отдел"
 #define DEPARTMENT_MEDICAL			"Медицинский отдел"

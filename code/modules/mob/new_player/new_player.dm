@@ -500,21 +500,44 @@
 /mob/new_player/proc/LateChoices()
 	var/name = client.prefs.be_random_name ? "friend" : client.prefs.real_name
 
+	/* Bastion of Endeavor Translation
 	var/dat = "<html><body><center>"
 	dat += "<b>Welcome, [name].<br></b>"
 	dat += "Round Duration: [roundduration2text()]<br>"
+	*/
+	var/dat = "<html><meta charset='utf-8'><body><center>"
+	dat += "<b>Добро пожаловать, [name].<br></b>"
+	dat += "Время раунда: [roundduration2text()]<br>"
+	// End of Bastion of Endeavor Translation
 
 	if(emergency_shuttle) //In case NanoTrasen decides reposess CentCom's shuttles.
 		if(emergency_shuttle.going_to_centcom()) //Shuttle is going to CentCom, not recalled
+			/* Bastion of Endeavor Translation
 			dat += "<font color='red'><b>The station has been evacuated.</b></font><br>"
+			*/
+			dat += "<font color='red'><b>Станция была эвакуирована.</b></font><br>"
+			// End of Bastion of Endeavor Translation
 		if(emergency_shuttle.online())
 			if (emergency_shuttle.evac)	// Emergency shuttle is past the point of no recall
+				/* Bastion of Endeavor Translation
 				dat += "<font color='red'>The station is currently undergoing evacuation procedures.</font><br>"
+				*/
+				dat += "<font color='red'>Станция в процессе эвакуации.</font><br>"
+				// End of Bastion of Endeavor Translation
 			else						// Crew transfer initiated
+				/* Bastion of Endeavor Translation
 				dat += "<font color='red'>The station is currently undergoing crew transfer procedures.</font><br>"
+				*/
+				dat += "<font color='red'>Станция в процессе трансфера персонала.</font><br>"
+				// End of Bastion of Endeavor Translation
 
+	/* Bastion of Endeavor Translation
 	dat += "Choose from the following open/valid positions:<br>"
 	dat += "<a href='byond://?src=\ref[src];hidden_jobs=1'>[show_hidden_jobs ? "Hide":"Show"] Hidden Jobs.</a><br>"
+	*/
+	dat += "Выберите желаемую должность из списка доступных:<br>"
+	dat += "<a href='byond://?src=\ref[src];hidden_jobs=1'>\[[show_hidden_jobs ? "Скрыть":"Показать"] скрытые должности\]</a><br>"
+	// End of Bastion of Endeavor Translation
 
 	var/deferred = ""
 	for(var/datum/job/job in job_master.occupations)
@@ -526,14 +549,22 @@
 			if(!(client.prefs.GetJobDepartment(job, 1) & job.flag))
 				if(!(client.prefs.GetJobDepartment(job, 2) & job.flag))
 					if(!(client.prefs.GetJobDepartment(job, 3) & job.flag))
+						/* Bastion of Endeavor Translation
 						if(!show_hidden_jobs && job.title != "Assistant")	// Assistant is always an option
+						*/
+						if(!show_hidden_jobs && job.title != "Ассистент")
+						// End of Bastion of Endeavor Translation
 							continue
 			var/active = 0
 			// Only players with the job assigned and AFK for less than 10 minutes count as active
 			for(var/mob/M in player_list) if(M.mind && M.client && M.mind.assigned_role == job.title && M.client.inactivity <= 10 MINUTES)
 				active++
 
+			/* Bastion of Endeavor Translation
 			var/string = "<a href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions]) (Active: [active])</a><br>"
+			*/
+			var/string = "<a href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions]) (Активно: [active])</a><br>"
+			// End of Bastion of Endeavor Translation
 
 			if(job.offmap_spawn) //At the bottom
 				deferred += string

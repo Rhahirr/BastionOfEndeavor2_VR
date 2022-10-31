@@ -26,7 +26,7 @@
 	/* Bastion of Endeavor Translation
 	name = "Warden"
 	*/
-	name = "Надзиратель"
+	name = "Надзиратель брига"
 	// End of Bastion of Endeavor Translation
 /obj/effect/landmark/start/detective
 	/* Bastion of Endeavor Translation

@@ -56,7 +56,7 @@
 						"Xenopaleontologist" = /datum/alt_title/xenopaleontologist, "Anomalist" = /datum/alt_title/anomalist, "Phoron Researcher" = /datum/alt_title/phoron_research,
 						"Gas Physicist" = /datum/alt_title/gas_physicist, "Circuit Designer" = /datum/alt_title/circuit_designer, "Circuit Programmer" = /datum/alt_title/circuit_programmer)
 	*/
-	alt_titles = list("Экспериментататор" = /datum/alt_title/researcher, "Лаборант" = /datum/alt_title/lab_assistant, "Ксеноархеолог" = /datum/alt_title/xenoarch,
+	alt_titles = list("Экспериментатор" = /datum/alt_title/researcher, "Лаборант" = /datum/alt_title/lab_assistant, "Ксеноархеолог" = /datum/alt_title/xenoarch,
 						"Ксенопалеонтолог" = /datum/alt_title/xenopaleontologist, "Исследователь аномалий" = /datum/alt_title/anomalist, "Исследователь форона" = /datum/alt_title/phoron_research,
 						"Исследователь газов" = /datum/alt_title/gas_physicist, "Дизайнер микросхем" = /datum/alt_title/circuit_designer, "Программист микросхем" = /datum/alt_title/circuit_programmer)
 	// End of Bastion of Endeavor Translation
@@ -200,7 +200,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "the Research Director"
 	*/
-	supervisors = "Вы отвечаете непосредственно перед Директором по исследованиям."
+	supervisors = "Вы отвечаете перед Директором по исследованиям."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#633D63"
 	economic_modifier = 7
