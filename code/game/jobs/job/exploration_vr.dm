@@ -172,7 +172,7 @@
 	/* Bastion of Endeavor Translation
 	supervisors = "the Pathfinder and the Chief Medical Officer"
 	*/
-	supervisors = "Вы отвечаете перед Первооткрывателем и Главным врачом."
+	supervisors = "Вы отвечаете перед Первопроходцем и Главным врачом."
 	// End of Bastion of Endeavor Translation
 	selection_color = "#999440"
 	economic_modifier = 6

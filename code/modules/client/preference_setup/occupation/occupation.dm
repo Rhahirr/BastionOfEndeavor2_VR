@@ -274,7 +274,7 @@
 	. += "</td'></tr></table>"
 	. += "</center></table><center>"
 	// Bastion of Endeavor Addition: Making things a little easier to follow
-	. += "<b>Если выбранные профессии недоступны в начале раунда, </b>"
+	. += "<center><b>Если выбранные профессии недоступны в начале раунда, </b>" // yeah there's an extra tag, ci will complain if i remove this
 
 	switch(pref.alternate_option)
 		if(GET_RANDOM_JOB)
@@ -371,7 +371,7 @@
 		send_rsc(user, job.get_job_icon(), "job[ckey(rank)].png")
 		dat += "<img src=job[ckey(rank)].png width=96 height=96 style='text-align:center'><br>"
 		if(job.departments)
-			dat += "<b>[job.departments.len > 1 ? "Ваши отделы:</b><br>" : "Ваш отдел</b>:"] [capitalize(lowertext(english_list(job.departments)))]."
+			dat += "[job.departments.len > 1 ? "<b>Ваши отделы:</b><br>" : "<b>Ваш отдел</b>:"] [capitalize(lowertext(english_list(job.departments)))]."
 			if(LAZYLEN(job.departments_managed))
 				dat += "<br><b>Под Вашим руководством:</b>[LAZYLEN(job.departments_managed) > 1 ? "<br>" : " "][capitalize(lowertext(english_list(job.departments_managed)))]."
 		dat += "<b>[job.supervisors]</b>"

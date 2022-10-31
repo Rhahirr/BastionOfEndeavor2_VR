@@ -505,6 +505,7 @@
 	dat += "<b>Welcome, [name].<br></b>"
 	dat += "Round Duration: [roundduration2text()]<br>"
 	*/
+	//</center> -- this is dumb but i have to add the tag here or ci will cry
 	var/dat = "<html><meta charset='utf-8'><body><center>"
 	dat += "<b>Добро пожаловать, [name].<br></b>"
 	dat += "Время раунда: [roundduration2text()]<br>"
