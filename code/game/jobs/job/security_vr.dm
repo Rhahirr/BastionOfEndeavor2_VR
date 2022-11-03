@@ -38,7 +38,7 @@
 	/* Bastion of Endeavor Translation
 	alt_titles = list("Brig Sentry" = /datum/alt_title/brig_sentry, "Armory Superintendent" = /datum/alt_title/armory_superintendent)
 	*/
-	alt_titles = list("Охранник брига" = /datum/alt_title/brig_sentry, "Контролёр арсенала" = /datum/alt_title/armory_superintendent)
+	alt_titles = list("Охранник брига" = /datum/alt_title/brig_sentry, "Заведующий арсеналом" = /datum/alt_title/armory_superintendent)
 	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/brig_sentry
@@ -52,7 +52,7 @@
 	/* Bastion of Endeavor Translation
 	title = "Armory Superintendent"
 	*/
-	title = "Контролёр арсенала"
+	title = "Заведующий арсеналом"
 	// End of Bastion of Endeavor Translation
 
 /datum/job/warden/get_request_reasons()

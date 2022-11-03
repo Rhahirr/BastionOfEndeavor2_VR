@@ -16,7 +16,7 @@
 						"Head of Development" = /datum/alt_title/head_of_development,"Head Scientist" = /datum/alt_title/head_scientist)
 	*/
 	alt_titles = list("Научный руководитель" = /datum/alt_title/research_supervisor, "Менеджер научных проектов" = /datum/alt_title/research_manager,
-						"Руководитель разработки" = /datum/alt_title/head_of_development,"Главный учёный" = /datum/alt_title/head_scientist)
+						"Руководитель разработки" = /datum/alt_title/head_of_development, "Главный учёный" = /datum/alt_title/head_scientist)
 	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/research_manager
@@ -79,7 +79,7 @@
 					learning the specializations in process."
 */
 	title = "Лаборант"
-	title_blurb = "Лаборант находится на нижней ступени научного отдела, и в его обязанности входит оказание другим учёным помощи с менее весёлой рутиной, \
+	title_blurb = "Лаборант находится на нижней ступени научного отдела. В его обязанности входит оказание другим учёным помощи с менее весёлой рутиной, \
 					 в процессе чего он может набраться знаний в той или иной сфере."
 // End of Bastion of Endeavor Translation
 
@@ -91,7 +91,7 @@
 	*/
 	title = "Ксенопалеонтолог"
 	title_blurb = "Ксенопалеонтолог посещает места раскопок в поисках ископаемых и древних следов жизни на планетах. \
-					Зачастую эти места находятся в вакууме и прочих небезопасных локациях, поэтому ксеноархеолог должен быть всегда готов дать отпор опасной среде"
+					Зачастую эти места находятся в вакууме и прочих небезопасных локациях, поэтому ксенопалеонтолог должен быть всегда готов дать отпор опасной среде"
 	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/gas_physicist

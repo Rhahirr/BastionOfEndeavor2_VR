@@ -163,7 +163,7 @@
 			/* Bastion of Endeavor Translation
 			. += "<del>[rank]</del></td></a><td> \[IN [round(available_in_hours, 0.1)] DEPTHOURS]</td></tr>"
 			*/
-			. += "<del>[rank]</del></td></a><td> \[ЧЕРЕЗ [count_ru(round(available_in_hours, 0.1), "час;а;ов")]]</td></tr>"
+			. += "<del>[rank]</del></td></a><td> \[ЧЕРЕЗ [count_ru(round(available_in_hours, 0.1), "час;;а;ов")]]</td></tr>"
 			// End of Bastion of Endeavor Translation
 			continue
 		if(!is_job_whitelisted(user,rank))

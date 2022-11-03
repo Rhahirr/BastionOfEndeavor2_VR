@@ -29,7 +29,7 @@
 	*/
 	name = "Идентификационная карта"
 	desc = "Карта, символизирующая тягу к неизведанному."
-	case_blueprint_ru = list("жен#аутентификационн;adj1*a карт;n1a")
+	case_blueprint_ru = list("жен#идентификационн;adj1*a карт;n1a")
 	// End of Bastion of Endeavor Translation
 	icon_state = "cyanGold"
 	primary_color = rgb(47,189,189)
@@ -78,7 +78,7 @@
 	job_description = "The Pathfinder's job is to lead and manage expeditions, and is the primary authority on all off-station expeditions."
 	alt_titles = list("Expedition Lead" = /datum/alt_title/expedition_lead, "Exploration Manager" = /datum/alt_title/exploration_manager)
 	*/
-	job_description = "Работа Первопроходца заключается проведении экспедиций вне станции, в которых на него возлагается ответственность за свою команду."
+	job_description = "Работа Первопроходца заключается в проведении экспедиций вне станции, в которых на него возлагается ответственность за свою команду."
 	alt_titles = list("Глава экспедиций" = /datum/alt_title/expedition_lead, "Организатор экспедиций" = /datum/alt_title/exploration_manager)
 	// End of Bastion of Endeavor Translation
 
@@ -86,14 +86,14 @@
 	/* Bastion of Endeavor Translation
 	title = "Expedition Lead"
 	*/
-	title = "Лидер экспедиций"
+	title = "Глава экспедиций"
 	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/exploration_manager
 	/* Bastion of Endeavor Translation
 	title = "Exploration Manager"
 	*/
-	title = "Экспедиционный менеджер"
+	title = "Организатор экспедиций"
 	// End of Bastion of Endeavor Translation
 
 /datum/job/pathfinder/get_request_reasons()
@@ -184,7 +184,7 @@
 	/* Bastion of Endeavor Translation
 	job_description = "A Field medic works as the field doctor of expedition teams."
 	*/
-	job_description = "Полевой врач обспечивает сохранность членов экспедиции."
+	job_description = "Полевой врач обеспечивает сохранность членов экспедиции."
 	// End of Bastion of Endeavor Translation
 	/* Bastion of Endeavor Translation
 	alt_titles = list("Expedition Medic" = /datum/alt_title/expedition_medic, "Offsite Medic" = /datum/alt_title/offsite_medic)

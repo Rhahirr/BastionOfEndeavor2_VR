@@ -317,11 +317,11 @@ var/global/datum/controller/occupations/job_master
 	//Holder for Triumvirate is stored in the ticker, this just processes it
 	if(ticker && ticker.triai)
 		for(var/datum/job/A in occupations)
-			/* Bastion of Endeavor Define Edit
+			/* Bastion of Endeavor Translation
 			if(A.title == "AI")
 			*/
 			if(A.title == "ИИ")
-			// End of Bastion of Endeavor Define Edit
+			// End of Bastion of Endeavor Translation
 				A.spawn_positions = 3
 				break
 

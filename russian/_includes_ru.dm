@@ -14,4 +14,5 @@
 #include "defines\defines_ru.dm"
 #include "defines\obj_ru.dm"
 #include "game\shuttle_engines_ru.dm"
+#include "game\jobs_ru.dm"
 // End includes

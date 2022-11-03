@@ -64,7 +64,7 @@
 					as additions to station layout."
 	*/
 	title = "Инженер-строитель"
-	title_blurb = "В обязанности инженера-строителя входит всё то же самое, что и у обычного инженера, однако своё свободное время стриотель проводит, как правило, \
+	title_blurb = "В обязанности инженера-строителя входит всё то же самое, что и у обычного инженера, однако своё свободное время строитель проводит, как правило, \
 					за созданием новых помещений или преобразованием существующих."
 	// End of Bastion of Endeavor Translation
 
@@ -116,7 +116,7 @@
 	title_blurb = "A Disposals Technician is an Atmospheric Technician still and can fulfill all the same duties, although specializes more in disposals delivery system's operations and configurations."
 	*/
 	title = "Ремонтник системы сортировки"
-	title_blurb = "Ремонтник системы сортировки выполняет те же обязанности, что и атмосферный техник, но особенно специализируется в наладке системы сортировки и доставки."
+	title_blurb = "Ремонтник системы сортировки выполняет те же обязанности, что и атмосферный техник, но в основном специализируется в наладке системы сортировки и доставки."
 	// End of Bastion of Endeavor Translation
 
 /datum/job/atmos/get_request_reasons()
