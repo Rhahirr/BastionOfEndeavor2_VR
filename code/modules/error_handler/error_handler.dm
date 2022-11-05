@@ -8,7 +8,11 @@ GLOBAL_VAR_INIT(total_runtimes_skipped, 0)
 #ifdef DEBUG
 /world/Error(var/exception/e, var/datum/e_src)
 	if(!istype(e)) // Something threw an unusual exception
+		/* Bastion of Endeavor Translation
 		log_error("\[[time_stamp()]] Uncaught exception: [e]")
+		*/
+		log_error("\[[time_stamp()]] непойманное исключение: [e]")
+		// End of Bastion of Endeavor Translation
 		return ..()
 	if(!GLOB.error_last_seen) // A runtime is occurring too early in start-up initialization
 		return ..()
@@ -39,7 +43,11 @@ GLOBAL_VAR_INIT(total_runtimes_skipped, 0)
 			var/skipcount = abs(GLOB.error_cooldown[erroruid]) - 1
 			GLOB.error_cooldown[erroruid] = 0
 			if(skipcount > 0)
+				/* Bastion of Endeavor Translation
 				log_error("\[[time_stamp()]] Skipped [skipcount] runtimes in [e.file],[e.line].")
+				*/
+				log_error("\[[time_stamp()]] [count_ru(skipcount, "Пропущен;;о;о", TRUE)] [count_ru(skipcount, "рантайм;;а;ов")] в [e.file],[e.line].")
+				// End of Bastion of Endeavor Translation
 				error_cache.logError(e, skipCount = skipcount)
 	GLOB.error_last_seen[erroruid] = world.time
 	GLOB.error_cooldown[erroruid] = cooldown
@@ -61,17 +69,37 @@ GLOBAL_VAR_INIT(total_runtimes_skipped, 0)
 			usrinfo += "  usr.loc: [locinfo]"
 	// The proceeding mess will almost definitely break if error messages are ever changed
 	// I apologize in advance
+	/* Bastion of Endeavor Unicode Edit
 	var/list/splitlines = splittext(e.desc, "\n")
+	*/
+	var/list/splitlines = splittext_char(e.desc, "\n")
+	// End of Bastion of Endeavor Unicode Edit
 	var/list/desclines = list()
 	if(splitlines.len > 2) // If there aren't at least three lines, there's no info
 		for(var/line in splitlines)
+			/* Bastion of Endeavor Unicode Edit
 			if(length(line) < 3)
+			*/
+			if(length_char(line) < 3)
+			// End of Bastion of Endeavor Unicode Edit
 				continue // Blank line, skip it
+			/* Bastion of Endeavor Unicode Edit
 			if(findtext(line, "source file:"))
+			*/
+			if(findtext_char(line, "файл:"))
+			// End of Bastion of Endeavor Unicode Edit
 				continue // Redundant, skip it
+			/* Bastion of Endeavor Unicode Edit
 			if(findtext(line, "usr.loc:"))
+			*/
+			if(findtext_char(line, "usr.loc:"))
+			// End of Bastion of Endeavor Unicode Edit
 				continue // Our usr.loc is better, skip it
+			/* Bastion of Endeavor Unicode Edit
 			if(findtext(line, "usr:"))
+			*/
+			if(findtext_char(line, "usr:"))
+			// End of Bastion of Endeavor Unicode Edit
 				if(usrinfo)
 					desclines.Add(usrinfo)
 					usrinfo = null
@@ -83,7 +111,11 @@ GLOBAL_VAR_INIT(total_runtimes_skipped, 0)
 					desclines.Add(srcinfo)
 					srcinfo = null
 					continue
+			/* Bastion of Endeavor Unicode Edit
 			if(copytext(line, 1, 3) != "  ")
+			*/
+			if(copytext_char(line, 1, 3) != "  ")
+			// End of Bastion of Endeavor Unicode Edit
 				desclines += ("  " + line) // Pad any unpadded lines, so they look pretty
 			else
 				desclines += line
@@ -92,10 +124,18 @@ GLOBAL_VAR_INIT(total_runtimes_skipped, 0)
 	if(usrinfo)
 		desclines.Add(usrinfo)
 	if(silencing)
+		/* Bastion of Endeavor Translation
 		desclines += "  (This error will now be silenced for [ERROR_SILENCE_TIME / 600] minutes)"
+		*/
+		desclines += "  (Эта ошибка будет заглушена на [count_ru((ERROR_SILENCE_TIME / 600), "минут;у;ы;")])"
+		// End of Bastion of Endeavor Translation
 
 	// Now to actually output the error info...
+	/* Bastion of Endeavor Translation
 	log_error("\[[time_stamp()]] Runtime in [e.file],[e.line]: [e]")
+	*/
+	log_error("\[[time_stamp()]] Рантайм в [e.file],[e.line]: [e]")
+	// End of Bastion of Endeavor Translation
 	for(var/line in desclines)
 		log_error(line)
 	if(error_cache)
