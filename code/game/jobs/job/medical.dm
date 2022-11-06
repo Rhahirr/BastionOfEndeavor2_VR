@@ -49,7 +49,7 @@
 						about the importance of Suit Sensors."
 	*/
 	job_description = "Главный врач отвечает за медицинский отдел и обладает всеми необходимыми навыками и знаниями; его цель - обеспечить \
-						с помощью его подопечных здоровье и целостность всего персонала. В первую очередь главный врач обязан отыскивать пациентов и переправлять их \
+						с помощью его подопечных здоровье и целостность всего персонала. В первую очередь главный врач обязан отыскивать пострадавших и направлять их \
 						в медицинский отдел на лечение. От него ожидается своевременное информирование персонала об угрозах здоровью и безопасности, \
 						а также о необходимости иметь на себе включённые датчики."
 	// End of Bastion of Endeavor Translation
@@ -88,9 +88,9 @@
 						familiar with basic first aid, and a number of accompanying medications, and can generally save, if not cure, a majority of the \
 						patients they encounter."
 	*/
-	job_description = "Врач - специалист общего профиля, обладающий широким спиктром навыков и познаний. \
+	job_description = "Врач - специалист общего профиля, обладающий широким спектром навыков и познаний. \
 						Он знаком с методами оказания первой помощи, а также составом и принципом работы многих лекарств. \
-						В его обязанности ходит спасение жизней и лечение пациентов."
+						В его обязанности входит спасение жизней и лечение пациентов."
 	// End of Bastion of Endeavor Translation
 	alt_titles = list(
 					/* Bastion of Endeavor Translation
@@ -141,7 +141,7 @@
 					called upon to revive deceased crew members."
 	*/
 	title = "Медсестра"
-	title_blurb = "Медсестра оказывается первую помощь пациентам  \
+	title_blurb = "Медсестра оказывает первую помощь пациентам  \
 					busy periods. They frequently watch the suit sensors console, to help manage the time of other Doctors. In rare occasions, a Nurse can be \
 					called upon to revive deceased crew members."
 	// End of Bastion of Endeavor Translation
