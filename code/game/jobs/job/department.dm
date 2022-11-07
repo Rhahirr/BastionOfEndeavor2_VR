@@ -57,11 +57,7 @@
 
 // Mostly for if someone wanted to rewrite manifest code to be map-agnostic.
 /datum/department/misc
-	/* Bastion of Endeavor Translation
 	name = "Miscellaneous"
-	*/
-	name = "Другое"
-	// End of Bastion of Endeavor Translation
 	short_name = "Misc"
 	color = "#666666"
 	sorting_order = 0
@@ -77,11 +73,7 @@
 // This one isn't very useful since no real centcom jobs exist yet.
 // Instead the jobs like ERT are hardcoded in.
 /datum/department/centcom
-	/* Bastion of Endeavor Translation
 	name = "Central Command"
-	*/
-	name = "Центральное Командование"
-	// End of Bastion of Endeavor Translation
 	short_name = "Centcom"
 	color = "#A52A2A"
 	sorting_order = 20 // Above Command.

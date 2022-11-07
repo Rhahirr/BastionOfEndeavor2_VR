@@ -10,39 +10,19 @@
 	minimal_access = list(access_medical, access_medical_equip, access_morgue, access_genetics, access_heads,
 			access_chemistry, access_virology, access_cmo, access_surgery, access_RC_announce,
 			access_keycard_auth, access_psychiatrist, access_eva, access_external_airlocks, access_maint_tunnels, access_gateway)
-	/* Bastion of Endeavor Translation
 	alt_titles = list("Chief Physician" = /datum/alt_title/chief_physician, "Medical Director" = /datum/alt_title/medical_director, "Healthcare Manager" = /datum/alt_title/healthcare_manager)
-	*/
-	alt_titles = list("Главный терапевт" = /datum/alt_title/chief_physician, "Директор медблока" = /datum/alt_title/medical_director, "Менеджер здравоохранения" = /datum/alt_title/healthcare_manager)
-	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/chief_physician
-	/* Bastion of Endeavor Translation
 	title = "Chief Physician"
-	*/
-	title = "Главный терапевт"
-	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/medical_director
-	/* Bastion of Endeavor Translation
 	title = "Medical Director"
-	*/
-	title = "Директор медблока"
-	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/healthcare_manager
-	/* Bastion of Endeavor Translation
 	title = "Healthcare Manager"
-	*/
-	title = "Менеджер здравоохранения"
-	// End of Bastion of Endeavor Translation
 
 /datum/job/cmo/get_request_reasons()
-	/* Bastion of Endeavor Translation
 	return list("Surgery pending", "Viral outbreak", "Training crew")
-	*/
-	return list("Хирургическая операция", "Вспышка инфекции", "Обучение персонала")
-	// End of Bastion of Endeavor Translation
 
 
 /datum/job/doctor

@@ -2,28 +2,16 @@
 //		Chief Medical Officer
 //////////////////////////////////
 /datum/job/cmo
-	/* Bastion of Endeavor Translation
 	title = "Chief Medical Officer"
-	*/
-	title = "Главный врач"
-	// End of Bastion of Endeavor Translation
 	flag = CMO
 	departments_managed = list(DEPARTMENT_MEDICAL)
 	departments = list(DEPARTMENT_MEDICAL, DEPARTMENT_COMMAND)
 	sorting_order = 2
 	department_flag = MEDSCI
-	/* Bastion of Endeavor Translation
 	faction = "Station"
-	*/
-	faction = "Станция"
-	// End of Bastion of Endeavor Translation
 	total_positions = 1
 	spawn_positions = 1
-	/* Bastion of Endeavor Translation
 	supervisors = "the Site Manager"
-	*/
-	supervisors = "Вы отвечаете перед Менеджером объекта."
-	// End of Bastion of Endeavor Translation
 	selection_color = "#026865"
 	req_admin_notify = 1
 	economic_modifier = 10
@@ -42,109 +30,58 @@
 	banned_job_species = list(SPECIES_TESHARI, SPECIES_DIONA, SPECIES_PROMETHEAN, SPECIES_ZADDAT, "digital")
 
 	outfit_type = /decl/hierarchy/outfit/job/medical/cmo
-	/* Bastion of Endeavor Translation
 	job_description = "The CMO manages the Medical department and is a position requiring experience and skill; their goal is to ensure that their \
 						staff keep the station's crew healthy and whole. They are primarily interested in making sure that patients are safely found and \
 						transported to Medical for treatment. They are expected to keep the crew informed about threats to their health and safety, and \
 						about the importance of Suit Sensors."
-	*/
-	job_description = "Главный врач отвечает за медицинский отдел и обладает всеми необходимыми навыками и знаниями; его цель - обеспечить \
-						с помощью его подопечных здоровье и целостность всего персонала. В первую очередь главный врач обязан отыскивать пострадавших и направлять их \
-						в медицинский отдел на лечение. От него ожидается своевременное информирование персонала об угрозах здоровью и безопасности, \
-						а также о необходимости иметь на себе включённые датчики."
-	// End of Bastion of Endeavor Translation
 
 //////////////////////////////////
 //		Medical Doctor
 //////////////////////////////////
 /datum/job/doctor
-	/* Bastion of Endeavor Translation
 	title = "Medical Doctor"
-	*/
-	title = "Врач"
-	// End of Bastion of Endeavor Translation
 	flag = DOCTOR
 	departments = list(DEPARTMENT_MEDICAL)
 	department_flag = MEDSCI
-	/* Bastion of Endeavor Translation
 	faction = "Station"
-	*/
-	faction = "Станция"
-	// End of Bastion of Endeavor Translation
 	total_positions = 5
 	spawn_positions = 3
-	/* Bastion of Endeavor Translation
 	supervisors = "the Chief Medical Officer"
-	*/
-	supervisors = "Вы отвечаете перед Главным врачом."
-	// End of Bastion of Endeavor Translation
 	selection_color = "#013D3B"
 	economic_modifier = 7
 	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics, access_eva)
 	minimal_access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_virology, access_eva)
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
-	/* Bastion of Endeavor Translation
 	job_description = "A Medical Doctor is a Jack-of-All-Trades Medical title, covering a variety of skill levels and minor specializations. They are likely \
 						familiar with basic first aid, and a number of accompanying medications, and can generally save, if not cure, a majority of the \
 						patients they encounter."
-	*/
-	job_description = "Врач - специалист общего профиля, обладающий широким спектром навыков и познаний. \
-						Он знаком с методами оказания первой помощи, а также составом и принципом работы многих лекарств. \
-						В его обязанности входит спасение жизней и лечение пациентов."
-	// End of Bastion of Endeavor Translation
 	alt_titles = list(
-					/* Bastion of Endeavor Translation
 					"Surgeon" = /datum/alt_title/surgeon,
 					"Emergency Physician" = /datum/alt_title/emergency_physician,
 					"Nurse" = /datum/alt_title/nurse,
 					"Virologist" = /datum/alt_title/virologist)
-					*/
-					"Хирург" = /datum/alt_title/surgeon,
-					"Врач неотложной помощи" = /datum/alt_title/emergency_physician,
-					"Медсестра" = /datum/alt_title/nurse,
-					"Вирусолог" = /datum/alt_title/virologist)
-					// End of Bastion of Endeavor Translation
 
 	min_age_by_species = list(SPECIES_PROMETHEAN = 3)
 
 //Medical Doctor Alt Titles
 /datum/alt_title/surgeon
-	/* Bastion of Endeavor Translation
 	title = "Surgeon"
 	title_blurb = "A Surgeon specializes in providing surgical aid to injured patients, up to and including amputation and limb reattachement. They are expected \
 					to know the ins and outs of anesthesia and surgery."
-	*/
-	title = "Хирург"
-	title_blurb = "Хирург специализируется в области хирургических операций, включая ампутации и присоединение конечностей. \
-					От него ожидаются широкие познания в области анатомии, анестезии и хирургических операций."
-	// End of Bastion of Endeavor Translation
 	title_outfit = /decl/hierarchy/outfit/job/medical/doctor/surgeon
 
 /datum/alt_title/emergency_physician
-	/* Bastion of Endeavor Translation
 	title = "Emergency Physician"
 	title_blurb = "An Emergency Physician is a Medical professional trained for stabilizing and treating severely injured and/or dying patients. \
 					They are generally the first response for any such individual brought to the Medbay, and can sometimes be expected to help their patients \
 					make a full recovery."
-	*/
-	title = "Врач неотложной помощи"
-	title_blurb = "Врач неотложной помощи обладает всеми необходимыми навыками для стабилизации пациентов в критическом состоянии и спасения их от гибели. \
-					Он помогает пациенту с момента его поступления в медицинский отдел вплоть до его полного восстановления."
-	// End of Bastion of Endeavor Translation
 	title_outfit = /decl/hierarchy/outfit/job/medical/doctor/emergency_physician
 
 /datum/alt_title/nurse
-	/* Bastion of Endeavor Translation
 	title = "Nurse"
 	title_blurb = "A Nurse acts as a general purpose Doctor's Aide, providing basic care to non-critical patients, and stabilizing critical patients during \
 					busy periods. They frequently watch the suit sensors console, to help manage the time of other Doctors. In rare occasions, a Nurse can be \
 					called upon to revive deceased crew members."
-	*/
-	title = "Медсестра"
-	title_blurb = "Медсестра оказывает первую помощь пациентам  \
-					busy periods. They frequently watch the suit sensors console, to help manage the time of other Doctors. In rare occasions, a Nurse can be \
-					called upon to revive deceased crew members."
-	// End of Bastion of Endeavor Translation
 	title_outfit = /decl/hierarchy/outfit/job/medical/doctor/nurse
 
 /datum/alt_title/virologist
