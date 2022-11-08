@@ -46,7 +46,7 @@
 	name = "Психиатр"
 
 /obj/effect/landmark/start/rd
-	name = "Директор исследований"
+	name = "Директор по исследованиям"
 
 /obj/effect/landmark/start/roboticist
 	name = "Робототехник"
@@ -64,7 +64,7 @@
 	name = "Квартирмейстер"
 
 /obj/effect/landmark/start/cargo
-	name = "Грузчик"
+	name = "Грузовой техник"
 
 /obj/effect/landmark/start/miner
 	name = "Шахтёр"

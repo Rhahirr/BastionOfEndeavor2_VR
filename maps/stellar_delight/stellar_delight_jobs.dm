@@ -9,6 +9,7 @@
 	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_eva, access_maint_tunnels, access_external_airlocks)
 	minimal_access = list(access_medical, access_medical_equip, access_morgue)
 
+/* Bastion of Endeavor Removal: I cannot in my good conscience justify localizing this. Sorry SD
 /datum/job/hop
 	alt_titles = list("Crew Resources Officer" = /datum/alt_title/cro, "Deputy Manager" = /datum/alt_title/deputy_manager, "Staff Manager" = /datum/alt_title/staff_manager,
 						"Facility Steward" = /datum/alt_title/facility_steward, "First Mate" = /datum/alt_title/first_mate)
@@ -28,6 +29,11 @@
 
 /datum/alt_title/master_at_arms
 	title = "Master-at-Arms"
+*/ // End of Bastion of Endeavor Removal
 
 /datum/job/pilot/get_request_reasons()
+	/* Bastion of Endeavor Translation
 	return list("Moving Stellar Delight")
+	*/
+	return list("Перемещение Звёздного Чуда")
+	// End of Bastion of Endeavor Translation

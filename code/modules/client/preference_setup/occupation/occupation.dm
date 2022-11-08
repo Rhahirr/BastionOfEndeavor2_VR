@@ -281,25 +281,25 @@
 			/* Bastion of Endeavor Translation
 			. += "<u><a href='?src=\ref[src];job_alternative=1'>Get random job if preferences unavailable</a></u>"
 			*/
-			. += "<u><a href='?src=\ref[src];job_alternative=1'>получить случайную</a></u>"
+			. += "<u><a href='?src=\ref[src];job_alternative=1'>получить случайную.</a></u>"
 			// End of Bastion of Endeavor Translation
 		if(BE_ASSISTANT)
 			/* Bastion of Endeavor Translation
 			. += "<u><a href='?src=\ref[src];job_alternative=1'>Be assistant if preference unavailable</a></u>"
 			*/
-			. += "<u><a href='?src=\ref[src];job_alternative=1'>стать ассистентом</a></u>"
+			. += "<u><a href='?src=\ref[src];job_alternative=1'>стать ассистентом.</a></u>"
 			// End of Bastion of Endeavor Translation
 		if(RETURN_TO_LOBBY)
 			/* Bastion of Endeavor Translation
 			. += "<u><a href='?src=\ref[src];job_alternative=1'>Return to lobby if preference unavailable</a></u>"
 			*/
-			. += "<u><a href='?src=\ref[src];job_alternative=1'>вернуться обратно в лобби</a></u>"
+			. += "<u><a href='?src=\ref[src];job_alternative=1'>вернуться обратно в лобби.</a></u>"
 			// End of Bastion of Endeavor Translation
 
 	/* Bastion of Endeavor Translation
 	. += "<a href='?src=\ref[src];reset_jobs=1'>\[Reset\]</a></center>"
 	*/
-	. += ". <a href='?src=\ref[src];reset_jobs=1'>\[Сбросить\]</a></center>"
+	. += "<a href='?src=\ref[src];reset_jobs=1'>\[Сбросить\]</a></center>"
 	// End of Bastion of Endeavor Translation
 	. += "</tt>"
 	. = jointext(.,null)

@@ -692,7 +692,7 @@ var/global/datum/controller/occupations/job_master
 			/* Bastion of Endeavor Translation
 			captain_announcement.Announce("All hands, [alt_title ? alt_title : "Site Manager"] [H.real_name] on deck!", new_sound = announce_sound, zlevel = H.z)
 			*/
-			captain_announcement.Announce("Внимание, на станции [alt_title ? alt_title : "Менеджер объекта"] [H.real_name]!", new_sound = announce_sound, zlevel = H.z)
+			captain_announcement.Announce("Внимание, на станции [alt_title ? lowertext(alt_title) : "менеджер объекта"] [H.real_name]!", new_sound = announce_sound, zlevel = H.z)
 			// End of Bastion of Endeavor Translation
 
 		//Deferred item spawning.

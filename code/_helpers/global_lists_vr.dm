@@ -660,8 +660,8 @@ var/global/list/remainless_species = list(SPECIES_PROMETHEAN,
 				SPECIES_GOLEM,					//Some special species that may or may not be ever used in event too,
 				SPECIES_SHADEKIN)			//Shadefluffers just poof away
 
-// Bastion of Endeavor TODO: Will need to get to these after jobs are localized.
 /var/global/list/alt_titles_with_icons = list(
+				/* Bastion of Endeavor Translation
 				"Virologist",
 				"Apprentice Engineer",
 				"Medical Intern",
@@ -672,6 +672,18 @@ var/global/list/remainless_species = list(SPECIES_PROMETHEAN,
 				"Server",
 				"Electrician",
 				"Barista")
+				*/
+				"Вирусолог",
+				"Помощник инженера",
+				"Врач-интерн",
+				"Интерн-лаборант",
+				"Кадет службы безопасности",
+				"Младший грузчик",
+				"Младший разведчик",
+				"Официант",
+				"Электрик",
+				"Бариста")
+				// End of Bastion of Endeavor Translation
 
 /var/global/list/existing_solargrubs = list()
 

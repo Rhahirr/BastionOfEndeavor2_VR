@@ -79,14 +79,14 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define NETWORK_TALON_SHIP "TalonShip" //VOREStation Add
 */
 #define NETWORK_CRESCENT "Космопорт"
-#define NETWORK_CARGO "Отдел снабжения"
+#define NETWORK_CARGO "Грузовой отдел"
 #define NETWORK_CIRCUITS "Схемы"
 #define NETWORK_CIVILIAN "Гражданский персонал"
 #define NETWORK_COMMAND "Командование"
 #define NETWORK_ENGINE "Двигатель"
 #define NETWORK_ENGINEERING "Инженерный отдел"
 #define NETWORK_ENGINEERING_OUTPOST "Инженерный аванпост"
-#define NETWORK_ERT "ГЭР"
+#define NETWORK_ERT "ОБР"
 #define NETWORK_DEFAULT "Станция"
 #define NETWORK_MEDICAL "Медицинский отдел"
 #define NETWORK_MERCENARY "Наёмники"

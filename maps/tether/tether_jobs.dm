@@ -9,16 +9,29 @@
 	visible = FALSE
 
 /datum/job/talon_captain
+	/* Bastion of Endeavor Translation
 	title = "Talon Captain"
+	*/
+	title = "Капитан Когтя"
+	// End of Bastion of Endeavor Translation
 	flag = TALCAP
 	department_flag = TALON
 	departments_managed = list(DEPARTMENT_TALON)
+	/* Bastion of Endeavor Translation
 	job_description = "The captain's job is to generate profit through trade or other means such as salvage or even privateering."
 	supervisors = "yourself"
+	*/
+	job_description = "Работа капитана - получать выгоду через торговлю или иные методы, например сбор металлолома или даже пиратство."
+	supervisors = "Вы работаете сами на себя."
+	// End of Bastion of Endeavor Translation
 	outfit_type = /decl/hierarchy/outfit/job/talon_captain
 
 	offmap_spawn = TRUE
+	/* Bastion of Endeavor Translation
 	faction = "Station" //Required for SSjob to allow people to join as it
+	*/
+	faction = "Станция" //Required for SSjob to allow people to join as it
+	// End of Bastion of Endeavor Translation
 	departments = list(DEPARTMENT_TALON)
 	total_positions = 1
 	spawn_positions = 1
@@ -31,21 +44,42 @@
 	dept_time_required = 60
 	access = list(access_talon)
 	minimal_access = list(access_talon)
+	/* Bastion of Endeavor Translation
 	alt_titles = list("Talon Commander" = /datum/alt_title/talon_commander)
+	*/
+	alt_titles = list("Командир Когтя" = /datum/alt_title/talon_commander)
+	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/talon_commander
+	/* Bastion of Endeavor Translation
 	title = "Talon Commander"
+	*/
+	title = "Командир Когтя"
+	// End of Bastion of Endeavor Translation
 
 /datum/job/talon_doctor
+	/* Bastion of Endeavor Translation
 	title = "Talon Doctor"
+	*/
+	title = "Врач Когтя"
+	// End of Bastion of Endeavor Translation
 	flag = TALDOC
 	department_flag = TALON
+	/* Bastion of Endeavor Translation
 	job_description = "The doctor's job is to make sure the crew of the ITV Talon remain in good health and to monitor them when away from the ship."
 	supervisors = "the ITV Talon's captain"
+	*/
+	job_description = "Работа врача заключается в поддержании здоровья членов экипажа НТС Коготь и мониторингом их состояния вне корабля."
+	supervisors = "Вы отвечаете перед капитаном НТС Коготь."
+	// End of Bastion of Endeavor Translation
 	outfit_type = /decl/hierarchy/outfit/job/talon_doctor
 
 	offmap_spawn = TRUE
+	/* Bastion of Endeavor Translation
 	faction = "Station" //Required for SSjob to allow people to join as it
+	*/
+	faction = "Станция"
+	// End of Bastion of Endeavor Translation
 	departments = list(DEPARTMENT_TALON)
 	total_positions = 1
 	spawn_positions = 1
@@ -57,22 +91,43 @@
 	timeoff_factor = 1
 	access = list(access_talon)
 	minimal_access = list(access_talon)
+	/* Bastion of Endeavor Translation
 	alt_titles = list("Talon Medic" = /datum/alt_title/talon_medic)
+	*/
+	alt_titles = list("Медик Когтя" = /datum/alt_title/talon_medic)
+	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/talon_medic
+	/* Bastion of Endeavor Translation
 	title = "Talon Medic"
+	*/
+	title = "Медик  Когтя"
+	// End of Bastion of Endeavor Translation
 
 
 /datum/job/talon_engineer
+	/* Bastion of Endeavor Translation
 	title = "Talon Engineer"
+	*/
+	title = "Инженер Когтя"
+	// End of Bastion of Endeavor Translation
 	flag = TALENG
 	department_flag = TALON
+	/* Bastion of Endeavor Translation
 	job_description = "The engineer's job is to ensure the ITV Talon remains in tip-top shape and to repair any damage as well as manage the shields."
 	supervisors = "the ITV Talon's captain"
+	*/
+	job_description = "Работа инженера заключается в поддержании целостности и сохранности НТС Коготь, ремонте всяческих повреждений и управлении щитами."
+	supervisors = "Вы отвечаете перед капитаном НТС Коготь."
+	// End of Bastion of Endeavor Translation
 	outfit_type = /decl/hierarchy/outfit/job/talon_engineer
 
 	offmap_spawn = TRUE
+	/* Bastion of Endeavor Translation
 	faction = "Station" //Required for SSjob to allow people to join as it
+	*/
+	faction = "Станция" //Required for SSjob to allow people to join as it
+	// End of Bastion of Endeavor Translation
 	departments = list(DEPARTMENT_TALON)
 	total_positions = 1
 	spawn_positions = 1
@@ -84,22 +139,43 @@
 	timeoff_factor = 1
 	access = list(access_talon)
 	minimal_access = list(access_talon)
+	/* Bastion of Endeavor Translation
 	alt_titles = list("Talon Technician" = /datum/alt_title/talon_tech)
+	*/
+	alt_titles = list("Техник Когтя" = /datum/alt_title/talon_tech)
+	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/talon_tech
+	/* Bastion of Endeavor Translation
 	title = "Talon Technician"
+	*/
+	title = "Техник Когтя"
+	// End of Bastion of Endeavor Translation
 
 
 /datum/job/talon_pilot
+	/* Bastion of Endeavor Translation
 	title = "Talon Pilot"
+	*/
+	title = "Пилот Когтя"
+	// End of Bastion of Endeavor Translation
 	flag = TALPIL
 	department_flag = TALON
+	/* Bastion of Endeavor Translation
 	job_description = "The pilot's job is to fly the ITV Talon in the most efficient and profitable way possible."
 	supervisors = "the ITV Talon's captain"
+	*/
+	job_description = "Работа пилота заключается в управлении НТС Коготь с максимальной эффективностью и выгодой."
+	supervisors = "Вы отвечаете перед капитаном НТС Коготь."
+	// End of Bastion of Endeavor Translation
 	outfit_type = /decl/hierarchy/outfit/job/talon_pilot
 
 	offmap_spawn = TRUE
+	/* Bastion of Endeavor Translation
 	faction = "Station" //Required for SSjob to allow people to join as it
+	*/
+	faction = "Станция"
+	// End of Bastion of Endeavor Translation
 	departments = list(DEPARTMENT_TALON)
 	total_positions = 1
 	spawn_positions = 1
@@ -111,22 +187,43 @@
 	timeoff_factor = 1
 	access = list(access_talon)
 	minimal_access = list(access_talon)
+	/* Bastion of Endeavor Translation
 	alt_titles = list("Talon Helmsman" = /datum/alt_title/talon_helmsman)
+	*/
+	alt_titles = list("Штурман Когтя" = /datum/alt_title/talon_helmsman)
+	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/talon_helmsman
+	/* Bastion of Endeavor Translation
 	title = "Talon Helmsman"
+	*/
+	title = "Штурман Когтя"
+	// End of Bastion of Endeavor Translation
 
 
 /datum/job/talon_guard
+	/* Bastion of Endeavor Translation
 	title = "Talon Guard"
+	*/
+	title = "Охранник Когтя"
+	// End of Bastion of Endeavor Translation
 	flag = TALSEC
 	department_flag = TALON
+	/* Bastion of Endeavor Translation
 	job_description = "The guard's job is to keep the crew of the ITV Talon safe and ensure the captain's wishes are carried out."
 	supervisors = "the ITV Talon's captain"
+	*/
+	job_description = "Работа охранника заключается в обеспечении безопасности членов экипажа НТС Коготь и выполнении приказов капитана."
+	supervisors = "the ITV Talon's captain"
+	// End of Bastion of Endeavor Translation
 	outfit_type = /decl/hierarchy/outfit/job/talon_security
 
 	offmap_spawn = TRUE
+	/* Bastion of Endeavor Translation
 	faction = "Station" //Required for SSjob to allow people to join as it
+	*/
+	faction = "Станция"
+	// End of Bastion of Endeavor Translation
 	departments = list(DEPARTMENT_TALON)
 	total_positions = 1
 	spawn_positions = 1
@@ -138,21 +235,42 @@
 	timeoff_factor = 1
 	access = list(access_talon)
 	minimal_access = list(access_talon)
+	/* Bastion of Endeavor Translation
 	alt_titles = list("Talon Security" = /datum/alt_title/talon_security)
+	*/
+	alt_titles = list("Офицер Когтя" = /datum/alt_title/talon_security)
+	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/talon_security
+	/* Bastion of Endeavor Translation
 	title = "Talon Security"
+	*/
+	title = "Офицер Когтя"
+	// End of Bastion of Endeavor Translation
 
 /datum/job/talon_miner
+	/* Bastion of Endeavor Translation
 	title = "Talon Miner"
+	*/
+	title = "Шахтёр Когтя"
+	// End of Bastion of Endeavor Translation
 	flag = TALMIN
 	department_flag = TALON
+	/* Bastion of Endeavor Translation
 	job_description = "The miner's job is to excavate ores and refine them for the Talon's use, as well as for trading."
 	supervisors = "the ITV Talon's captain"
+	*/
+	job_description = "Работа шахтёра заключается в добыче и обработке руд для нужд корабля, а также торговли."
+	supervisors = "Вы отвечаете перед капитаном НТС Коготь."
+	// End of Bastion of Endeavor Translation
 	outfit_type = /decl/hierarchy/outfit/job/talon_miner
 
 	offmap_spawn = TRUE
+	/* Bastion of Endeavor Translation
 	faction = "Station" //Required for SSjob to allow people to join as it
+	*/
+	faction = "Станция"
+	// End of Bastion of Endeavor Translation
 	departments = list(DEPARTMENT_TALON)
 	total_positions = 1
 	spawn_positions = 1
@@ -164,10 +282,18 @@
 	timeoff_factor = 1
 	access = list(access_talon)
 	minimal_access = list(access_talon)
+	/* Bastion of Endeavor Translation
 	alt_titles = list("Talon Excavator" = /datum/alt_title/talon_excavator)
+	*/
+	alt_titles = list("Землекоп Когтя" = /datum/alt_title/talon_excavator)
+	// End of Bastion of Endeavor Translation
 
 /datum/alt_title/talon_excavator
+	/* Bastion of Endeavor Translation
 	title = "Talon Excavator"
+	*/
+	title = "Землекоп Когтя"
+	// End of Bastion of Endeavor Translation
 
 //////////////////////TALON OUTFITS//////////////////////
 
