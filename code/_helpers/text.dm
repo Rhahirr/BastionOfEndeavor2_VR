@@ -78,7 +78,11 @@
 
 	if(extra)
 		var/temp_input = replace_characters(input, list("\n"="  ","\t"=" "))//one character is replaced by two
+		/* Bastion of Endeavor Unicode Edit: Apparently these don't work on upstream atm so this might get changed later, oh well
 		if(length(input) < (length(temp_input) - 6))//6 is the number of linebreaks allowed per message
+		*/
+		if(length_char(input) < (length_char(temp_input) - 6))//6 is the number of linebreaks allowed per message
+		// End of Bastion of Endeavor Unicode Edit
 			input = replace_characters(temp_input,list("  "=" "))//replace again, this time the double spaces with single ones
 
 	if(encode)
