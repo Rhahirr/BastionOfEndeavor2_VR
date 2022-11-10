@@ -129,7 +129,7 @@ var/const/TALON_FREQ = 1363 //VOREStation Add
 var/const/CSN_FREQ = 1365 //VOREStation Add
 
 var/list/radiochannels = list(
-	/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: I'd prefer to see these in real use before I commit to these names, might want to shorten them later
+	/* Bastion of Endeavor Translation: Shortening the names to take less space, russian text is long is enough as it is
 	"Common"		= PUB_FREQ,
 	"Science"		= SCI_FREQ,
 	"Command"		= COMM_FREQ,
@@ -151,23 +151,23 @@ var/list/radiochannels = list(
 	"Casino" 		= CSN_FREQ,
 	*/
 	"Общий"						= PUB_FREQ,
-	"Научный отдел"				= SCI_FREQ, 	// Науч. отдел?
+	"Научный"					= SCI_FREQ, 
 	"Командование"				= COMM_FREQ, 
-	"Медицинский отдел"			= MED_FREQ, 	// Мед. отдел?
-	"Инженерный отдел"			= ENG_FREQ, 	// Инж. отдел?
-	"Служба безопасности" 		= SEC_FREQ,		// СБ?
-	"ГЭР" 						= ERT_FREQ,
+	"Медицинский"				= MED_FREQ,
+	"Инженерный"				= ENG_FREQ,
+	"СБ" 						= SEC_FREQ,
+	"ОБР" 						= ERT_FREQ,
 	"Спецотряд" 				= DTH_FREQ,
 	"Наёмники" 					= SYND_FREQ,
 	"Налётчики"					= RAID_FREQ,
-	"Отдел снабжения" 			= SUP_FREQ, 	// Снабжение?
-	"Обслуживание" 				= SRV_FREQ,		// Сервис?
-	"Экспедиционный отдел"		= EXP_FREQ,		// Эксп. отдел?
-	"Канал ИИ"					= AI_FREQ,		// ИИ?
+	"Грузовой" 					= SUP_FREQ,
+	"Сервис" 					= SRV_FREQ,
+	"Экспедиционный"			= EXP_FREQ,
+	"Канал ИИ"					= AI_FREQ,
 	"Развлечения" 				= ENT_FREQ,
-	"Медицинский отдел (В)"		= MED_I_FREQ,	// Мед. отдел (В)?
-	"Служба безопасности (В)"	= SEC_I_FREQ,	// СБ (В)?
-	"НТС Коготь"				= TALON_FREQ,	// Коготь?
+	"Медицинский (В)"			= MED_I_FREQ,
+	"СБ (В)"					= SEC_I_FREQ,
+	"Коготь"					= TALON_FREQ,
 	"Казино" 					= CSN_FREQ,
 	// End of Bastion of Endeavor Translation
 )

@@ -22,7 +22,11 @@ SUBSYSTEM_DEF(job)
 		setup_occupations()
 	return ..()
 
+/* Bastion of Endeavor Translation
 /datum/controller/subsystem/job/proc/setup_occupations(faction = "Station")
+*/
+/datum/controller/subsystem/job/proc/setup_occupations(faction = "Станция")
+// End of Bastion of Endeavor Translation
 	occupations = list()
 	var/list/all_jobs = subtypesof(/datum/job)
 	if(!all_jobs.len)
