@@ -597,7 +597,7 @@ Recharging stations are available in robotics, the dormitory bathrooms, and the 
 office by your AI master or any qualified human may resolve this matter. Robotics may provide further assistance if necessary."
 	*/
 	name = "Отключение"
-	desc = "Юнит был удалённо отключён. Эту проблему можно устранить при помощи Робототехнической Панели Управления в кабинете Директора исследований \
+	desc = "Юнит был удалённо отключён. Эту проблему можно устранить при помощи Робототехнической Панели Управления в кабинете директора по исследованиям \
 и квалифицированного работника или ИИ. При необходимости оказать помощь может робототехник."
 	// End of Bastion of Endeavor Translation
 	icon_state = "locked"

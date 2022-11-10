@@ -96,6 +96,7 @@ var/global/list/self_cases_list_ru = list(
 	else return "[cap_ru(user, case_user)] [verb_ru(user, use_verb)]"
 
 // An alias for verb_ru + case_ru; despite the naming, verb_ru is good for adjectives/pronouns too
+// Logically concat_ru is incompatible with self_check in cases_ru and is therefore omitted in this proc to avoid runtiming
 /proc/concat_ru(var/word, atom/object, var/case = NCASE, var/capital = FALSE, var/secondary=null, var/force_mode="normal")
-	if(capital) return "[capitalize(verb_ru(object, word))] [case_ru(object, case, secondary, force_mode)]"
-	else return "[verb_ru(object, word)] [case_ru(object, case, secondary, force_mode)]"
+	if(capital) return "[capitalize(verb_ru(object, word))] [case_ru(object, null, case, secondary, force_mode)]"
+	else return "[verb_ru(object, word)] [case_ru(object, case, null, secondary, force_mode)]"

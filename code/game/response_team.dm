@@ -13,9 +13,9 @@ var/silent_ert = 0
 	set category = "Special Verbs"
 	set desc = "Send an emergency response team to the station"
 	*/
-	set name = "Отправить ГЭР"
+	set name = "Отправить ОБР"
 	set category = "Особые глаголы"
-	set desc = "Отправить на станцию группу экстренного реагирования."
+	set desc = "Отправить на станцию отряд быстрого реагирования."
 	// End of Bastion of Endeavor Translation
 
 	if(!holder)
@@ -43,19 +43,19 @@ var/silent_ert = 0
 		/* Bastion of Endeavor Translation
 		to_chat(usr, "<span class='danger'>[using_map.boss_name] has already dispatched an emergency response team!</span>")
 		*/
-		to_chat(usr, "<span class='danger'>Группа экстренного реагирования уже отправлена!</span>")
+		to_chat(usr, "<span class='danger'>Отряд быстрого реагирования уже отправлен!</span>")
 		// End of Bastion of Endeavor Translation
 		return
 	/* Bastion of Endeavor Translation
 	if(tgui_alert(usr, "Do you want to dispatch an Emergency Response Team?","ERT",list("Yes","No")) != "Yes")
 	*/
-	if(tgui_alert(usr, "Вы действительно хотите отправить Группу экстренного реагирования?","ГЭР",list("Да","Нет")) != "Да")
+	if(tgui_alert(usr, "Вы действительно хотите отправить отряд быстрого реагирования?","ОБР",list("Да","Нет")) != "Да")
 	// End of Bastion of Endeavor Translation
 		return
 	/* Bastion of Endeavor Translation
 	if(tgui_alert(usr, "Do you want this Response Team to be announced?","ERT",list("Yes","No")) != "Yes")
 	*/
-	if(tgui_alert(usr, "Объявить о прибытии ГЭР?","ГЭР",list("Да","Нет")) != "Да")
+	if(tgui_alert(usr, "Объявить о прибытии ОБР?","ОБР",list("Да","Нет")) != "Да")
 	// End of Bastion of Endeavor Translation
 		silent_ert = 1
 	if(get_security_level() != "red") // Allow admins to reconsider if the alert level isn't Red
@@ -63,7 +63,7 @@ var/silent_ert = 0
 		switch(tgui_alert(usr, "The station is not in red alert. Do you still want to dispatch a response team?","ERT",list("Yes","No")))
 			if("No")
 		*/
-		switch(tgui_alert(usr, "На станции не красная тревога. Вы уверены в своём решении?","ГЭР",list("Да","Нет")))
+		switch(tgui_alert(usr, "На станции не красная тревога. Вы уверены в своём решении?","ОБР",list("Да","Нет")))
 			if("Нет")
 		// End of Bastion of Endeavor Translation
 				return
@@ -80,9 +80,9 @@ var/silent_ert = 0
 	admin_chat_message(message = "[key_name(usr)] is dispatching an Emergency Response Team", color = "#CC2222") //VOREStation Add
 	log_admin("[key_name(usr)] used Dispatch Response Team.")
 	*/
-	message_admins("Игрок [key_name_admin(usr)] вызвал Группу Экстренного Реагирования.", 1)
-	admin_chat_message(message = "Игрок [key_name(usr)] вызвал Группу Экстренного Реагирования.", color = "#CC2222") //VOREStation Add
-	log_admin("Игрок [key_name(usr)] вызвал Группу Экстренного Реагирования.")
+	message_admins("Игрок [key_name_admin(usr)] вызвал отряд быстрого реагирования.", 1)
+	admin_chat_message(message = "Игрок [key_name(usr)] вызвал отряд быстрого реагирования.", color = "#CC2222") //VOREStation Add
+	log_admin("Игрок [key_name(usr)] вызвал отряд быстрого реагирования.")
 	// End of Bastion of Endeavor Translation
 	trigger_armed_response_team(1)
 
@@ -92,7 +92,7 @@ var/silent_ert = 0
 	set name = "Join Response Team"
 	set category = "IC"
 	*/
-	set name = "Присоединиться к ГЭР"
+	set name = "Присоединиться к ОБР"
 	set category = "IC"
 	// End of Bastion of Endeavor Translation
 
@@ -100,7 +100,7 @@ var/silent_ert = 0
 		/* Bastion of Endeavor Translation
 		to_chat(usr, "<span class='warning'>You cannot join the response team at this time.</span>")
 		*/
-		to_chat(usr, "<span class='warning'>Вы не можете сейчас присоединиться к ГЭР.</span>")
+		to_chat(usr, "<span class='warning'>Вы не можете сейчас присоединиться к ОБР.</span>")
 		// End of Bastion of Endeavor Translation
 		return
 
@@ -109,7 +109,7 @@ var/silent_ert = 0
 			/* Bastion of Endeavor Translation
 			to_chat(usr, "No emergency response team is currently being sent.")
 			*/
-			to_chat(usr, "На станцию не была отправлена группа экстренного реагирования.")
+			to_chat(usr, "На станцию не был отправлен отряд быстрого реагирования.")
 			// End of Bastion of Endeavor Translation
 			return
 		/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: Might come back to this after admin stuff is localized or something I'm not sure
@@ -117,14 +117,14 @@ var/silent_ert = 0
 			to_chat(usr, "<span class='danger'>You are jobbanned from the emergency reponse team!</span>")
 		*/
 		if(jobban_isbanned(usr, "Syndicate") || jobban_isbanned(usr, "Emergency Response Team") || jobban_isbanned(usr, "Security Officer"))
-			to_chat(usr, "<span class='danger'>Вам запрещено состоять в группе экстренного реагирования!</span>")
+			to_chat(usr, "<span class='danger'>Вам запрещено состоять в отряде быстрого реагирования!</span>")
 		// End of Bastion of Endeavor Translation
 			return
 		if(ert.current_antagonists.len >= ert.hard_cap)
 			/* Bastion of Endeavor Translation
 			to_chat(usr, "The emergency response team is already full!")
 			*/
-			to_chat(usr, "Группа экстренного реагирования уже заполнена!")
+			to_chat(usr, "Отряд быстрого реагирования уже заполнена!")
 			// End of Bastion of Endeavor Translation
 			return
 		ert.create_default(usr)
@@ -198,7 +198,7 @@ var/silent_ert = 0
 		/* Bastion of Endeavor Translation
 		command_announcement.Announce("It would appear that an emergency response team was requested for [station_name()]. Unfortunately, we were unable to send one at this time.", "[using_map.boss_name]")
 		*/
-		command_announcement.Announce("Мы получили запрос на отправку группы экстренного реагирования на объект [station_name_ru(NCASE)]. К сожалению, на данный момент мы не можем его выполнить.", "[station_name_ru(NCASE)]")
+		command_announcement.Announce("Мы получили запрос на отправку отряда быстрого реагирования на [station_name_ru(ACASE)]. К сожалению, на данный момент мы не можем его выполнить.", "[command_name_ru(NCASE)]")
 		// End of Bastion of Endeavor Translation
 		can_call_ert = 0 // Only one call per round, ladies.
 		return
@@ -206,7 +206,7 @@ var/silent_ert = 0
 		/* Bastion of Endeavor Translation
 		command_announcement.Announce("It would appear that an emergency response team was requested for [station_name()]. We will prepare and send one as soon as possible.", "[using_map.boss_name]")
 		*/
-		command_announcement.Announce("Мы получили запрос на отправку группы экстренного реагирования на объект [station_name_ru(NCASE)]. Группа будет немедленно отправлена.", "[station_name_ru(NCASE)]")
+		command_announcement.Announce("Мы получили запрос на отправку отряда быстрого реагирования на [station_name_ru(ACASE)]. Отряд будет немедленно отправлен.", "[command_name_ru(NCASE)]")
 		// End of Bastion of Endeavor Translation
 
 	can_call_ert = 0 // Only one call per round, gentleman.

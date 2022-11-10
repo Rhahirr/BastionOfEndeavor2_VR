@@ -212,10 +212,10 @@ var/global/datum/controller/subsystem/ticker/ticker
 		//Cleanup some stuff
 		for(var/obj/effect/landmark/start/S in landmarks_list)
 			//Deleting Startpoints but we need the ai point to AI-ize people later
-			/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: I'm hesitant about translating this one, because it's possible we'll have translated names for landmarks without changing them. I'll just leave it as it is for now.
+			/* Bastion of Endeavor Translation
 			if (S.name != "AI")
 			*/
-			if (S.name != "AI")
+			if (S.name != "ИИ")
 			// End of Bastion of Endeavor Translation
 				qdel(S)
 		/* Bastion of Endeavor Translation

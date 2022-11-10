@@ -81,7 +81,7 @@
 #define PTO_ENGINEERING 	"Инженерный отдел"
 #define PTO_SCIENCE			"Научный отдел"
 #define PTO_EXPLORATION 	"Экспедиционный отдел"
-#define PTO_CARGO			"Отдел снабжения"
+#define PTO_CARGO			"Грузовой отдел"
 #define PTO_CIVILIAN		"Гражданский персонал"
 #define PTO_CYBORG			"Киборг"
 #define PTO_TALON			"Подрядчик Когтя"

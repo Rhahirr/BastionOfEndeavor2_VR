@@ -308,13 +308,13 @@ SUBSYSTEM_DEF(transcore)
 		// Bastion of Endeavor TODO: Also we might potentially just give the transcore mob case persistence in the future.
 		global_announcer.autosay("[MR.mindname] is past-due for a mind backup, but lacks a corresponding body record.", "TransCore Oversight", "Medical")
 		*/
-		global_announcer.autosay("Срок действия записи резервного копирования '[MR.mindname]' истёк, однако запись тела отсутствует.", "Мониторинг трансядра", "Медицинский отдел")
+		global_announcer.autosay("Срок действия записи резервного копирования '[MR.mindname]' истёк, однако запись тела отсутствует.", "Мониторинг трансядра", "Медицинский")
 		// End of Bastion of Endeavor Translation
 		return
 	/* Bastion of Endeavor Translation
 	global_announcer.autosay("[MR.mindname] is past-due for a mind backup.", "TransCore Oversight", BR.synthetic ? "Science" : "Medical")
 	*/
-	global_announcer.autosay("Срок действия записи резервного копирования '[MR.mindname]' истёк.", "Мониторинг трансядра", BR.synthetic ? "Научный отдел" : "Медицинский отдел")
+	global_announcer.autosay("Срок действия записи резервного копирования '[MR.mindname]' истёк.", "Мониторинг трансядра", BR.synthetic ? "Научный" : "Медицинский")
 	// End of Bastion of Endeavor Translation
 
 // Called from mind_record to add itself to the transcore.
@@ -369,7 +369,7 @@ SUBSYSTEM_DEF(transcore)
 	global_announcer.autosay("An emergency core dump has been initiated!", "TransCore Oversight", "Medical")
 	*/
 	global_announcer.autosay("Инициирован экстренный дамп трансядра!", "Мониторинг трансядра", "Командование")
-	global_announcer.autosay("Инициирован экстренный дамп трансядра!", "Мониторинг трансядра", "Медицинский отдел")
+	global_announcer.autosay("Инициирован экстренный дамп трансядра!", "Мониторинг трансядра", "Медицинский")
 	// End of Bastion of Endeavor Translation
 
 	disk.stored += backed_up
