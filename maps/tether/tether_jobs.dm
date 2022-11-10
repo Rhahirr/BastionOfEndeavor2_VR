@@ -101,7 +101,7 @@
 	/* Bastion of Endeavor Translation
 	title = "Talon Medic"
 	*/
-	title = "Медик  Когтя"
+	title = "Медик Когтя"
 	// End of Bastion of Endeavor Translation
 
 

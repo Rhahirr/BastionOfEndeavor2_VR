@@ -82,7 +82,7 @@ var/silent_ert = 0
 	*/
 	message_admins("Игрок [key_name_admin(usr)] вызвал отряд быстрого реагирования.", 1)
 	admin_chat_message(message = "Игрок [key_name(usr)] вызвал отряд быстрого реагирования.", color = "#CC2222") //VOREStation Add
-	log_admin("Игрок [key_name(usr)] вызвал Отряд Быстрого Реагирования.")
+	log_admin("Игрок [key_name(usr)] вызвал отряд быстрого реагирования.")
 	// End of Bastion of Endeavor Translation
 	trigger_armed_response_team(1)
 
@@ -206,7 +206,7 @@ var/silent_ert = 0
 		/* Bastion of Endeavor Translation
 		command_announcement.Announce("It would appear that an emergency response team was requested for [station_name()]. We will prepare and send one as soon as possible.", "[using_map.boss_name]")
 		*/
-		command_announcement.Announce("Мы получили запрос на отправку группы быстрого реагирования на [station_name_ru(ACASE)]. Группа будет немедленно отправлена.", "[command_name_ru(NCASE)]")
+		command_announcement.Announce("Мы получили запрос на отправку отряда быстрого реагирования на [station_name_ru(ACASE)]. Отряд будет немедленно отправлен.", "[command_name_ru(NCASE)]")
 		// End of Bastion of Endeavor Translation
 
 	can_call_ert = 0 // Only one call per round, gentleman.
