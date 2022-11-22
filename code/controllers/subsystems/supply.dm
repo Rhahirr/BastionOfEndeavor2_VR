@@ -206,7 +206,8 @@ SUBSYSTEM_DEF(supply)
 		var/obj/A = new SP.containertype(pickedloc)
 		A.name = "[SP.containername] [SO.comment ? "([SO.comment])":"" ]"
 		// Bastion of Endeavor Addition: Give the container itself some cases for grammatical polish, those are defined in supply pack datums
-		A.assigncases_ru(SP.cases_ru["containername"])
+		// Bastion of Endeavor TODO: I can't be bothered to test if this works after one of our 20231234534 case system refactors but come back to this when cargo is localized ig
+		A.cases_ru = deepCopyList(SP.cases_ru["containername"])
 		// End of Bastion of Endeavor Addition	
 
 		//supply manifest generation begin
