@@ -29,12 +29,9 @@
 	if(!pref.cases[PCASE]) pref.cases[PCASE] = pref.real_name
 
 /datum/category_item/player_setup_item/general/cases/copy_to_mob(var/mob/living/carbon/human/character)
-	character.cases_ru[NCASE]			= pref.cases[NCASE]
-	character.cases_ru[GCASE]			= pref.cases[GCASE]
-	character.cases_ru[DCASE]			= pref.cases[DCASE]
-	character.cases_ru[ACASE]			= pref.cases[ACASE]
-	character.cases_ru[ICASE]			= pref.cases[ICASE]
-	character.cases_ru[PCASE]			= pref.cases[PCASE]
+	// Bastion of Endeavor TODO: This will need some work after we get a proper case editor
+	character.cases_ru["basic"] = list(RUGENDER = character.gender, NCASE = pref.cases[NCASE], GCASE = pref.cases[GCASE], DCASE = pref.cases[DCASE], ACASE = pref.cases[ACASE], ICASE = pref.cases[ICASE], PCASE = pref.cases[PCASE])
+	character.cases_ru["real_name"] = list(RUGENDER = character.gender, NCASE = pref.cases[NCASE], GCASE = pref.cases[GCASE], DCASE = pref.cases[DCASE], ACASE = pref.cases[ACASE], ICASE = pref.cases[ICASE], PCASE = pref.cases[PCASE])
 
 /datum/category_item/player_setup_item/general/cases/content(var/mob/user)
 	. += "<a href='?src=\ref[src];cases=open'>Установить склонение имени</a><br/>"
