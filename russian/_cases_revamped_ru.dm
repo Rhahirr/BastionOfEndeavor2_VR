@@ -169,3 +169,19 @@ var/global/list/successful_cases_ru = list()
 		if(PLURAL_ICASE) return "Тв. п. мн. ч."
 		if(PLURAL_PCASE) return "Пр. п. мн. ч."
 	return
+
+// this lets as add words to case blueprints from either side
+/datum/proc/update_blueprint_ru(var/left, var/right, var/separator_left = " ", var/separator_right = " ", var/index = "basic", var/gender)
+	var/list/sliced_by_gender = splittext_char(case_blueprint_ru[index], "#")
+
+	var/gender_key
+	if(gender) gender_key = gender
+	else gender_key = sliced_by_gender[1]
+
+	var/index_key
+	if(index) index_key = index
+	else if(sliced_by_gender.len == 3) index_key = sliced_by_gender[3]
+
+	case_blueprint_ru[index] = "[gender_key]#[left][separator_left][sliced_by_gender[2]][separator_right][right][index_key]"
+	construct_cases_ru()
+	return
