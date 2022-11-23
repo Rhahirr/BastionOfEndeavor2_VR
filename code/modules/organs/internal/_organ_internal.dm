@@ -35,14 +35,24 @@
 
 /obj/item/organ/internal/robotize()
 	..()
+	/* Bastion of Endeavor Translation
 	name = "prosthetic [initial(name)]"
+	*/
+	name = "[verb_ru(src, "Механическ;ий;ая;ое;ие;")] [ncase_ru(src)]"
+	update_blueprint_ru(left = "механическ;adj3aX~")
+	// End of Bastion of Endeavor Translation
 	icon_state = "[initial(icon_state)]_prosthetic"
 	if(dead_icon)
 		dead_icon = "[initial(dead_icon)]_prosthetic"
 
 /obj/item/organ/internal/mechassist()
 	..()
+	/* Bastion of Endeavor Translation
 	name = "assisted [initial(name)]"
+	*/
+	name = "[verb_ru(src, "Полумеханическ;ий;ая;ое;ие;")] [ncase_ru(src)]"
+	update_blueprint_ru(left = "полумеханическ;adj3aX~")
+	// End of Bastion of Endeavor Translation
 	icon_state = "[initial(icon_state)]_assisted"
 	if(dead_icon)
 		dead_icon = "[initial(dead_icon)]_assisted"

@@ -39,7 +39,12 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	return can_assist
 
 /obj/item/organ/internal/brain/proc/implant_assist(var/targ_icon_state = null)
+	/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: We have no realname cases just yet so come back to fix this later
 	name = "[owner.real_name]'s assisted [initial(name)]"
+	*/
+	name = "[verb_ru(src, "Полумеханическ;ий;ая;ое;ие;")] [lowercase_ru(initial(name))] [gcase_ru(owner)]"
+	update_blueprint_ru(left = "полумеханическ;adj3aX~", right = "[gcase_ru(owner)]")
+	// End of Bastion of Endeavor Translation
 	if(targ_icon_state)
 		icon_state = targ_icon_state
 		if(dead_icon)
@@ -65,10 +70,18 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	//Bacterial meningitis (more of a spine thing but 'brain infection' isn't a common thing)
 	if (. >= 1)
 		if(prob(1))
+			/* Bastion of Endeavor Translation
 			owner.custom_pain("Your neck aches, and feels very stiff!",0)
+			*/
+			owner.custom_pain("Ваша шея болит и с трудом поворачивается!",0)
+			// End of Bastion of Endeavor Translation
 	if (. >= 2)
 		if(prob(1))
+			/* Bastion of Endeavor Translation
 			owner.custom_pain("Your feel very dizzy for a moment!",0)
+			*/
+			owner.custom_pain("У Вас на мгновение закружилась голова!",0)
+			// End of Bastion of Endeavor Translation
 			owner.Confuse(2)
 
 /obj/item/organ/internal/brain/proc/replace_self_with(replace_path)
@@ -99,6 +112,8 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 		brainmob = new(src)
 		brainmob.name = H.real_name
 		brainmob.real_name = H.real_name
+		// Bastion of Endeavor Add: Bastion of Endeavor TODO: This might get fucky so keep an eye on this. i will suffer immensely if this becomes an issue
+		
 
 		if(istype(H))
 			brainmob.dna = H.dna.Clone()
@@ -115,20 +130,37 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 
 	brainmob.languages = H.languages
 
+	/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: Again initial and real_name stuff is fucky so I'm not sure if this is ok
 	to_chat(brainmob, "<span class='notice'>You feel slightly disoriented. That's normal when you're just \a [initial(src.name)].</span>")
+	*/
+	to_chat(brainmob, "<span class='notice'>Вы чувствуете себя слегка [verb_ru(H, "дезориентированн;ым;ой;ым;ыми;")]. Это не удивительно, когда Вы всего лишь [lowercase_ru(src)].</span>")
+	// End of Bastion of Endeavor Translation
 	callHook("debrain", list(brainmob))
 
 /obj/item/organ/internal/brain/examine(mob/user) // -- TLE
 	. = ..()
 	if(brainmob && brainmob.client)//if thar be a brain inside... the brain.
+		/* Bastion of Endeavor Translation
 		. += "You can feel the small spark of life still left in this one."
+		*/
+		. += "Вам кажется, что в [verb_ru(src, ";нём;ней;нём;них;")] ещё осталась искра жизни."
+		// End of Bastion of Endeavor Translation
 	else
+		/* Bastion of Endeavor Translation
 		. += "This one seems particularly lifeless. Perhaps it will regain some of its luster later..."
+		*/
+		. += "Вы не чувствуете в [verb_ru(src, ";нём;ней;нём;них;")] искру жизни. Быть может, она ещё вернётся позже..."
+		// End of Bastion of Endeavor Translation
 
 /obj/item/organ/internal/brain/removed(var/mob/living/user)
 
 	if(name == initial(name))
+		/* Bastion of Endeavor Translation
 		name = "\the [owner.real_name]'s [initial(name)]"
+		*/
+		name = "[initial(name)] [case_ru(owner, GCASE, secondary = "real_name")]"
+		update_blueprint_ru(right = "[case_ru(owner, GCASE, secondary = "real_name")]")
+		// End of Bastion of Endeavor Translation
 
 	var/mob/living/simple_mob/animal/borer/borer = owner?.has_brain_worms()
 
@@ -251,7 +283,11 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	H.UpdateAppearance()
 	H.sync_organ_dna()
 	if(!R.dna.real_name)	//to prevent null names
+		/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: AUGHHH REAL NAMES
 		R.dna.real_name = "promethean ([rand(0,999)])"
+		*/
+		R.dna.real_name = "Прометеан ([rand(0,999)])"
+		// End of Bastion of Endeavor Translation
 	H.real_name = R.dna.real_name
 	H.ooc_notes = brainmob.ooc_notes // VOREStation Edit
 
@@ -277,7 +313,11 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	return 1
 
 /decl/chemical_reaction/instant/promethean_brain_revival
+	/* Bastion of Endeavor Translation
 	name = "Promethean Revival"
+	*/
+	name = "Воскрешение прометеана"
+	// End of Bastion of Endeavor Translation
 	id = "prom_revival"
 	result = null
 	required_reagents = list("phoron" = 40)
@@ -291,9 +331,17 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 /decl/chemical_reaction/instant/promethean_brain_revival/on_reaction(var/datum/reagents/holder)
 	var/obj/item/organ/internal/brain/slime/brain = holder.my_atom
 	if(brain.reviveBody())
+		/* Bastion of Endeavor Translation
 		brain.visible_message("<span class='notice'>[brain] bubbles, surrounding itself with a rapidly expanding mass of slime!</span>")
+		*/
+		brain.visible_message("<span class='notice'>[cap_ru(brain)] [verb_ru(brain, "пузыр;ится;ится;ится;ятся;")], утопая в стремительно расширяющейся глыбе слизи!</span>")
+		// End of Bastion of Endeavor Translation
 	else
+		/* Bastion of Endeavor Translation
 		brain.visible_message("<span class='warning'>[brain] shifts strangely, but falls still.</span>")
+		*/
+		brain.visible_message("<span class='warning'>[cap_ru(brain)] странно [verb_ru(brain, "дёрга;ется;ется;ется;ются;")], но быстро [verb_ru(brain, "успокаив;ется;ется;ется;ются;")].</span>")
+		// End of Bastion of Endeavor Translation
 
 /obj/item/organ/internal/brain/golem
 	name = "chem"
