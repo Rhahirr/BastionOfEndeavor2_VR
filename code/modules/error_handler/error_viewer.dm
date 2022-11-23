@@ -264,7 +264,6 @@ var/global/datum/ErrorViewer/ErrorCache/error_cache = null
 			*/
 			html += "<br>src.loc: <a href='?_src_=vars;Vars=\ref[srcLoc]'>ПП</a>"
 			html += " <a href='?_src_=holder;adminplayerobservecoodjump=1;X=[srcLoc.x];Y=[srcLoc.y];Z=[srcLoc.z]'>Прыгнуть</a>"
-			case_blueprint_ru = list("")
 			// End of Bastion of Endeavor Translation
 	if(usrRef)
 		/* Bastion of Endeavor Translation
