@@ -42,8 +42,8 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: We have no realname cases just yet so come back to fix this later
 	name = "[owner.real_name]'s assisted [initial(name)]"
 	*/
-	name = "[verb_ru(src, "Полумеханическ;ий;ая;ое;ие;")] [lowercase_ru(initial(name))] [gcase_ru(owner)]"
-	update_blueprint_ru(left = "полумеханическ;adj3aX~", right = "[gcase_ru(owner)]")
+	update_blueprint_ru(left = "полумеханическ;adj3aX~", right = "[gcase_ru(owner, secondary="real_name")]")
+	name = cap_ru(src)
 	// End of Bastion of Endeavor Translation
 	if(targ_icon_state)
 		icon_state = targ_icon_state
@@ -133,7 +133,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: Again initial and real_name stuff is fucky so I'm not sure if this is ok
 	to_chat(brainmob, "<span class='notice'>You feel slightly disoriented. That's normal when you're just \a [initial(src.name)].</span>")
 	*/
-	to_chat(brainmob, "<span class='notice'>Вы чувствуете себя слегка [verb_ru(H, "дезориентированн;ым;ой;ым;ыми;")]. Это не удивительно, когда Вы всего лишь [lowercase_ru(src)].</span>")
+	to_chat(brainmob, "<span class='notice'>Вы чувствуете себя слегка [verb_ru(H, "дезориентированн;ым;ой;ым;ыми;")]. Это не удивительно, когда Вы всего лишь [ncase_ru(src)].</span>")
 	// End of Bastion of Endeavor Translation
 	callHook("debrain", list(brainmob))
 
@@ -159,7 +159,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 		name = "\the [owner.real_name]'s [initial(name)]"
 		*/
 		name = "[initial(name)] [case_ru(owner, GCASE, secondary = "real_name")]"
-		update_blueprint_ru(right = "[case_ru(owner, GCASE, secondary = "real_name")]")
+		update_blueprint_ru(right = " [case_ru(owner, GCASE, secondary = "real_name")]")
 		// End of Bastion of Endeavor Translation
 
 	var/mob/living/simple_mob/animal/borer/borer = owner?.has_brain_worms()

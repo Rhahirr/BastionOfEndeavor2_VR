@@ -32,7 +32,7 @@
 			goo.name = "Ихорозный гной"
 			goo.desc = "На вид густой, источает запах разложения."
 			goo.case_blueprint_ru[1] = "муж#ихорозн;n1*a гн;n6a"
-			goo.apply_blueprint_ru()
+			goo.construct_cases_ru()
 			// End of Bastion of Endeavor Translation
 			goo.basecolor = "#412464"
 			goo.update_icon()

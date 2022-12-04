@@ -310,9 +310,9 @@ var/list/organ_cache = list()
 		else if(status == "mechanical")
 			robotize()
 		*/
-		if(status == RU_ORGAN_ASSISTED)
+		if(status == "Полумеханический орган")
 			mechassist()
-		else if(status == RU_ORGAN_MECHANICAL)
+		else if(status == "Механический орган")
 			robotize()
 		// End of Bastion of Endeavor Define Edit
 
@@ -549,9 +549,9 @@ var/list/organ_cache = list()
 		/* Bastion of Endeavor Translation: This is a REALLY experimental way of going about doing cases but I guess we'll see.
 		newmeat.name = "[src.name] [newmeat.name]"	// "liver meat" "heart meat", etc.
 		*/
-		newmeat.name = "[cap_ru(newmeat)] из [gcase_ru(src)]"
 		newmeat.case_blueprint_ru[1] += " из [gcase_ru(src)]"
-		newmeat.apply_blueprint_ru()
+		newmeat.construct_cases_ru()
+		newmeat.name = cap_ru(src)
 		// End of Bastion of Endeavor Translation
 
 	qdel(src)
