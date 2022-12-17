@@ -457,15 +457,11 @@ SUBSYSTEM_DEF(vote)
 
 		. += "</table><hr>"
 		if(admin)
-<<<<<<< HEAD
 			/* Bastion of Endeavor Translation
-			. += "(<a href='?src=\ref[src];vote=cancel'>Cancel Vote</a>) "
-			*/
-			. += "(<a href='?src=\ref[src];vote=cancel'>Отменить голосование</a>) "
-			// End of Bastion of Endeavor Translation
-=======
 			. += "(<a href='?src=\ref[src];[HrefToken()];vote=cancel'>Cancel Vote</a>) "
->>>>>>> fe91b1a43b (Merge pull request #14206 from ItsSelis/selis-href-adds)
+			*/
+			. += "(<a href='?src=\ref[src];[HrefToken()];vote=cancel'>Отменить голосование</a>) "
+			// End of Bastion of Endeavor Translation
 	else
 		/* Bastion of Endeavor Translation
 		. += "<h2>Start a vote:</h2><hr><ul><li>"
@@ -500,15 +496,11 @@ SUBSYSTEM_DEF(vote)
 			// End of Bastion of Endeavor Translation
 
 		if(admin)
-<<<<<<< HEAD
 			/* Bastion of Endeavor Translation
-			. += "\t(<a href='?src=\ref[src];vote=toggle_restart'>[config.allow_vote_restart ? "Allowed" : "Disallowed"]</a>)"
-			*/
-			. += "\t(<a href='?src=\ref[src];vote=toggle_restart'>[config.allow_vote_restart ? "разрешено" : "запрещено"]</a>)"
-			// End of Bastion of Endeavor Translation
-=======
 			. += "\t(<a href='?src=\ref[src];[HrefToken()];vote=toggle_restart'>[config.allow_vote_restart ? "Allowed" : "Disallowed"]</a>)"
->>>>>>> fe91b1a43b (Merge pull request #14206 from ItsSelis/selis-href-adds)
+			*/
+			. += "\t(<a href='?src=\ref[src];[HrefToken()];vote=toggle_restart'>[config.allow_vote_restart ? "разрешено" : "запрещено"]</a>)"
+			// End of Bastion of Endeavor Translation
 		. += "</li><li>"
 
 		if(admin || config.allow_vote_mode)
@@ -525,15 +517,11 @@ SUBSYSTEM_DEF(vote)
 			// End of Bastion of Endeavor Translation
 
 		if(admin)
-<<<<<<< HEAD
 			/* Bastion of Endeavor Translation
-			. += "\t(<a href='?src=\ref[src];vote=toggle_gamemode'>[config.allow_vote_mode ? "Allowed" : "Disallowed"]</a>)"
-			*/
-			. += "\t(<a href='?src=\ref[src];vote=toggle_gamemode'>[config.allow_vote_mode ? "разрешено" : "запрещено"]</a>)"
-			// End of Bastion of Endeavor Translation
-=======
 			. += "\t(<a href='?src=\ref[src];[HrefToken()];vote=toggle_gamemode'>[config.allow_vote_mode ? "Allowed" : "Disallowed"]</a>)"
->>>>>>> fe91b1a43b (Merge pull request #14206 from ItsSelis/selis-href-adds)
+			*/
+			. += "\t(<a href='?src=\ref[src];[HrefToken()];vote=toggle_gamemode'>[config.allow_vote_mode ? "разрешено" : "запрещено"]</a>)"
+			// End of Bastion of Endeavor Translation
 		. += "</li><li>"
 
 		if(!antag_add_failed && config.allow_extra_antags)
@@ -551,15 +539,11 @@ SUBSYSTEM_DEF(vote)
 		. += "</li>"
 
 		if(admin)
-<<<<<<< HEAD
 			/* Bastion of Endeavor Translation
-			. += "<li><a href='?src=\ref[src];vote=custom'>Custom</a></li>"
-			*/
-			. += "<li><a href='?src=\ref[src];vote=custom'>Особый</a></li>"
-			// End of Bastion of Endeavor Translation
-=======
 			. += "<li><a href='?src=\ref[src];[HrefToken()];vote=custom'>Custom</a></li>"
->>>>>>> fe91b1a43b (Merge pull request #14206 from ItsSelis/selis-href-adds)
+			*/
+			. += "<li><a href='?src=\ref[src];[HrefToken()];vote=custom'>Особый</a></li>"
+			// End of Bastion of Endeavor Translation
 		. += "</ul><hr>"
 
 	/* Bastion of Endeavor Translation

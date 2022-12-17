@@ -74,15 +74,11 @@ SUBSYSTEM_DEF(inactivity)
 						// End of Bastion of Endeavor Translation
 
 			var/adminlinks
-<<<<<<< HEAD
 			/* Bastion of Endeavor Translation
-			adminlinks = " (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[C.mob.x];Y=[C.mob.y];Z=[C.mob.z]'>JMP</a>|<A HREF='?_src_=holder;cryoplayer=\ref[C.mob]'>CRYO</a>)"
-			*/
-			adminlinks = " (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[C.mob.x];Y=[C.mob.y];Z=[C.mob.z]'>ПРЫГ</a>|<A HREF='?_src_=holder;cryoplayer=\ref[C.mob]'>КРИО</a>)"
-			// End of Bastion of Endeavor Translation
-=======
 			adminlinks = " (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[C.mob.x];Y=[C.mob.y];Z=[C.mob.z]'>JMP</a>|<A HREF='?_src_=holder;[HrefToken()];cryoplayer=\ref[C.mob]'>CRYO</a>)"
->>>>>>> fe91b1a43b (Merge pull request #14206 from ItsSelis/selis-href-adds)
+			*/
+			adminlinks = " (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[C.mob.x];Y=[C.mob.y];Z=[C.mob.z]'>JMP</a>|<A HREF='?_src_=holder;[HrefToken()];cryoplayer=\ref[C.mob]'>КРИО</a>)"
+			// End of Bastion of Endeavor Translation
 
 			/* Bastion of Endeavor Translation
 			log_and_message_admins("being kicked for AFK[information][adminlinks]", C.mob)
