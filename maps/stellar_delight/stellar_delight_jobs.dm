@@ -31,12 +31,8 @@
 	title = "Master-at-Arms"
 
 /datum/job/pilot/get_request_reasons()
-<<<<<<< HEAD
 	/* Bastion of Endeavor Translation
 	return list("Moving Stellar Delight")
 	*/
 	return list("Перемещение Звёздного Чуда")
 	// End of Bastion of Endeavor Translation
-=======
-	return list("Moving Stellar Delight")
->>>>>>> 244095be9e (Merge pull request #14220 from Very-Soft/removeexplo)
