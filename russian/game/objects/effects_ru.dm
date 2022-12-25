@@ -69,6 +69,8 @@
 /obj/effect/landmark/start/miner
 	name = "Шахтёр"
 
+// upstream  removed explo
+/*
 /obj/effect/landmark/start/pf
 	name = "Первопроходец"
 
@@ -77,6 +79,7 @@
 
 /obj/effect/landmark/start/fieldmedic
 	name = "Полевой врач"
+*/
 
 /obj/effect/landmark/start/bartender
 	name = "Бармен"
