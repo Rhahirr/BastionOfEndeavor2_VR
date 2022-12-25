@@ -588,17 +588,11 @@ var/global/datum/controller/occupations/job_master
 				// Try desperately (and sorta poorly) to equip the item. Now with increased desperation!
 				if(G.slot && !(G.slot in custom_equip_slots))
 					var/metadata = H.client.prefs.gear[G.display_name]
-<<<<<<< HEAD
-					if(G.slot == slot_wear_mask || G.slot == slot_wear_suit || G.slot == slot_head)
-						custom_equip_leftovers += thing
-					else if(H.equip_to_slot_or_del(G.spawn_item(H, metadata), G.slot))
-						/* Bastion of Endeavor Translation
-=======
 					//if(G.slot == slot_wear_mask || G.slot == slot_wear_suit || G.slot == slot_head)
 					//	custom_equip_leftovers += thing
 					//else
 					if(H.equip_to_slot_or_del(G.spawn_item(H, metadata), G.slot))
->>>>>>> edcd5f0653 (Merge pull request #14222 from Heroman3003/suit-override)
+						/* Bastion of Endeavor Translation
 						to_chat(H, "<span class='notice'>Equipping you with \the [thing]!</span>")
 						*/
 						to_chat(H, "<span class='notice'>На Вас [verb_ru(thing_obj, "надет;;а;о;ы;")] [ncase_ru(thing_obj)]!</span>")
