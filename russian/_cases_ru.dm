@@ -16,8 +16,8 @@ var/global/list/self_cases_list_ru = list(
 	ICASE = "собой", \
 	PCASE = "себе")
 /datum
-	var/list/case_blueprint_ru = list()
-	var/list/cases_ru = list()
+	var/list/case_blueprint_ru
+	var/list/cases_ru
 	var/number_lock_ru
 	var/always_plural_ru
 
