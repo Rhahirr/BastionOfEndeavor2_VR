@@ -75,9 +75,9 @@ SUBSYSTEM_DEF(inactivity)
 
 			var/adminlinks
 			/* Bastion of Endeavor Translation
-			adminlinks = " (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[C.mob.x];Y=[C.mob.y];Z=[C.mob.z]'>JMP</a>|<A HREF='?_src_=holder;cryoplayer=\ref[C.mob]'>CRYO</a>)"
+			adminlinks = " (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[C.mob.x];Y=[C.mob.y];Z=[C.mob.z]'>JMP</a>|<A HREF='?_src_=holder;[HrefToken()];cryoplayer=\ref[C.mob]'>CRYO</a>)"
 			*/
-			adminlinks = " (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[C.mob.x];Y=[C.mob.y];Z=[C.mob.z]'>ПРЫГ</a>|<A HREF='?_src_=holder;cryoplayer=\ref[C.mob]'>КРИО</a>)"
+			adminlinks = " (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[C.mob.x];Y=[C.mob.y];Z=[C.mob.z]'>ПРЫГ</a>|<A HREF='?_src_=holder;[HrefToken()];cryoplayer=\ref[C.mob]'>КРИО</a>)"
 			// End of Bastion of Endeavor Translation
 
 			/* Bastion of Endeavor Translation
