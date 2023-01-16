@@ -50,6 +50,7 @@
 	//end-emergency fix
 
 	src.update_status()
+	setup_season()	//VOREStation Addition
 
 	. = ..()
 
