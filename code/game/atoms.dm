@@ -223,6 +223,9 @@
 			found += A.search_contents_for(path,filter_path)
 	return found
 
+/atom/proc/get_examine_desc()
+	return desc
+
 //All atoms
 /atom/proc/examine(mob/user, var/infix = "", var/suffix = "")
 	//This reformat names to get a/an properly working on item descriptions when they are bloody
@@ -260,7 +263,7 @@
 	/* Bastion of Endeavor Translation
 	var/list/output = list("\icon[src.examine_icon()][bicon(src)] That's [f_name] [suffix]", desc)
 	*/
-	var/list/output = list("\icon[src.examine_icon()][bicon(src)] Это [f_name] [suffix]", desc)
+	var/list/output = list("\icon[src.examine_icon()][bicon(src)] Это [f_name] [suffix]", get_examine_desc())
 	// End of Bastion of Endeavor Translation
 
 	if(user.client?.prefs.examine_text_mode == EXAMINE_MODE_INCLUDE_USAGE)
@@ -272,7 +275,6 @@
 		*/
 		user.client.statpanel = "Осмотреть" // Switch to stat panel
 		// End of Bastion of Endeavor Translation
-
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, output)
 	return output
 
