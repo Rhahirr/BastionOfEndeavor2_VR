@@ -138,17 +138,15 @@
 #define CLASS_MIDDLE 		"Average"
 #define CLASS_LOWMID		"Underpaid"
 #define CLASS_LOWER			"Poor"
-<<<<<<< HEAD
+#define CLASS_BROKE			"Broke"	//VOREStation Add
 */
 #define CLASS_UPPER 		"Олигарх"
 #define CLASS_UPMID			"Высокий доход"
 #define CLASS_MIDDLE 		"Средний доход"
 #define CLASS_LOWMID		"Низкий доход"
-#define CLASS_LOWER			"Нищета"
+#define CLASS_LOWER			"Бедность"
+#define CLASS_BROKE			"Нищета"	//VOREStation Add
 // End of Bastion of Endeavor Translation
-=======
-#define CLASS_BROKE			"Broke"	//VOREStation Add
->>>>>>> 3d86f8d97b (Merge pull request #14503 from Very-Soft/broke)
 
 #define ECONOMIC_CLASS		list(CLASS_UPPER,CLASS_UPMID,CLASS_MIDDLE,CLASS_LOWMID,CLASS_LOWER,CLASS_BROKE)
 
