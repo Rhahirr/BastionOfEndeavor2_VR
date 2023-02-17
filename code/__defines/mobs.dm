@@ -138,15 +138,17 @@
 #define CLASS_MIDDLE 		"Average"
 #define CLASS_LOWMID		"Underpaid"
 #define CLASS_LOWER			"Poor"
+#define CLASS_BROKE			"Broke"	//VOREStation Add
 */
 #define CLASS_UPPER 		"Олигарх"
 #define CLASS_UPMID			"Высокий доход"
 #define CLASS_MIDDLE 		"Средний доход"
 #define CLASS_LOWMID		"Низкий доход"
-#define CLASS_LOWER			"Нищета"
+#define CLASS_LOWER			"Бедность"
+#define CLASS_BROKE			"Нищета"	//VOREStation Add
 // End of Bastion of Endeavor Translation
 
-#define ECONOMIC_CLASS		list(CLASS_UPPER,CLASS_UPMID,CLASS_MIDDLE,CLASS_LOWMID,CLASS_LOWER)
+#define ECONOMIC_CLASS		list(CLASS_UPPER,CLASS_UPMID,CLASS_MIDDLE,CLASS_LOWMID,CLASS_LOWER,CLASS_BROKE)
 
 
 // Defines mob sizes, used by lockers and to determine what is considered a small sized mob, etc.
