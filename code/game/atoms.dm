@@ -260,15 +260,11 @@
 			f_name += "[verb_ru(src, "замасленн;ый;ая;ое;ые;")] [ncase_ru(src)][infix]"
 			// End of Bastion of Endeavor Translation
 
-<<<<<<< HEAD
 	/* Bastion of Endeavor Translation
 	var/list/output = list("\icon[src.examine_icon()][bicon(src)] That's [f_name] [suffix]", desc)
 	*/
-	var/list/output = list("\icon[src.examine_icon()][bicon(src)] Это [f_name] [suffix]", desc)
+	var/list/output = list("\icon[src.examine_icon()][bicon(src)] Это [f_name] [suffix]", get_examine_desc())
 	// End of Bastion of Endeavor Translation
-=======
-	var/list/output = list("\icon[src.examine_icon()][bicon(src)] That's [f_name] [suffix]", get_examine_desc())
->>>>>>> 6c51eeb93e (Merge pull request #14387 from VOREStation/upstream-merge-8894)
 
 	if(user.client?.prefs.examine_text_mode == EXAMINE_MODE_INCLUDE_USAGE)
 		output += description_info
@@ -276,13 +272,9 @@
 	if(user.client?.prefs.examine_text_mode == EXAMINE_MODE_SWITCH_TO_PANEL)
 		/* Bastion of Endeavor Translation
 		user.client.statpanel = "Examine" // Switch to stat panel
-<<<<<<< HEAD
 		*/
 		user.client.statpanel = "Осмотреть" // Switch to stat panel
 		// End of Bastion of Endeavor Translation
-
-=======
->>>>>>> 6c51eeb93e (Merge pull request #14387 from VOREStation/upstream-merge-8894)
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, output)
 	return output
 
