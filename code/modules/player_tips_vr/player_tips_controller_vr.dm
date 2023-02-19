@@ -11,6 +11,7 @@ Controlled by the player_tips subsystem under code/controllers/subsystems/player
 	var/tip_delay = 5 MINUTES //10 minute initial delay for first tip of the day. Timer starts 5 minutes after game starts, plus 5 minutes here. Gets overwritten afterwards
 	var/last_tip_time = 0
 	var/last_tip = null
+	var/list/HasReceived = list() //Tracking who received tips. We let them know how to turn them off if they're not on this list. Stores CKeys until round-end.
 
 //Called every 5 minutes as defined in the subsystem.
 /datum/player_tips/proc/send_tips()
@@ -33,12 +34,18 @@ Controlled by the player_tips subsystem under code/controllers/subsystems/player
 
 		for(var/mob/M in player_list)
 			if(M.is_preference_enabled(/datum/client_preference/player_tips))
+<<<<<<< HEAD
 				if(!last_tip) //Notifying players how to turn tips off, or call them on-demand in a personalized manner.
 					/* Bastion of Endeavor Translation
 					to_chat(M, SPAN_WARNING("You have periodic player tips enabled. You may turn them off at any time with the Toggle Receiving Player Tips verb in Preferences, or in character set up under the OOC tab!\n Player tips appear every 45-75 minutes."))
 					*/
 					to_chat(M, SPAN_WARNING("У Вас включена рассылка периодических подсказок. Её можно выключить с помощью глагола Переключить рассылку подсказок во вкладке Настройки или в Редакторе персонажа!\n Подсказки появляются каждые 45-75 минут."))
 					// End of Bastion of Endeavor Translation
+=======
+				if(!(M.mind.key in HasReceived))
+					to_chat(M, SPAN_WARNING("You have periodic player tips enabled. You may turn them off at any time with the Toggle Receiving Player Tips verb in Preferences, or in character set up under the OOC tab!\n Player tips appear every 45-75 minutes."))
+					HasReceived.Add(M.mind.key)
+>>>>>>> 79bcb9a440 (Merge pull request #14522 from Runa-Dacino/tips_firstmessage)
 				to_chat(M, SPAN_NOTICE("[tip]"))
 
 		last_tip = tip
