@@ -16,13 +16,11 @@ Controlled by the player_tips subsystem under code/controllers/subsystems/player
 //Called every 5 minutes as defined in the subsystem.
 /datum/player_tips/proc/send_tips()
 	if(world.time > last_tip_time + tip_delay)
-		/* Bastion of Endeavor Translation: Kinda janky out of context but this is okay
 		last_tip_time = world.time
 		tip_delay = rand(min_tip_delay, max_tip_delay)
+		/* Bastion of Endeavor Translation: Kinda janky out of context but this is okay
 		var/tip = pick_tip("none") //"none" picks a random topic of advice.
 		*/
-		last_tip_time = world.time
-		tip_delay = rand(min_tip_delay, max_tip_delay)
 		var/tip = pick_tip("Любую") //"none" picks a random topic of advice.
 		// End of Bastion of Endeavor Translation
 		var/stopWhile = 0
