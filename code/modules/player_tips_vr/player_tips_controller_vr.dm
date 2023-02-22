@@ -48,6 +48,7 @@ Controlled by the player_tips subsystem under code/controllers/subsystems/player
 
 
 
+
 /mob/living/verb/request_automated_advice()
 	set name = "Запросить периодическую подсказку"
 	set desc = "Показать подсказку на выбранную тему."
