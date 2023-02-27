@@ -43,6 +43,7 @@
 #define BE_MORPH		0x40000
 #define BE_CORGI		0x80000
 #define BE_CURSEDSWORD	0x100000
+#define BE_SURVIVOR		0x200000
 //VOREStation Add End
 
 // Bastion of Endeavor TODO: I forget if these can be safely changed, but I don't see the need to risk it until antag localization happens
@@ -69,6 +70,7 @@ var/list/be_special_flags = list(
 	"Morph"            = BE_MORPH,
 	"Corgi"            = BE_CORGI,
 	"Cursed Sword"     = BE_CURSEDSWORD,
+	"Ship Survivor"	   = BE_SURVIVOR
 	//VOREStation Add End
 )
 
@@ -112,6 +114,7 @@ var/list/be_special_flags = list(
 #define MODE_INFILTRATOR "infiltrator"
 #define MODE_THUG "thug"
 #define MODE_STOWAWAY "stowaway"
+#define MODE_SURVIVOR "Shipwreck Survivor"
 
 #define DEFAULT_TELECRYSTAL_AMOUNT 120
 
