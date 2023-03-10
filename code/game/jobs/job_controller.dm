@@ -639,11 +639,15 @@ var/global/datum/controller/occupations/job_master
 				else
 					spawn_in_storage += thing
 	else
+<<<<<<< HEAD
 		/* Bastion of Endeavor Translation
 		to_chat(H, "Your job is [rank] and the game just can't handle it! Please report this bug to an administrator.")
 		*/
 		to_chat(H, "Ваша должность - [rank], и игра к этому не была готова! Доложите об этом администратору.")
 		// End of Bastion of Endeavor Translation
+=======
+		to_chat(H, "<span class='filter_notice'>Your job is [rank] and the game just can't handle it! Please report this bug to an administrator.</span>")
+>>>>>>> 0eb2f82d41 (Merge pull request #14649 from Seris02/prmirror)
 
 	H.job = rank
 	/* Bastion of Endeavor Translation
@@ -741,6 +745,7 @@ var/global/datum/controller/occupations/job_master
 				W.color = R.color
 				qdel(R)
 
+<<<<<<< HEAD
 	/* Bastion of Endeavor Translation
 	to_chat(H, "<B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B>")
 	*/
@@ -767,6 +772,18 @@ var/global/datum/controller/occupations/job_master
 		*/
 		to_chat(H, "<b>Ваша должность важна для развития игры. Если Вам нужно резко отключиться, просьба сообщить админам через Помощь админа.</b>")
 		// End of Bastion of Endeavor Translation
+=======
+	to_chat(H, "<span class='filter_notice'><B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B></span>")
+
+	if(job.supervisors)
+		to_chat(H, "<span class='filter_notice'><b>As the [alt_title ? alt_title : rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b></span>")
+	if(job.has_headset)
+		H.equip_to_slot_or_del(new /obj/item/device/radio/headset(H), slot_l_ear)
+		to_chat(H, "<span class='filter_notice'><b>To speak on your department's radio channel use :h. For the use of other channels, examine your headset.</b></span>")
+
+	if(job.req_admin_notify)
+		to_chat(H, "<span class='filter_notice'><b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b></span>")
+>>>>>>> 0eb2f82d41 (Merge pull request #14649 from Seris02/prmirror)
 
 	// EMAIL GENERATION
 	// Email addresses will be created under this domain name. Mostly for the looks.
@@ -787,8 +804,12 @@ var/global/datum/controller/occupations/job_master
 
 	// If even fallback login generation failed, just don't give them an email. The chance of this happening is astronomically low.
 	if(ntnet_global.does_email_exist(complete_login))
+<<<<<<< HEAD
 		/* Bastion of Endeavor Translation
 		to_chat(H, "You were not assigned an email address.")
+=======
+		to_chat(H, "<span class='filter_notice'>You were not assigned an email address.</span>")
+>>>>>>> 0eb2f82d41 (Merge pull request #14649 from Seris02/prmirror)
 		H.mind.store_memory("You were not assigned an email address.")
 		*/
 		to_chat(H, "За Вами не закреплён адрес электронной почты.")
@@ -798,7 +819,7 @@ var/global/datum/controller/occupations/job_master
 		var/datum/computer_file/data/email_account/EA = new/datum/computer_file/data/email_account()
 		EA.password = GenerateKey()
 		EA.login = 	complete_login
-		to_chat(H, "Your email account address is <b>[EA.login]</b> and the password is <b>[EA.password]</b>. This information has also been placed into your notes.")
+		to_chat(H, "<span class='filter_notice'>Your email account address is <b>[EA.login]</b> and the password is <b>[EA.password]</b>. This information has also been placed into your notes.</span>")
 		H.mind.store_memory("Your email account address is [EA.login] and the password is [EA.password].")
 	// END EMAIL GENERATION
 
@@ -915,7 +936,7 @@ var/global/datum/controller/occupations/job_master
 			if(fail_deadly)
 				to_chat(C, "<span class='warning'>Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job. Please correct your spawn point choice.</span>")
 				return
-			to_chat(C, "Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job. Spawning you at the Arrivals shuttle instead.")
+			to_chat(C, "<span class='filter_warning'>Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job. Spawning you at the Arrivals shuttle instead.</span>")
 			var/spawning = pick(latejoin)
 			.["turf"] = get_turf(spawning)
 			.["msg"] = "will arrive at the station shortly"
