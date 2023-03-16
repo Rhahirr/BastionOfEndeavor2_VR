@@ -47,7 +47,7 @@
 	set desc = "Toggle your flash-proof, thermal-integrated sunglasses."
 	set category = "Augments"
 	*/
-	set name = " Переключить светозащитные теплолинзы"
+	set name = "Переключить светозащитные теплолинзы"
 	set desc = "Переключить теплолинзы в режим поглощения вспышек."
 	set category = "Аугментации"
 	// End of Bastion of Endeavor Translation
