@@ -90,10 +90,10 @@
 				parent_organ_ru = "правой руке"
 				// End of Bastion of Endeavor Addition
 				target_slot = slot_l_hand
-		/* Bastion of Endeavor Translation: this is ideally supposed to show the parent_organ but i dont care to deal with this rn
+		/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: this is ideally supposed to show the parent_organ but i dont care to deal with this rn
 		to_chat(user, "<span class='notice'>You swap \the [src]'s servos to install neatly into \the upper [parent_organ] mount.</span>")
 		*/
-		to_chat(user, "<span class='notice'>Вы переключили cервоприводы [gcase_ru(src)] и установили их в верхнюю монтажную стойку в [parent_organ_ru].</span>")
+		to_chat(user, "<span class='notice'>Вы настроили cервоприводы [gcase_ru(src)] для установки в верхней [parent_organ_ru].</span>")
 		// End of Bastion of Endeavor Translation
 		return
 
