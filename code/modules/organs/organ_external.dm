@@ -509,7 +509,6 @@
 		else
 			user.visible_message("<b>\The [user]</b> [fix_verb] [damage_desc] on [owner]'s [src.name] with [tool].")
 		*/
-		var/fix_verb = (damage_amount > repair_amount) ? "patches" : "finishes patching"
 		if(user == src.owner)
 			user.visible_message("<b>[cap_ru(user)]</b> [(damage_amount > repair_amount) ? "[verb_ru("ремонтиру;ет;ет;ет;ют;")]" : "[verb_ru("закончил")] ремонтировать"] [damage_desc] на [concat_ru("сво;ём;ей;ём;их;", src, PCASE)] с помощью [gcase_ru(tool)].")
 		else
