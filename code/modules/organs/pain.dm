@@ -55,14 +55,14 @@
 				/* Bastion of Endeavor Translation
 				msg =  "Your [damaged_organ.name] [burning ? "burns" : "hurts"]."
 				*/
-				msg =  "Вы чувствуете [burning ? "жжение" : "боль"] [prep_ru(damaged_organ, "в")] [concat_ru("сво;ём;ей;ём;их;", damaged_organ)]."
+				msg =  "Вы чувствуете [burning ? "жжение" : "боль"] [prep_ru(damaged_organ, "в")] [pcase_ru(damaged_organ)]."
 				// End of Bastion of Endeavor Translation
 			if(11 to 90)
 				flash_weak_pain()
 				/* Bastion of Endeavor Translation
 				msg = "<font size=2>Your [damaged_organ.name] [burning ? "burns" : "hurts"] badly!</font>"
 				*/
-				msg = "<font size=2>Вы чувствуете [burning ? "ужасное жжение" : "ужасную боль"] [prep_ru(damaged_organ, "в")] [concat_ru("сво;ём;ей;ём;их;", damaged_organ)]!</font>"
+				msg = "<font size=2>Вы чувствуете [burning ? "ужасное жжение" : "ужасную боль"] [prep_ru(damaged_organ, "в")] [pcase_ru(damaged_organ)]!</font>"
 				// End of Bastion of Endeavor Translation
 			if(91 to 10000)
 				flash_pain()
@@ -81,7 +81,7 @@
 			/* Bastion of Endeavor Translation
 			src.custom_pain("You feel a sharp pain in your [parent.name]", 50)
 			*/
-			src.custom_pain("Вы чувствуете острую боль [prep_ru(damaged_organ, "в")] [concat_ru("сво;ём;ей;ём;их;", parent)]", 50)
+			src.custom_pain("Вы чувствуете острую боль [prep_ru(damaged_organ, "в")] [pcase_ru(parent)]", 50)
 			// End of Bastion of Endeavor Translation
 
 	if(prob(2))

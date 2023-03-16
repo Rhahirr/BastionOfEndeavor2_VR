@@ -209,7 +209,7 @@ var/list/organ_cache = list()
 		/* Bastion of Endeavor Translation
 		. += "<span class='notice'>Decay appears to have set in.</span>"
 		*/
-		. += "<span class='notice'>Похоже, [verb_ru(src, "он;;а;о;и;")] уже [verb_ru(src, "начало")] разлагаться.</span>"
+		. += "<span class='notice'>Похоже, [verb_ru(src, "он;;а;о;и;")] уже [verb_ru(src, "начал")] разлагаться.</span>"
 		// End of Bastion of Endeavor Translation
 
 //A little wonky: internal organs stop calling this (they return early in process) when dead, but external ones cause further damage when dead
@@ -368,7 +368,7 @@ var/list/organ_cache = list()
 				/* Bastion of Endeavor Translation
 				owner.custom_pain("Something inside your [parent.name] hurts a lot.", amount)
 				*/
-				owner.custom_pain("Что-то внутри [concat_ru("Ваш;его;ей;его;их;", parent)] очень сильно болит.", amount)
+				owner.custom_pain("Что-то внутри [concat_ru("Ваш;его;ей;его;их;", parent, GCASE)] очень сильно болит.", amount)
 				// End of Bastion of Endeavor Translation
 
 /obj/item/organ/proc/bruise()

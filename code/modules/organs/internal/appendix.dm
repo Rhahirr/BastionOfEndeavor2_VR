@@ -69,6 +69,6 @@
 		name = "inflamed appendix"
 		*/
 		name = "Воспалённый аппендикс"
-		update_blueprint_ru(left="воспалённ;adj1*a/b(2)")
+		update_blueprint_ru(left="воспалённ;adj1*a/b(2)", separator_left = " ")
 		// End of Bastion of Endeavor Translation
 	..()

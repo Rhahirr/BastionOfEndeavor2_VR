@@ -204,6 +204,7 @@
 #define O_STANDARD list(O_EYES, O_HEART, O_LUNGS, O_BRAIN, O_LIVER, O_KIDNEYS, O_SPLEEN, O_APPENDIX, O_VOICE, O_STOMACH, O_INTESTINE)
 
 // Augments
+// Bastion of Endeavor TODO: These will need to be localized at some point
 #define O_AUG_EYES "occular augment"
 
 #define O_AUG_L_FOREARM "left forearm augment"

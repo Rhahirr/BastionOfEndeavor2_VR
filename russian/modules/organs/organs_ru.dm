@@ -6,24 +6,17 @@
 // misc.dm
 /obj/item/organ/internal/stack
 	name = "Кортикальный стэк"
-	case_blueprint_ru = "муж#кортикальн;1*a стэк;3a"
-
+	case_blueprint_ru = list("муж#кортикальн;adj1*a стэк;n3a")
 
 /obj/item/organ/internal/stack/vox/stack
 	name = "Воксовый кортикальный стэк"
-	case_blueprint_ru = "муж#воксов;adj1a кортикальн;adj1*a стэк;n3a"
+	case_blueprint_ru = list("муж#воксов;adj1a кортикальн;adj1*a стэк;n3a")
 
 // organ_external.dm
-
-
-// organ_external_vr.dm
-
-
-// organ_icon.dm
-
-
-// organ_internal.dm
-
+/obj/item/organ/external
+	name = "Внешний орган"
+	joint = "Сустав" 
+	case_blueprint_ru = list("муж#внешн;n2*a орган;n1a", "муж#сустав;n1a")
 
 // organ_stump.dm
 /obj/item/organ/external/stump

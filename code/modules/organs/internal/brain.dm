@@ -39,10 +39,11 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	return can_assist
 
 /obj/item/organ/internal/brain/proc/implant_assist(var/targ_icon_state = null)
-	/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: We have no realname cases just yet so come back to fix this later
+	/* Bastion of Endeavor Translation
+	// Bastion of Endeavor TODO (MOB Realname): We have no realname cases just yet so come back to fix this later
 	name = "[owner.real_name]'s assisted [initial(name)]"
 	*/
-	update_blueprint_ru(left = "полумеханическ;adj3aX~", right = "[gcase_ru(owner, secondary="real_name")]")
+	update_blueprint_ru(left = "полумеханическ;adj3aX~", right = "[gcase_ru(owner, secondary="real_name")]", separator_left = " ", separator_right = " ")
 	name = cap_ru(src)
 	// End of Bastion of Endeavor Translation
 	if(targ_icon_state)
@@ -112,8 +113,9 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 		brainmob = new(src)
 		brainmob.name = H.real_name
 		brainmob.real_name = H.real_name
-		// Bastion of Endeavor Add: Bastion of Endeavor TODO: This might get fucky so keep an eye on this. i will suffer immensely if this becomes an issue
-		
+		// Bastion of Endeavor Add
+		// Bastion of Endeavor TODO (MOB Realname / Initial): This might get fucky so keep an eye on this. i will suffer immensely if this becomes an issue
+		brainmob.cases_ru = H.cases_ru
 
 		if(istype(H))
 			brainmob.dna = H.dna.Clone()
@@ -130,10 +132,11 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 
 	brainmob.languages = H.languages
 
-	/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: Again initial and real_name stuff is fucky so I'm not sure if this is ok
+	/* Bastion of Endeavor Translation
+	// Bastion of Endeavor TODO (MOB Realname / Initial): Again initial and real_name stuff is fucky so I'm not sure if this is ok
 	to_chat(brainmob, "<span class='notice'>You feel slightly disoriented. That's normal when you're just \a [initial(src.name)].</span>")
 	*/
-	to_chat(brainmob, "<span class='notice'>Вы чувствуете себя слегка [verb_ru(H, "дезориентированн;ым;ой;ым;ыми;")]. Это не удивительно, когда Вы всего лишь [ncase_ru(src)].</span>")
+	to_chat(brainmob, "<span class='notice'>Вы чувствуете себя слегка [verb_ru(H, "дезориентированн;ым;ой;ым;ыми;")]. Это не удивительно, когда от Вас [verb_ru(src, "остал;ся;ась;ось;ись;")] всего лишь [ncase_ru(src)].</span>")
 	// End of Bastion of Endeavor Translation
 	callHook("debrain", list(brainmob))
 
@@ -159,7 +162,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 		name = "\the [owner.real_name]'s [initial(name)]"
 		*/
 		name = "[initial(name)] [case_ru(owner, GCASE, secondary = "real_name")]"
-		update_blueprint_ru(right = " [case_ru(owner, GCASE, secondary = "real_name")]")
+		update_blueprint_ru(right = " [case_ru(owner, GCASE, secondary = "real_name")]", separator_right = " ")
 		// End of Bastion of Endeavor Translation
 
 	var/mob/living/simple_mob/animal/borer/borer = owner?.has_brain_worms()
@@ -241,6 +244,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	R.dna = brainmob.dna
 	R.ckey = brainmob.ckey
 	R.id = copytext(md5(brainmob.real_name), 2, 6)
+	// Bastion of Endeavor TODO (MOB Realname / DNA): Fuck this i hate this i dont want to be doing this why must i suffer like this
 	R.name = R.dna.real_name
 	R.types = DNA2_BUF_UI|DNA2_BUF_UE|DNA2_BUF_SE
 	R.languages = brainmob.languages
@@ -283,7 +287,8 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	H.UpdateAppearance()
 	H.sync_organ_dna()
 	if(!R.dna.real_name)	//to prevent null names
-		/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: AUGHHH REAL NAMES
+		/* Bastion of Endeavor Translation
+		// Bastion of Endeavor TODO (MOB Realname): AUGHHHGHGHGHHGHHHHh
 		R.dna.real_name = "promethean ([rand(0,999)])"
 		*/
 		R.dna.real_name = "Прометеан ([rand(0,999)])"
@@ -316,7 +321,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	/* Bastion of Endeavor Translation
 	name = "Promethean Revival"
 	*/
-	name = "Воскрешение прометеана"
+	name = "Воскрешение прометеевца"
 	// End of Bastion of Endeavor Translation
 	id = "prom_revival"
 	result = null

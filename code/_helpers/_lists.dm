@@ -27,7 +27,18 @@
 		if(0) return nothing_text
 		if(1) return "[input[1]]"
 		if(2) return "[input[1]][and_text][input[2]]"
+		/* Bastion of Endeavor Edit: I hate this, but some additional tinkering is required to avoid double commas in places where it matters
 		else  return "[jointext(input, comma_text, 1, -1)][final_comma_text][and_text][input[input.len]]"
+		*/
+		else
+			var/output
+			for(var/i=1, i<(input.len-1), i++)
+				output += "[input[i]][copytext_char(input[i], -1) == "," ? " " : comma_text]"
+			var/final_element = input[input.len]
+			if(copytext_char(final_element, -1) == ",")
+				final_element = copytext_char(final_element, 1, -1)
+			return "[output][final_comma_text][and_text][final_element]"
+		// End of Bastion of Endeavor Edit
 
 //Returns a newline-separated list that counts equal-ish items, outputting count and item names, optionally with icons and specific determiners
 /* Bastion of Endeavor Translation: Translating the arguments.

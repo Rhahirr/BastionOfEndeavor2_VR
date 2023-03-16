@@ -134,7 +134,10 @@ var/global/list/consonants_ru = list("б", "в", "г", "д", "ж", "з", "й", "
 		gender_key = user_gender.key
 	else if (istype(input, /atom))
 		var/atom/A = input
-		gender_key = A.cases_ru[index][RUGENDER]
+		if(A.number_lock_ru == "plural")
+			gender_key = "plural"
+		else
+			gender_key = A.cases_ru[index][RUGENDER]
 	switch(lowertext(gender_key))
 		if("male") return "[base_verb][he_end]"
 		if("female") return "[base_verb][she_end]"

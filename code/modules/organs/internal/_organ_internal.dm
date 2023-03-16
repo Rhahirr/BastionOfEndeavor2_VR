@@ -38,8 +38,8 @@
 	/* Bastion of Endeavor Translation
 	name = "prosthetic [initial(name)]"
 	*/
-	name = "[verb_ru(src, "Механическ;ий;ая;ое;ие;")] [ncase_ru(src)]"
-	update_blueprint_ru(left = "механическ;adj3aX~")
+	update_blueprint_ru(left = "механическ;adj3aX~", separator_left = " ")
+	name = cap_ru(src)
 	// End of Bastion of Endeavor Translation
 	icon_state = "[initial(icon_state)]_prosthetic"
 	if(dead_icon)
@@ -50,8 +50,8 @@
 	/* Bastion of Endeavor Translation
 	name = "assisted [initial(name)]"
 	*/
-	name = "[verb_ru(src, "Полумеханическ;ий;ая;ое;ие;")] [ncase_ru(src)]"
-	update_blueprint_ru(left = "полумеханическ;adj3aX~")
+	update_blueprint_ru(left = "полумеханическ;adj3aX~", separator_left = " ")
+	name = cap_ru(src)
 	// End of Bastion of Endeavor Translation
 	icon_state = "[initial(icon_state)]_assisted"
 	if(dead_icon)

@@ -2,9 +2,10 @@
 var/global/list/successful_cases_ru = list()
 
 /atom/New() // radical? yes. will it break things? won't know until we try.
-	..()
 	cases_ru = new /list()
+	cases_ru = list("basic" = basic_cases_list_ru)
 	construct_cases_ru()
+	..()
 
 /datum/proc/create_cases_ru(var/subcase)
 	if(subcase)
@@ -14,7 +15,6 @@ var/global/list/successful_cases_ru = list()
 		cases_ru.Add(basic_cases_list_ru)
 
 /datum/proc/construct_cases_ru()
-	create_cases_ru("basic")
 	var/enable_logging = FALSE
 	var/enable_reporting = FALSE
 	if(isnull(case_blueprint_ru)) 	// if we're lacking a blueprint then it's probably unlocalized
