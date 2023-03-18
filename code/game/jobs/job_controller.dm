@@ -742,7 +742,7 @@ var/global/datum/controller/occupations/job_master
 				qdel(R)
 
 	/* Bastion of Endeavor Translation
-	to_chat(H, "<span class='filter_notice'><B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B>")
+	to_chat(H, "<span class='filter_notice'><B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B></span>")
 	*/
 	to_chat(H, "<span class='filter_notice'><B>Ваша должность - [alt_title ? alt_title : rank].</B></span>")
 	// End of Bastion of Endeavor Translation
