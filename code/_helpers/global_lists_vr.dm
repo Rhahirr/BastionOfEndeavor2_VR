@@ -13,14 +13,11 @@ var/global/list/traits_costs = list()		// Just path = cost list, saves time in c
 var/global/list/all_traits = list()			// All of 'em at once (same instances)
 var/global/list/active_ghost_pods = list()
 
-<<<<<<< HEAD
-/* Bastion of Endeavor Translation
-=======
 //Global vars for making the overmap_renamer subsystem.
 //Collects all instances by reference of visitable overmap objects of /obj/effect/overmap/visitable like the debris field.
 var/global/list/visitable_overmap_object_instances = list()
 
->>>>>>> ec61e89345 (Merge pull request #14616 from Runa-Dacino/OMNameLandmarkTry2)
+/* Bastion of Endeavor Translation
 var/global/list/sensorpreflist = list("Off", "Binary", "Vitals", "Tracking", "No Preference")
 */
 var/global/list/sensorpreflist = list("Датчики отключены", "Бинарный датчик", "Датчик состояния", "Маячок отслеживания", "Нет предпочтения")
