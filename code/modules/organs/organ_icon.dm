@@ -22,6 +22,7 @@ var/global/list/limb_icon_cache = list()
 			if(human.synth_color)
 				s_col = list(human.r_synth, human.g_synth, human.b_synth)
 			return
+	// Bastion of Endeavor TODO: Might need to watch over it in the future, maybe it works maybe it doesnt I've no idea yet
 	if(species && human.species && species.name != human.species.name)
 		return
 	if(!isnull(human.s_tone) && (human.species.appearance_flags & HAS_SKIN_TONE))
@@ -68,7 +69,11 @@ var/global/list/limb_icon_cache = list()
 		var/datum/sprite_accessory/hair/hair_style = hair_styles_list[style]
 		if(owner.head && (owner.head.flags_inv & BLOCKHEADHAIR))
 			if(!(hair_style.flags & HAIR_VERY_SHORT))
+				/* Bastion of Endeavor Translation: Bastion of Endeavor TODO: Double check this after all the charedit stuff is done
 				hair_style = hair_styles_list["Short Hair"]
+				*/
+				hair_style = hair_styles_list["Короткие волосы"]
+				// End of Bastion of Endeavor Translation
 		if(hair_style && (species.get_bodytype(owner) in hair_style.species_allowed))
 			var/icon/hair_s = new/icon("icon" = hair_style.icon, "icon_state" = "[hair_style.icon_state]_s")
 			var/icon/hair_s_add = new/icon("icon" = hair_style.icon_add, "icon_state" = "[hair_style.icon_state]_s")

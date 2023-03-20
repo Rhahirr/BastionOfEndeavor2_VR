@@ -9,7 +9,14 @@
 
 /obj/item/organ/internal/eyes/robotize()
 	..()
+	/* Bastion of Endeavor Translation
 	name = "optical sensor"
+	*/
+	name = "Фотодетекторы"
+	case_blueprint_ru[1] = "муж#фотодетектор;n1a"
+	number_lock_ru = "plural"
+	construct_cases_ru()
+	// End of Bastion of Endeavor Translation
 	verbs |= /obj/item/organ/internal/eyes/proc/change_eye_color
 
 /obj/item/organ/internal/eyes/robot
@@ -31,13 +38,22 @@
 			color = H.species.blood_color
 
 /obj/item/organ/internal/eyes/proc/change_eye_color()
+	/* Bastion of Endeavor Translation
 	set name = "Change Eye Color"
 	set desc = "Changes your robotic eye color instantly."
+	*/
+	set name = "Изменить цвет глаз"
+	set desc = "Мгновенно изменить цвет глаз."
+	// End of Bastion of Endeavor Translation
 	set category = "IC"
 	set src in usr
 
 	var/current_color = rgb(eye_colour[1],eye_colour[2],eye_colour[3])
+	/* Bastion of Endeavor Translation
 	var/new_color = input(usr, "Pick a new color for your eyes.","Eye Color", current_color) as null|color
+	*/
+	var/new_color = input(usr, "Выберите новый цвет глаз.","Цвет глаз", current_color) as null|color
+	// End of Bastion of Endeavor Translation
 	if(new_color && owner)
 		// input() supplies us with a hex color, which we can't use, so we convert it to rbg values.
 		var/list/new_color_rgb_list = hex2rgb(new_color)
@@ -73,7 +89,11 @@
 	var/oldbroken = is_broken()
 	..()
 	if(is_broken() && !oldbroken && owner && !owner.stat)
+		/* Bastion of Endeavor Translation
 		to_chat(owner, "<span class='danger'>You go blind!</span>")
+		*/
+		to_chat(owner, "<span class='danger'>Вы ослепли!</span>")
+		// End of Bastion of Endeavor Translation
 
 /obj/item/organ/internal/eyes/process() //Eye damage replaces the old eye_stat var.
 	..()
@@ -91,10 +111,18 @@
 	//Conjunctivitis
 	if (. >= 1)
 		if(prob(1))
+			/* Bastion of Endeavor Translation
 			owner.custom_pain("The corners of your eyes itch! It's quite frustrating.",0)
+			*/
+			owner.custom_pain("Уголки Ваших глаз чешутся! Это раздражает.",0)
+			// End of Bastion of Endeavor Translation
 	if (. >= 2)
 		if(prob(1))
+			/* Bastion of Endeavor Translation
 			owner.custom_pain("Your eyes are watering, making it harder to see clearly for a moment.",1)
+			*/
+			owner.custom_pain("Ваши глаза прослезились, и на мгновение ничего не видите.",1)
+			// End of Bastion of Endeavor Translation
 			owner.eye_blurry += 10
 
 /obj/item/organ/internal/eyes/proc/get_total_protection(var/flash_protection = FLASH_PROTECTION_NONE)
