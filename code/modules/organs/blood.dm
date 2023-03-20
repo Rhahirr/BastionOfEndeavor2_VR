@@ -108,11 +108,21 @@ var/const/CE_STABLE_THRESHOLD = 0.5
 			if(!pale)
 				pale = 1
 				update_icons_body()
+				/* Bastion of Endeavor Translation: making things neater
 				var/word = pick("dizzy","woozy","faint","disoriented","unsteady")
 				to_chat(src, "<font color='red'>You feel slightly [word]</font>")
+				*/
+				var/word = pick("У Вас слегка кружится голова","У Вас слегка плывёт в глазах","Вы чувствуете недомогание","Вы слегка дезориентированы","Вы слегка шатаетесь")
+				to_chat(src, "<font color='red'>[word].</font>")
+				// End of Bastion of Endeavor Translation
 			if(prob(1))
+				/* Bastion of Endeavor Translation: dunno why these are separate but sure
 				var/word = pick("dizzy","woozy","faint","disoriented","unsteady")
 				to_chat(src, "<font color='red'>You feel [word]</font>")
+				*/
+				var/word = pick("У Вас кружится голова","У Вас плывёт в глазах","Вы чувствуете недомогание","Вы дезориентированы","Вы шатаетесь")
+				to_chat(src, "<font color='red'>[word].</font>")
+				// End of Bastion of Endeavor Translation
 			if(getOxyLoss() < 20 * threshold_coef)
 				adjustOxyLoss(3 * dmg_coef)
 		else if(blood_volume_raw >= species.blood_volume*species.blood_level_danger)
@@ -125,14 +135,24 @@ var/const/CE_STABLE_THRESHOLD = 0.5
 			adjustOxyLoss(1 * dmg_coef)
 			if(prob(15))
 				Paralyse(rand(1,3))
+				/* Bastion of Endeavor Translation
 				var/word = pick("dizzy","woozy","faint","disoriented","unsteady")
 				to_chat(src, "<font color='red'>You feel dangerously [word]</font>")
+				*/
+				var/word = pick("У Вас сильно кружится голова","У Вас сильно плывёт в глазах","Вы чувствуете сильное недомогание","Вы сильно дезориентированы","Вы сильно шатаетесь")
+				to_chat(src, "<font color='red'>[word].</font>")
+				// End of Bastion of Endeavor Translation
 		else if(blood_volume_raw >= species.blood_volume*species.blood_level_fatal)
 			adjustOxyLoss(5 * dmg_coef)
 //			adjustToxLoss(3 * dmg_coef)
 			if(prob(15))
+				/* Bastion of Endeavor Translation
 				var/word = pick("dizzy","woozy","faint","disoriented","unsteady")
 				to_chat(src, "<font color='red'>You feel extremely [word]</font>")
+				*/
+				var/word = pick("У Вас очень сильно кружится голова","У Вас очень сильно плывёт в глазах","Вы чувствуете очень сильное недомогание","Вы очень сильно дезориентированы","Вы очень сильно шатаетесь")
+				to_chat(src, "<font color='red'>[word].</font>")
+				// End of Bastion of Endeavor Translation
 		else //Not enough blood to survive (usually)
 			if(!pale)
 				pale = 1
