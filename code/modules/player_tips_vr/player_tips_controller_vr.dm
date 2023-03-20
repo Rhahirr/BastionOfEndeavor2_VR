@@ -16,6 +16,8 @@ Controlled by the player_tips subsystem under code/controllers/subsystems/player
 //Called every 5 minutes as defined in the subsystem.
 /datum/player_tips/proc/send_tips()
 	if(world.time > last_tip_time + tip_delay)
+		last_tip_time = world.time
+		tip_delay = rand(min_tip_delay, max_tip_delay)
 		/* Bastion of Endeavor Translation: Kinda janky out of context but this is okay
 		var/tip = pick_tip("none") //"none" picks a random topic of advice.
 		*/
@@ -31,21 +33,17 @@ Controlled by the player_tips subsystem under code/controllers/subsystems/player
 			stopWhile = stopWhile + 1
 			if(stopWhile >= 10)
 				break
-
+		last_tip = tip
 		for(var/mob/M in player_list)
 			if(M.is_preference_enabled(/datum/client_preference/player_tips))
-				if(!(M.mind.key in HasReceived))
+				if(!M.key && !(M.key in HasReceived))
 					/* Bastion of Endeavor Translation
 					to_chat(M, SPAN_WARNING("You have periodic player tips enabled. You may turn them off at any time with the Toggle Receiving Player Tips verb in Preferences, or in character set up under the OOC tab!\n Player tips appear every 45-75 minutes."))
 					*/
 					to_chat(M, SPAN_WARNING("У Вас включена рассылка периодических подсказок. Её можно выключить с помощью глагола Переключить рассылку подсказок во вкладке Настройки или в Редакторе персонажа!\n Подсказки появляются каждые 45-75 минут."))
 					// End of Bastion of Endeavor Translation
-					HasReceived.Add(M.mind.key)
+					HasReceived.Add(M.key)
 				to_chat(M, SPAN_NOTICE("[tip]"))
-
-		last_tip = tip
-		last_tip_time = world.time
-		tip_delay = rand(min_tip_delay, max_tip_delay)
 
 
 

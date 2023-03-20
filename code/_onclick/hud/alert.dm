@@ -154,7 +154,7 @@ The box in your backpack has an oxygen tank and breath mask in it."
 	name = "Choking (No CO2)"
 	desc = "You're not getting enough carbon dioxide. Find some good air before you pass out!"
 	*/
-	name = "Удушье (Мало CO2)"
+	name = "Удушье (мало CO2)"
 	desc = "Вам не хватает углекислого газа. Сделайте глоток нормального воздуха, пока не упали в обморок!"
 	// End of Bastion of Endeavor Translation
 	icon_state = "not_enough_co2"
@@ -184,7 +184,7 @@ The box in your backpack has an oxygen tank and breath mask in it."
 	name = "Choking (No Phoron)"
 	desc = "You're not getting enough phoron. Find some good air before you pass out!"
 	*/
-	name = "Удушье (Мало форона)"
+	name = "Удушье (мало форона)"
 	desc = "Вам не хватает форона, чтобы дышать. Сделайте глоток нормального воздуха, пока не упали в обморок!"
 	// End of Bastion of Endeavor Translation
 	icon_state = "not_enough_tox"
@@ -195,7 +195,7 @@ The box in your backpack has an oxygen tank and breath mask in it."
 	desc = "There's highly flammable, toxic phoron in the air and you're breathing it in. Find some fresh air. \
 The box in your backpack has an oxygen tank and gas mask in it."
 	*/
-	name = "Удушье (Форон)"
+	name = "Удушье (форон)"
 	desc = "Вы дышите легковоспламеняющимся токсичным фороном. Сделайте глоток нормального воздуха. \
 В Вашем рюкзаке есть коробка с баллоном и дыхательной маской."
 	// End of Bastion of Endeavor Translation
@@ -206,7 +206,7 @@ The box in your backpack has an oxygen tank and gas mask in it."
 	name = "Choking (No Volatile fuel)"
 	desc = "You're not getting enough volatile fuel. Find some good air before you pass out!"
 	*/
-	name = "Удушье (Мало летучего топлива)"
+	name = "Удушье (мало летучего топлива)"
 	desc = "Вам не хватает летучего топлива, чтобы дышать. Сделайте глоток нормального воздуха, пока не упали в обморок!"
 	// End of Bastion of Endeavor Translation
 	icon_state = "not_enough_tox"
@@ -216,7 +216,7 @@ The box in your backpack has an oxygen tank and gas mask in it."
 	name = "Choking (No Sleeping Gas)"
 	desc = "You're not getting enough sleeping gas. Find some good air before you pass out!"
 	*/
-	name = "Удушье (Мало усыпляющего газа)"
+	name = "Удушье (мало N2O)"
 	desc = "Вам не хватает усыпляющего газа. Сделайте глоток нормального воздуха, пока не упали в обморок!"
 	// End of Bastion of Endeavor Translation
 	icon_state = "not_enough_tox"
@@ -225,19 +225,19 @@ The box in your backpack has an oxygen tank and gas mask in it."
 
 /obj/screen/alert/fat
 	/* Bastion of Endeavor Translation
-	name = "Fat"
-	desc = "You ate too much food, lardass. Run around the station and lose some weight."
+	name = "Full"
+	desc = "You've eaten more than you can handle, maybe you should slow down?"
 	*/
-	name = "Лишний вес"
-	desc = "Вы слишком обожрались. Теперь отрабатывайте все эти калории, чтобы похудеть."
+	name = "Переедание"
+	desc = "Вы объелись. Может быть, не стоит переедать?"
 	// End of Bastion of Endeavor Translation
 	icon_state = "fat"
 
 /obj/screen/alert/fat/vampire
 	/* Bastion of Endeavor Translation
-	desc = "You drank too much blood, lardass. Run around the station and lose some weight."
+	desc = "You've had more than enough blood, for now."
 	*/
-	desc = "Вы слишком упились кровью. Теперь отрабатывайте все эти калории, чтобы похудеть."
+	desc = "Вы выпили более чем достаточно крови. Надолго ли?"
 	// End of Bastion of Endeavor Translation
 	icon_state = "v_fat"
 
@@ -245,6 +245,7 @@ The box in your backpack has an oxygen tank and gas mask in it."
 	/* Bastion of Endeavor Translation
 	desc = "Your battery is full! Don't overvolt it."
 	*/
+	name = "Излишний заряд"
 	desc = "Ваш аккумулятор полностью заряжен. Не перегрузите его."
 	// End of Bastion of Endeavor Translation
 	icon_state = "c_fat"
@@ -261,9 +262,9 @@ The box in your backpack has an oxygen tank and gas mask in it."
 
 /obj/screen/alert/hungry/vampire
 	/* Bastion of Endeavor Translation
-	desc = "You could use a bloodsnack or two."
+	desc = "You could go for a bite right now..."
 	*/
-	desc = "Вы бы сейчас не отказались от крови."
+	desc = "Вам бы укусить кого-нибудь..."
 	// End of Bastion of Endeavor Translation
 	icon_state = "v_hungry"
 
@@ -271,6 +272,7 @@ The box in your backpack has an oxygen tank and gas mask in it."
 	/* Bastion of Endeavor Translation
 	desc = "Battery's running a bit low, could use a topoff."
 	*/
+	name = "Низкий заряд"
 	desc = "Аккумулятор начинает садиться, не помешало бы подзарядить."
 	// End of Bastion of Endeavor Translation
 	icon_state = "c_hungry"
@@ -278,10 +280,10 @@ The box in your backpack has an oxygen tank and gas mask in it."
 /obj/screen/alert/starving
 	/* Bastion of Endeavor Translation
 	name = "Starving"
-	desc = "You're severely malnourished. The hunger pains make moving around a chore."
+	desc = "You're starving. You barely have enough energy to move around."
 	*/
-	name = "Голод"
-	desc = "Вы крайне голодны. Стонущий желудок затрудняет Ваше передвижение."
+	name = "Голодание"
+	desc = "Вы голодаете. У Вас почти не осталось энергии на передвижение."
 	// End of Bastion of Endeavor Translation
 	icon_state = "starving"
 
@@ -430,11 +432,10 @@ or something covering your eyes."
 /obj/screen/alert/high
 	/* Bastion of Endeavor Translation
 	name = "High"
-	desc = "Whoa man, you're tripping balls! Careful you don't get addicted... if you aren't already."
+	desc = "Whoa, you're tripping balls!"
 	*/
 	name = "Под кайфом"
-	desc = "Ух ты ж ё, да Вы под кайфом! Постарайтесь не подсесть... если этого ещё не случилось."
-	// End of Bastion of Endeavor Translation
+	desc = "Ух ты ж ё, да Вы под кайфом!"
 	icon_state = "high"
 
 /obj/screen/alert/embeddedobject
@@ -500,11 +501,11 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 
 /obj/screen/alert/alien_tox
 	/* Bastion of Endeavor Translation
-	name = "Plasma"
-	desc = "There's flammable plasma in the air. If it lights up, you'll be toast."
+	name = "Phoron"
+	desc = "There's flammable phoron in the air. If it lights up, you'll be toast."
 	*/
-	name = "Плазма"
-	desc = "В воздухе легковоспламеняющаяся плазма. Если она загорится, Вам не жить."
+	name = "Форон"
+	desc = "В воздухе легковоспламеняющийся форон. Если он загорится, Вам не жить."
 	// End of Bastion of Endeavor Translation
 	icon_state = "alien_tox"
 	alerttooltipstyle = "alien"
@@ -711,7 +712,7 @@ so as to remain in compliance with the most up-to-date laws."
 		return 1
 	for(var/i = 1, i <= alerts.len, i++)
 		var/obj/screen/alert/alert = alerts[alerts[i]]
-		
+
 		if(alert.icon_state in cached_icon_states(ui_style))
 			alert.icon = ui_style
 		
@@ -720,7 +721,7 @@ so as to remain in compliance with the most up-to-date laws."
 			I.color = ui_color
 			I.alpha = ui_alpha
 			alert.underlays = list(I)
-		
+
 		switch(i)
 			if(1)
 				. = ui_alert1
