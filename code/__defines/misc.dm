@@ -250,10 +250,10 @@
 #define TSC_HEPH	"Гефест"
 #define TSC_VM		"Вей-Мед"
 #define TSC_ZH		"Дзен-Ху"
-#define TSC_WT		"Вард-Такахаши"
+#define TSC_WT		"Уорд-Такахаси"
 #define TSC_BC		"Бишоп"
 #define TSC_MORPH	"Морфей"
-#define TSC_XION	"Ксайон"
+#define TSC_XION	"Зион"
 #define TSC_GIL 	"Гилтари"
 // End of Bastion of Endeavor Translation
 

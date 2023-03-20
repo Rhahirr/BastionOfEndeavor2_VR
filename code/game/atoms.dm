@@ -257,7 +257,7 @@
 			/* Bastion of Endeavor Translation
 			f_name += "oil-stained [name][infix]."
 			*/
-			f_name += "[verb_ru(src, "замасленн;ый;ая;ое;ые;")] [ncase_ru(src)][infix]"
+			f_name += "[verb_ru(src, "замасленн;ый;ая;ое;ые;")] [ncase_ru(src)][infix]."
 			// End of Bastion of Endeavor Translation
 
 	/* Bastion of Endeavor Translation

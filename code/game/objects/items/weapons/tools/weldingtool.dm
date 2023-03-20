@@ -89,7 +89,11 @@
 			to_chat(user, "<span class='warning'>You'll need to turn [src] on to patch the damage on [H]'s [S.name]!</span>")
 			return TRUE
 
+		/* Bastion of Endeavor Translation
 		if(S.robo_repair(15, BRUTE, "some dents", src, user))
+		*/
+		if(S.robo_repair(15, BRUTE, "[verb_ru(user, "заделал")] вмятины", src, user))
+		// End of Bastion of Endeavor Translation
 			remove_fuel(1, user)
 			return TRUE
 		else

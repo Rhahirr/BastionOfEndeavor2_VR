@@ -2,10 +2,10 @@
 var/global/list/successful_cases_ru = list()
 
 /atom/New() // radical? yes. will it break things? won't know until we try.
-	..()
 	cases_ru = new /list()
-	create_cases_ru("basic")
+	cases_ru = list("basic" = basic_cases_list_ru)
 	construct_cases_ru()
+	..()
 
 /datum/proc/create_cases_ru(var/subcase)
 	if(subcase)
@@ -168,4 +168,39 @@ var/global/list/successful_cases_ru = list()
 		if(PLURAL_ACASE) return "Вин. п. мн. ч."
 		if(PLURAL_ICASE) return "Тв. п. мн. ч."
 		if(PLURAL_PCASE) return "Пр. п. мн. ч."
+	return
+
+// this lets as add words to case blueprints from either side
+// this entire proc is literal spaghetti someone please help me code this in a better way
+/datum/proc/update_blueprint_ru(var/left, var/right, var/separator_left = "", var/separator_right = "", var/index = "basic", var/gender)
+	
+	// this part locates the blueprint from the list index we want
+	var/sliced_by_gender
+	var/blueprint_index
+	if(index != "basic")
+		log_grammar_ru("update_blueprint_ru: указан индекс, поэтому:")
+		for(var/blueprint in case_blueprint_ru)
+			log_grammar_ru("Для case_blueprint_ru\[[blueprint]\]:")
+			sliced_by_gender = splittext_char(case_blueprint_ru[blueprint], "#")
+			log_grammar_ru("spliced_by_gender = [jointext(sliced_by_gender, ", ")]")
+			if(!isnull(listgetindex(sliced_by_gender, 3)))
+				if(sliced_by_gender[3] == index)
+					blueprint_index = blueprint
+					break
+	else
+		sliced_by_gender = splittext_char(case_blueprint_ru[1], "#")
+
+	// this part changes the gender if need be
+	var/gender_key
+	if(gender) gender_key = gender
+	else gender_key = sliced_by_gender[1]
+
+	// this part changes the index if needed
+	var/index_key
+	if(index) index_key = index
+	else if(isnull(listgetindex(sliced_by_gender, 3))) index_key = sliced_by_gender[3]
+
+	if(!blueprint_index) blueprint_index = 1
+	case_blueprint_ru[blueprint_index] = "[gender_key]#[left][separator_left][sliced_by_gender[2]][separator_right][right][index_key && index_key != "basic"? "#[index_key]" : ""]"
+	construct_cases_ru()
 	return
