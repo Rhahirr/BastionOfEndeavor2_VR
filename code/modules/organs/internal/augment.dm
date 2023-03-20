@@ -174,7 +174,7 @@
 		/* Bastion of Endeavor Translation
 		to_chat(M,"<span class='warning'>Your hand is full.  Drop something first.</span>")
 		*/
-		to_chat(M,"<span class='warning'>Сперва освободите руки, чтобы использовать аугментацию.</span>")
+		to_chat(M,"<span class='warning'>Сперва освободите руку, чтобы использовать аугментацию.</span>")
 		// End of Bastion of Endeavor Translation
 		return 0
 

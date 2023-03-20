@@ -1277,7 +1277,15 @@ Note that amputating the affected organ does in fact remove the infection from t
 				*/
 				update_blueprint_ru(left = "роботизированн;adj1*a(2)", separator_left = " ")
 				name = cap_ru(src)
-			desc = "[R.desc] Похоже, [verb_ru(src, ";его;её;его;их;")] бренд - [R.company]."
+			var/desc_ext_ru
+			if(findtext_char(lowertext(R.company), "безбрендовый"))
+				desc_ext_ru = "[verb_ru(src, "Он")] не [verb_ru(src, "напомина;ет;ет;ет;ют;")] какой-либо известный бренд."
+			else if (findtext_char(lowertext(R.company), "монитор")) //don't care for unbranded monitors
+				var/company_name_ru = splittext_char(R.company, " ")
+				desc_ext_ru = "Похоже, это монитор от фирмы [company_name_ru]."
+			else
+				desc_ext_ru = "Похоже, [verb_ru(src, ";его;её;его;их;")] бренд - [R.company]."
+			desc = "[desc_ext_ru] [R.desc] "
 				// End of Bastion of Endeavor Translation
 
 	dislocated = -1

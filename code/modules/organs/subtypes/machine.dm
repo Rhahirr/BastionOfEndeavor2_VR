@@ -11,6 +11,16 @@
 	robotize()
 	..()
 
+//Bastion of Endeavor Addition: I don't know why it robotizes itself twice when printed nor care to find out. Here's some snowflake treatment
+/obj/item/organ/internal/cell/robotize()
+	..()
+	name = "Механический микроаккумулятор"
+	desc = "Крохотный, но очень мощный аккумулятор, используемый в полностью простетических телах."
+	case_blueprint_ru[1] = "муж#механическ;adj3aX~ микроаккумулятор;n1a"
+	// i hate this
+	construct_cases_ru()
+// End of Bastion of Endeavor Addition
+
 /obj/item/organ/internal/cell/replaced()
 	..()
 	// This is very ghetto way of rebooting an IPC. TODO better way.
@@ -19,7 +29,7 @@
 		/* Bastion of Endeavor Translation
 		owner.visible_message("<span class='danger'>\The [owner] twitches visibly!</span>")
 		*/
-		owner.visible_message("<span class='danger'>[interact_ru(owner, "резко дёрнул;ся;ась;ось;ись")]!</span>")
+		owner.visible_message("<span class='danger'>[interact_ru(owner, "резко вздрогнул")]!</span>")
 		// End of Bastion of Endeavor Translation
 
 /obj/item/organ/internal/cell/emp_act(severity)
@@ -97,7 +107,7 @@
 		/* Bastion of Endeavor Translation
 		owner.visible_message("<span class='danger'>\The [owner] twitches visibly!</span>")
 		*/
-		owner.visible_message("<span class='danger'>[interact_ru(owner, "резко дёрнул;ся;ась;ось;ись")]!</span>")
+		owner.visible_message("<span class='danger'>[interact_ru(owner, "резко вздрогнул")]!</span>")
 		// End of Bastion of Endeavor Translation
 
 /obj/item/organ/internal/mmi_holder/removed(var/mob/living/user)

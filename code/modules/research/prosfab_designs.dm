@@ -15,7 +15,11 @@
 			var/datum/robolimb/manf = all_robolimbs[prosfab.manufacturer]
 
 			if(!(O.organ_tag in manf.parts))	// Make sure we're using an actually present icon.
+				/* Bastion of Endeavor Translation
 				manf = all_robolimbs["Unbranded"]
+				*/
+				manf = all_robolimbs["Безбрендовый"]
+				// End of Bastion of Endeavor Translation
 
 			if(prosfab.species in manf.species_alternates)	// If the prosthetics fab is set to say, Unbranded, and species set to 'Tajaran', it will make the Taj variant of Unbranded, if it exists.
 				manf = manf.species_alternates[prosfab.species]
@@ -25,7 +29,11 @@
 			else
 				O.species = GLOB.all_species[prosfab.species]
 		else
+			/* Bastion of Endeavor Translation
 			O.species = GLOB.all_species["Human"]
+			*/
+			O.species = GLOB.all_species[SPECIES_HUMAN]
+			// End of Bastion of Endeavor Translation
 		O.robotize(prosfab.manufacturer)
 		O.dna = new/datum/dna() //Uuughhhh... why do I have to do this?
 		O.dna.ResetUI()
@@ -39,7 +47,11 @@
 /datum/design/item/prosfab/pros/torso/Fabricate(var/newloc, var/fabricator)
 	if(istype(fabricator, /obj/machinery/mecha_part_fabricator/pros))
 		var/obj/machinery/mecha_part_fabricator/pros/prosfab = fabricator
+		/* Bastion of Endeavor Translation
 		var/newspecies = "Human"
+		*/
+		var/newspecies = SPECIES_HUMAN
+		// End of Bastion of Endeavor Translation
 
 		var/datum/robolimb/manf = all_robolimbs[prosfab.manufacturer]
 
@@ -65,7 +77,11 @@
 			O.species = GLOB.all_species[newspecies]
 
 			if(!(O.organ_tag in manf.parts))	// Make sure we're using an actually present icon.
+				/* Bastion of Endeavor Translation
 				manf = all_robolimbs["Unbranded"]
+				*/
+				manf = all_robolimbs["Безбрендовый"]
+				// End of Bastion of Endeavor Translation
 
 			O.robotize(manf.company)
 			O.dna = new/datum/dna()
