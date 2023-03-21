@@ -47,7 +47,7 @@
 	company = "Когтя" // a bit ugly but should do the trick?
 
 /datum/robolimb/zenghu_taj
-	company = "Дзен-Ху - Таджара"
+	company = "Дзен-Ху - Таджар"
 	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыка."
 
 /datum/robolimb/eggnerdltdred
@@ -58,12 +58,12 @@
 	company = "Эгнёрд Прототайпинг" // lets not add more snowflakes than we already have
 
 /datum/robolimb/dsi_tajaran
-	company = "Дарксайд - Таджара"
+	company = "Дарксайд - Таджар"
 	desc = "Мягкий и пушистый протез, реалистичный на вид и ощупь."
 	suggested_species = SPECIES_TAJ // overwriting this here as a define just in case
 
 /obj/item/weapon/disk/limb/dsi_tajaran // okay so who and why upstream made a specific subtype SPECIFICALLY for species-specific limbs and then added these under the generalized one??
-	company = "Дарксайд (таджара)" // not that it matters much but just why? adding the parenthesis to look readable with cases
+	company = "Дарксайд (таджар)" // not that it matters much but just why? adding the parenthesis to look readable with cases
 
 /datum/robolimb/dsi_lizard
 	company = "Дарксайд - Унати" // and why the hell is this listed as lizard when the rest of these are given proper species names? changing this
@@ -98,12 +98,12 @@
 	company = "Дарксайд (вульпканин)"
 
 /datum/robolimb/dsi_akula
-	company = "Дарксайд - Акула"
+	company = "Дарксайд - Акул"
 	desc = "Мягкий и мясистый протез, реалистичный на вид и ощупь."
 	suggested_species = SPECIES_AKULA
 
 /obj/item/weapon/disk/limb/dsi_akula
-	company = "Дарксайд (акула)"
+	company = "Дарксайд (акул)"
 
 /datum/robolimb/dsi_spider
 	company = "Дарксайд - Василиссанец"
@@ -144,7 +144,7 @@
 	blood_name = "oil"                              						// Descriptor for blood splatters.
 	// these are tricky, might need to get looked at later
 	suggested_species = SPECIES_HUMAN                						// If it should make the torso a species
-	species_alternates = list(SPECIES_TAJ = "Безбрендовый - Таджара", SPECIES_UNATHI = "Unbranded - Unathi")
+	species_alternates = list(SPECIES_TAJ = "Безбрендовый - Таджар", SPECIES_UNATHI = "Безбрендовый - Унати")
 
 /datum/robolimb/unbranded_monitor
 	company = "Безбрендовый монитор"
@@ -159,7 +159,7 @@
 	desc = "Эта модель протеза покрыта слоём блестящего черного металла и имеет весьма вызывающий насекомообразный вид."
 
 /datum/robolimb/unbranded_tajaran
-	company = "Безбрендовый - Таджара"
+	company = "Безбрендовый - Таджар"
 	desc = "Простая, немного тяжеловатая кошачья модель протеза."
 
 /datum/robolimb/unbranded_unathi
@@ -176,10 +176,10 @@
 /datum/robolimb/nanotrasen
 	company = "НаноТрейсен"
 	desc = "Простая, но эффективная модель протеза."
-	species_alternates = list(SPECIES_TAJ = "НаноТрейсен - Таджара", SPECIES_UNATHI = "НаноТрейсен - Унати")
+	species_alternates = list(SPECIES_TAJ = "НаноТрейсен - Таджар", SPECIES_UNATHI = "НаноТрейсен - Унати")
 
 /datum/robolimb/nanotrasen_tajaran
-	company = "НаноТрейсен - Таджара"
+	company = "НаноТрейсен - Таджар"
 	species_alternates = list(SPECIES_HUMAN = "НаноТрейсен")
 	desc = "Простая, но эффективная модель протеза."
 
@@ -457,10 +457,10 @@
 /datum/robolimb/zenghu_glacier
 	company = "Дзен-Ху - Ледник"
 	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыка."
-	species_alternates = list(SPECIES_TAJ = "Дзен-Ху - Таджара")
+	species_alternates = list(SPECIES_TAJ = "Дзен-Ху - Таджар")
 
 /datum/robolimb/zenghu_taj_glacier
-	company = "Дзен-Ху - Таджара - Ледник"
+	company = "Дзен-Ху - Таджар - Ледник"
 	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыка."
 
 

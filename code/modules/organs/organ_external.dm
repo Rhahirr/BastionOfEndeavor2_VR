@@ -509,10 +509,11 @@
 		else
 			user.visible_message("<b>\The [user]</b> [fix_verb] [damage_desc] on [owner]'s [src.name] with [tool].")
 		*/
+		var/fix_verb = (damage_amount > repair_amount) ? "[verb_ru(user, "ремонтиру;ет;ет;ет;ют;")]" : "[verb_ru(user, "закончил")] ремонтировать"]"
 		if(user == src.owner)
-			user.visible_message("<b>[cap_ru(user)]</b> [(damage_amount > repair_amount) ? "[verb_ru("ремонтиру;ет;ет;ет;ют;")]" : "[verb_ru("закончил")] ремонтировать"] [damage_desc] на [concat_ru("сво;ём;ей;ём;их;", src, PCASE)] с помощью [gcase_ru(tool)].")
+			user.visible_message("<b>[cap_ru(user)]</b> [fix_verb] [damage_desc] на [concat_ru("сво;ём;ей;ём;их;", src, PCASE)] с помощью [gcase_ru(tool)].") // a bit iffy about cables being ON something but sure
 		else
-			user.visible_message("<b>[cap_ru(user)]</b> [(damage_amount > repair_amount) ? "[verb_ru("ремонтиру;ет;ет;ет;ют;")]" : "[verb_ru("закончил")] ремонтировать"] [damage_desc] на [pcase_ru(src)] [gcase_ru(owner)] с помощью [gcase_ru(tool)].")
+			user.visible_message("<b>[cap_ru(user)]</b> [fix_verb] [damage_desc] на [pcase_ru(src)] [gcase_ru(owner)] с помощью [gcase_ru(tool)].")
 		// End of Bastion of Endeavor Translation
 
 	return 1
