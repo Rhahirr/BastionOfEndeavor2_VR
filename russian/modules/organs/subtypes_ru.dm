@@ -46,8 +46,8 @@
 	case_blueprint_ru = list("муж#прав;adj1a/c хватун;n1b", "жен#ветв;n8e#amputation_point", "муж#лигамент;n1a#joint")
 
 /obj/item/organ/internal/diona
-	name = "Нимфа дионы"
-	case_blueprint_ru = list("жен#нимф;n1a дионы")
+	name = "Нимфа дионеи"
+	case_blueprint_ru = list("жен#нимф;n1a дионеи")
 
 /obj/item/organ/internal/diona/strata
 	name = "Нейронная страта"

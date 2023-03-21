@@ -566,7 +566,7 @@ var/list/possible_cable_coil_colours = list(
 			/* Bastion of Endeavor Translation
 			if(S.robo_repair(5*use_amt, BURN, "some damaged wiring", src, user))
 			*/
-			if(S.robo_repair(5*use_amt, BURN, "[verb_ru(user, "заменил")]  повреждённые провода", src, user))
+			if(S.robo_repair(5*use_amt, BURN, "повреждённые провода", src, user))
 			// End of Bastion of Endeavor Translation
 				src.use(use_amt)
 
