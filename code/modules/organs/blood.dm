@@ -112,7 +112,7 @@ var/const/CE_STABLE_THRESHOLD = 0.5
 				var/word = pick("dizzy","woozy","faint","disoriented","unsteady")
 				to_chat(src, "<font color='red'>You feel slightly [word]</font>")
 				*/
-				var/word = pick("У Вас слегка кружится голова","У Вас слегка плывёт в глазах","Вы чувствуете недомогание","Вы слегка дезориентированы","Вы слегка шатаетесь")
+				var/word = pick("У Вас слегка кружится голова","У Вас слегка плывёт в глазах","Вы чувствуете недомогание","Вы слегка дезориентированы","Вы слегка пошатываетесь")
 				to_chat(src, "<font color='red'>[word].</font>")
 				// End of Bastion of Endeavor Translation
 			if(prob(1))

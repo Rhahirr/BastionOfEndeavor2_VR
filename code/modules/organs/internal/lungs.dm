@@ -82,7 +82,7 @@
 			/* Bastion of Endeavor Translation
 			owner.custom_pain("You suddenly feel short of breath and take a sharp, painful breath!",1)
 			*/
-			owner.custom_pain("Вам резко начало не хватать воздуха, и Вы делаете тяжелый, больной вдох!",1)
+			owner.custom_pain("Вам резко начало не хватать воздуха, и Вы делаете тяжёлый, больной вдох!",1)
 			// End of Bastion of Endeavor Translation
 			owner.adjustOxyLoss(30) //Look it's hard to simulate low O2 perfusion okay
 

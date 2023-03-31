@@ -14,7 +14,7 @@
 		P.request_player(D, "A diona nymph has split off from its gestalt. ")
 		*/
 		var/datum/ghosttrap/plant/P = get_ghost_trap("Живое растение")
-		P.request_player(D, "Нимфа дионеи отделилась от своих истоков. ")
+		P.request_player(D, "Нимфа дионеи отделилась от своего гештальта. ")
 		// End of Bastion of Endeavor Translation
 		spawn(60)
 			if(D)

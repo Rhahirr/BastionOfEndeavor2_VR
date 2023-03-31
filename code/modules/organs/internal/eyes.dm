@@ -121,7 +121,7 @@
 			/* Bastion of Endeavor Translation
 			owner.custom_pain("Your eyes are watering, making it harder to see clearly for a moment.",1)
 			*/
-			owner.custom_pain("Ваши глаза прослезились, и на мгновение ничего не видите.",1)
+			owner.custom_pain("Ваши глаза прослезились, на мгновение размывая зрение.",1)
 			// End of Bastion of Endeavor Translation
 			owner.eye_blurry += 10
 

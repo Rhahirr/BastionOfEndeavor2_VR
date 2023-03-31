@@ -103,7 +103,7 @@
 			/* Bastion of Endeavor Translation
 			to_chat(src, "<span class='notice'>Your [aug.integrated_object] deploy.</span>")
 			*/
-			to_chat(src, "<span class='alien'>[concat_ru("Ваш;;а;е;и;", aug.integrated_object)] [verb_ru(aug.integrated_object, "опуска;ется;ется;ется;ются;")] из Вашего черепа.</span>")
+			to_chat(src, "<span class='alien'>[concat_ru("Ваш;;а;е;и;", aug.integrated_object)] [verb_ru(aug.integrated_object, "выдвига;ется;ется;ется;ются;")] из Вашего черепа.</span>")
 			// End of Bastion of Endeavor Translation
 
 /obj/item/organ/internal/augment/bioaugment/sprint_enhance

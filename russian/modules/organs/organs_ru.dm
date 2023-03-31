@@ -5,18 +5,18 @@
 
 // misc.dm
 /obj/item/organ/internal/stack
-	name = "Кортикальный стэк"
-	case_blueprint_ru = list("муж#кортикальн;adj1*a стэк;n3a")
+	name = "Кортикальный стек"
+	case_blueprint_ru = list("муж#кортикальн;adj1*a стек;n3a")
 
 /obj/item/organ/internal/stack/vox/stack
-	name = "Воксовый кортикальный стэк"
-	case_blueprint_ru = list("муж#воксов;adj1a кортикальн;adj1*a стэк;n3a")
+	name = "Воксовый кортикальный стек"
+	case_blueprint_ru = list("муж#воксов;adj1a кортикальн;adj1*a стек;n3a")
 
 // organ_external.dm
 /obj/item/organ/external
 	name = "Внешний орган"
 	joint = "Сустав" 
-	case_blueprint_ru = list("муж#внешн;n2*a орган;n1a", "муж#сустав;n1a")
+	case_blueprint_ru = list("муж#внешн;n2*a орган;n1a", "муж#сустав;n1a#joint")
 
 // organ_stump.dm
 /obj/item/organ/external/stump
@@ -34,7 +34,7 @@
 // robolimbs_custom.dm
 /datum/robolimb/eggnerdltd
 	company = "Эгнёрд Прототайпинг"
-	desc = "Этот протез выглядит так, будто вручную собран из металлолома. На нём красуется маркировка 'ГИ', кривая, словно нанесенная от руки фломастером."
+	desc = "Этот протез выглядит так, будто вручную собран из металлолома. На нём красуется маркировка 'ГИ', кривая, словно нанесённая от руки фломастером."
 
 /obj/item/weapon/disk/limb/eggnerdltd
 	company = "Эгнёрд Прототайпинг"
@@ -48,7 +48,7 @@
 
 /datum/robolimb/zenghu_taj
 	company = "Дзен-Ху - Таджар"
-	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыка."
+	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыков."
 
 /datum/robolimb/eggnerdltdred
 	company = "Эгнёрд Прототайпинг - Красный"
@@ -59,7 +59,7 @@
 
 /datum/robolimb/dsi_tajaran
 	company = "Дарксайд - Таджар"
-	desc = "Мягкий и пушистый протез, реалистичный на вид и ощупь."
+	desc = "Мягкий и пушистый протез, реалистичный на вид и на ощупь."
 	suggested_species = SPECIES_TAJ // overwriting this here as a define just in case
 
 /obj/item/weapon/disk/limb/dsi_tajaran // okay so who and why upstream made a specific subtype SPECIFICALLY for species-specific limbs and then added these under the generalized one??
@@ -67,7 +67,7 @@
 
 /datum/robolimb/dsi_lizard
 	company = "Дарксайд - Унати" // and why the hell is this listed as lizard when the rest of these are given proper species names? changing this
-	desc = "Гладкий, чешуйчатый протез, реалистичный на вид и ощупь."
+	desc = "Гладкий, чешуйчатый протез, реалистичный на вид и на ощупь."
 	suggested_species = SPECIES_UNATHI // same as above
 
 /obj/item/weapon/disk/limb/dsi_lizard
@@ -75,7 +75,7 @@
 
 /datum/robolimb/dsi_sergal
 	company = "Дарксайд - Сергал"
-	desc = "Мягкий, пушистый и чуточку даже мускулистый протез, реалистичный на вид и ощупь."
+	desc = "Мягкий, пушистый и чуточку даже мускулистый протез, реалистичный на вид и на ощупь."
 	suggested_species = SPECIES_SERGAL
 
 /obj/item/weapon/disk/limb/dsi_sergal
@@ -83,7 +83,7 @@
 
 /datum/robolimb/dsi_nevrean
 	company = "Дарксайд - Невреец"
-	desc = "Мягкий и пернатый протез, легкий, реалистичный на вид и ощупь."
+	desc = "Мягкий и пернатый протез, лёгкий, реалистичный на вид и на ощупь."
 	suggested_species = SPECIES_NEVREAN
 
 /obj/item/weapon/disk/limb/dsi_nevrean
@@ -91,7 +91,7 @@
 
 /datum/robolimb/dsi_vulpkanin
 	company = "Дарксайд - Вульпканин"
-	desc = "Мягкий и пушистый протез, реалистичный на вид и ощупь. И капельку хитроватый..?"
+	desc = "Мягкий и пушистый протез, реалистичный на вид и на ощупь. И капельку хитроватый..?"
 	suggested_species = SPECIES_VULPKANIN
 
 /obj/item/weapon/disk/limb/dsi_vulpkanin
@@ -99,7 +99,7 @@
 
 /datum/robolimb/dsi_akula
 	company = "Дарксайд - Акул"
-	desc = "Мягкий и мясистый протез, реалистичный на вид и ощупь."
+	desc = "Мягкий и мясистый протез, реалистичный на вид и на ощупь."
 	suggested_species = SPECIES_AKULA
 
 /obj/item/weapon/disk/limb/dsi_akula
@@ -107,7 +107,7 @@
 
 /datum/robolimb/dsi_spider
 	company = "Дарксайд - Василиссанец"
-	desc = "Твердый хитинистый протез, реалистичный ощупь."
+	desc = "Твёрдый хитинистый протез, реалистичный ощупь."
 	suggested_species = SPECIES_VASILISSAN
 
 /obj/item/weapon/disk/limb/dsi_spider
@@ -122,7 +122,7 @@
 
 /datum/robolimb/dsi_zorren
 	company = "Дарксайд - Зоррен"
-	desc = "Мягкий и пушистый протез, реалистичный на вид и ощупь. И капельку хитроватый..?"
+	desc = "Мягкий и пушистый протез, реалистичный на вид и на ощупь. И капельку хитроватый..?"
 	suggested_species = SPECIES_ZORREN_HIGH
 
 /obj/item/weapon/disk/limb/dsi_zorren
@@ -130,7 +130,7 @@
 
 /datum/robolimb/dsi_fennec
 	company = "Дарксайд - Фенёк"
-	desc = "Мягкий и пушистый протез, реалистичный на вид и ощупь. И капельку хитроватый..?"
+	desc = "Мягкий и пушистый протез, реалистичный на вид и на ощупь. И капельку хитроватый..?"
 	suggested_species = SPECIES_FENNEC
 
 /obj/item/weapon/disk/limb/dsi_fennec
@@ -156,7 +156,7 @@
 
 /datum/robolimb/unbranded_alt2
 	company = "Безбрендовый - Богомол"
-	desc = "Эта модель протеза покрыта слоём блестящего черного металла и имеет весьма вызывающий насекомообразный вид."
+	desc = "Эта модель протеза покрыта слоем блестящего черного металла и имеет весьма вызывающий насекомообразный вид."
 
 /datum/robolimb/unbranded_tajaran
 	company = "Безбрендовый - Таджар"
@@ -215,19 +215,19 @@
 
 /datum/robolimb/cybersolutions
 	company = "Сайбер Солюшнс"
-	desc = "Этот протез серая и шероховатая, отнюдь не самый эстетичный вариант."
+	desc = "Этот протез серый и шероховатый, отнюдь не самый эстетичный вариант."
 
 /datum/robolimb/cybersolutions_alt2
 	company = "Сайбер Солюшнс - Устаревший"
-	desc = "Этот протез обладает устаревшим, снятым с продажи дизайна; наверняка, такую очень тяжело и неприятно использовать."
+	desc = "Этот протез обладает устаревшим, снятым с продажи дизайном; наверняка, такую очень тяжело и неприятно использовать."
 
 /datum/robolimb/cybersolutions_alt1
 	company = "Сайбер Солюшнс - Матёрый"
-	desc = "На сером металле этого протеза установлены дешевые пластиковые панели."
+	desc = "На сером металле этого протеза установлены дешёвые пластиковые панели."
 
 /datum/robolimb/cybersolutions_alt3
 	company = "Сайбер Солюшнс - Матрица"
-	desc = "Простой и функциональный протез, состоящая из матрицы из датчиков на неприглядном корпусе."
+	desc = "Простой и функциональный протез, состоящий из матрицы датчиков на неприглядном корпусе."
 
 /datum/robolimb/einstein
 	company = "Эйнштейн Энджинс"
@@ -235,19 +235,19 @@
 
 /datum/robolimb/grayson
 	company = "Грейсон"
-	desc = "Прочная, надежная модель протеза."
+	desc = "Прочная, надёжная модель протеза."
 
 /datum/robolimb/grayson_alt1
 	company = "Грейсон - Упрочнённая"
-	desc = "Прочная, надежная модель протеза."
+	desc = "Прочная, надёжная модель протеза."
 
 /datum/robolimb/grayson_monitor
 	company = "Грейсон (монитор)"
-	desc = "Прочная, надежная модель монитора, использующего пластик вместо стекла."
+	desc = "Прочная, надёжная модель монитора, использующего пластик вместо стекла."
 
 /datum/robolimb/hephaestus
 	company = "Гефест"
-	desc = "Модель протеза с зелено-черным оформлением, декорированная золотыми полосами."
+	desc = "Модель протеза с зелёно-чёрным оформлением, декорированная золотыми полосами."
 
 /datum/robolimb/hephaestus_alt1
 	company = "Гефест - Фронтир"
@@ -263,11 +263,11 @@
 
 /datum/robolimb/morpheus
 	company = "Морфей"
-	desc = "Простая и функциональная модель протеза; дизайнеры даже не пытались придать её какой-либо человечности."
+	desc = "Простая и функциональная модель протеза; дизайнеры даже не пытались придать ей какой-либо человечности."
 
 /datum/robolimb/morpheus_alt1
 	company = "Морфей - Зенит"
-	desc = "Простая и функциональная модель протеза; дизайнеры даже не пытались придать её какой-либо человечности."
+	desc = "Простая и функциональная модель протеза; дизайнеры даже не пытались придать ей какой-либо человечности."
 
 /datum/robolimb/morpheus_alt2
 	company = "Морфей - Скелет"
@@ -286,15 +286,15 @@
 
 /datum/robolimb/wardtakahashi
 	company = "Уорд-Такахаси"
-	desc = "Модель протеза, покрытая глянцевыми полимерами черных и белых цветов."
+	desc = "Модель протеза, покрытая глянцевыми полимерами чёрных и белых цветов."
 
 /datum/robolimb/wardtakahashi_alt1
 	company = "Уорд-Такахаси - Покров"
-	desc = "Модель протеза, покрытая глянцевыми полимерами черных и белых цветов. Внешне напоминает шлем."
+	desc = "Модель протеза, покрытая глянцевыми полимерами чёрных и белых цветов. Внешне напоминает шлем."
 
 /datum/robolimb/wardtakahashi_alt2
 	company = "Уорд-Такахаси - Дух"
-	desc = "Модель протеза, оформленная в белых и фиолетовых цветах и обладающая более тяжелым корпусом."
+	desc = "Модель протеза, оформленная в белых и фиолетовых цветах и обладающая более тяжёлым корпусом."
 
 /datum/robolimb/wardtakahashi_monitor
 	company = "Уорд-Такахаси (монитор)"
@@ -302,23 +302,23 @@
 
 /datum/robolimb/xion
 	company = "Зион"
-	desc = "Модель протеза с минималистичным черно-оранжевым корпусом."
+	desc = "Модель протеза с минималистичным чёрно-оранжевым корпусом."
 
 /datum/robolimb/xion_alt1
 	company = "Зион - Брешь"
-	desc = "Модель протеза с минималистичным черно-оранжевым корпусом. Выглядит немного угрожающе."
+	desc = "Модель протеза с минималистичным чёрно-оранжевым корпусом. Выглядит немного угрожающе."
 
 /datum/robolimb/xion_alt2
 	company = "Зион - Корпус"
-	desc = "Модель протеза с минималистичным черно-оранжевым корпусом, обрамленная стальными пластинами."
+	desc = "Модель протеза с минималистичным чёрно-оранжевым корпусом, обрамленная стальными пластинами."
 
 /datum/robolimb/xion_alt3
 	company = "Зион - Белая Мгла"
-	desc = "Модель протеза с минималистичным черно-белым корпусом."
+	desc = "Модель протеза с минималистичным чёрно-белым корпусом."
 
 /datum/robolimb/xion_alt4
 	company = "Зион - Белая Брешь"
-	desc = "Модель протеза с минималистичным черно-белым корпусом. Выглядит немного угрожающе."
+	desc = "Модель протеза с минималистичным чёрно-белым корпусом. Выглядит немного угрожающе."
 
 /datum/robolimb/xion_monitor
 	company = "Зион (монитор)"
@@ -326,7 +326,7 @@
 
 /datum/robolimb/zenghu
 	company = "Дзен-Ху"
-	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыка."
+	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыков."
 	species_alternates = list(SPECIES_TAJ = "Дзен-Ху - Таджара")
 
 /datum/robolimb/wooden
@@ -376,7 +376,7 @@
 	company = "дионейского экзоскелета" //annoying but have to make an exception here. there might a be a lore reason for this but who plays skrell anyway
 
 /obj/item/weapon/disk/limb/wardtakahashi
-	company = "Уорд-Такасахи"
+	company = "Уорд-Такахаси"
 	catalogue_data = list(/datum/category_item/catalogue/information/organization/ward_takahashi)
 
 /obj/item/weapon/disk/limb/xion
@@ -434,7 +434,7 @@
 // silencedmp5a5 : Serdykov Antoz
 /datum/robolimb/white_kryten
 	company = "Уайт Крайтен Сайбернетикс"
-	desc = "Реалистичный на ощуп протез, обладающий мягкой шерстью. Его было бы почти не отличить от настоящей части тела, если бы не встроенные оранжевые лампочки!"
+	desc = "Реалистичный на ощупь протез, обладающий мягкой шерстью. Его было бы почти не отличить от настоящей части тела, если бы не встроенные оранжевые лампочки!"
 
 /obj/item/weapon/disk/limb/white_kryten
 	company = "Уайт Крайтен Сайбернетикс"
@@ -456,12 +456,12 @@
 
 /datum/robolimb/zenghu_glacier
 	company = "Дзен-Ху - Ледник"
-	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыка."
+	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыков."
 	species_alternates = list(SPECIES_TAJ = "Дзен-Ху - Таджар")
 
 /datum/robolimb/zenghu_taj_glacier
 	company = "Дзен-Ху - Таджар - Ледник"
-	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыка."
+	desc = "Эта модель покрыта резиновой плотью с видимыми линиями стыков."
 
 
 // wound.dm

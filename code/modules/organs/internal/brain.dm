@@ -291,7 +291,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 		// Bastion of Endeavor TODO (MOB Realname): AUGHHHGHGHGHHGHHHHh
 		R.dna.real_name = "promethean ([rand(0,999)])"
 		*/
-		R.dna.real_name = "Прометеан ([rand(0,999)])"
+		R.dna.real_name = "Прометеец ([rand(0,999)])"
 		// End of Bastion of Endeavor Translation
 	H.real_name = R.dna.real_name
 	H.ooc_notes = brainmob.ooc_notes // VOREStation Edit
@@ -321,7 +321,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 	/* Bastion of Endeavor Translation
 	name = "Promethean Revival"
 	*/
-	name = "Воскрешение прометеевца"
+	name = "Воскрешение прометейца"
 	// End of Bastion of Endeavor Translation
 	id = "prom_revival"
 	result = null
@@ -345,7 +345,7 @@ GLOBAL_LIST_BOILERPLATE(all_brain_organs, /obj/item/organ/internal/brain)
 		/* Bastion of Endeavor Translation
 		brain.visible_message("<span class='warning'>[brain] shifts strangely, but falls still.</span>")
 		*/
-		brain.visible_message("<span class='warning'>[cap_ru(brain)] странно [verb_ru(brain, "дёрга;ется;ется;ется;ются;")], но быстро [verb_ru(brain, "успокаив;ется;ется;ется;ются;")].</span>")
+		brain.visible_message("<span class='warning'>[cap_ru(brain)] странно [verb_ru(brain, "дёрга;ется;ется;ется;ются;")], но быстро [verb_ru(brain, "успокаива;ется;ется;ется;ются;")].</span>")
 		// End of Bastion of Endeavor Translation
 
 /obj/item/organ/internal/brain/golem
