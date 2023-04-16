@@ -175,5 +175,5 @@ SUBSYSTEM_DEF(job)
 		/* Bastion of Endeavor Translation
 		log_debug("JOB DEBUG: [message]")
 		*/
-		log_debug("ДЕБАГ РАБОТ: [message]")
+		log_debug("ОТЛАДКА РАБОТ: [message]")
 		// End of Bastion of Endeavor Translation

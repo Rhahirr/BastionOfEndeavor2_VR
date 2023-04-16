@@ -77,7 +77,7 @@ SUBSYSTEM_DEF(processing)
 	/* Bastion of Endeavor Translation
 	to_chat(usr, "[name] - Debug mode [debug_original_process_proc ? "en" : "dis"]abled")
 	*/
-	to_chat(usr, "[name] - Режим дебаггинга [debug_original_process_proc ? "включён" : "выключен"].")
+	to_chat(usr, "[name] - Режим отладки [debug_original_process_proc ? "включён" : "выключен"].")
 	// End of Bastion of Endeavor Translation
 
 /datum/controller/subsystem/processing/proc/log_recent()
@@ -85,7 +85,7 @@ SUBSYSTEM_DEF(processing)
 	var/msg = "Debug output from the [name] subsystem:\n"
 	msg += "- Process subsystems are processed tail-first -\n"
 	*/
-	var/msg = "Результаты дебаггинга подсистемы '[name]':\n"
+	var/msg = "Результаты отладки подсистемы '[name]':\n"
 	msg += "- Обрабатывающие подсистемы начинаются с хвоста -\n"
 	// End of Bastion of Endeavor Translation
 	if(!currentrun || !processing)

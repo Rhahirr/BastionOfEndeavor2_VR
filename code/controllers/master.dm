@@ -126,7 +126,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	/* Bastion of Endeavor Translation
 	var/msg = "## DEBUG: [time2text(world.timeofday)] MC restarted. Reports:\n"
 	*/
-	var/msg = "## ДЕБАГ: [time2text(world.timeofday)] ГК перезапущен. Отчёты:\n"
+	var/msg = "## ОТЛАДКА: [time2text(world.timeofday)] ГК перезапущен. Отчёты:\n"
 	// End of Bastion of Endeavor Translation
 	for (var/varname in Master.vars)
 		switch (varname)

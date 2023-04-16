@@ -186,7 +186,7 @@ SUBSYSTEM_DEF(game_master)
 	set name = "Show GM Status"
 	set desc = "Shows you what the GM is thinking.  If only that existed in real life..."
 	*/
-	set category = "Дебаг"
+	set category = "Отладка"
 	set name = "Показать Статус ГМ"
 	set desc = "Показывает, о чём думает ГМ. Вот бы в жизни такое..."
 	// End of Bastion of Endeavor Translation

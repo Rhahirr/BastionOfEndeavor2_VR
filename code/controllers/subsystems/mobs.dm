@@ -62,7 +62,7 @@ SUBSYSTEM_DEF(mobs)
 	var/msg = "Debug output from the [name] subsystem:\n"
 	msg += "- This subsystem is processed tail-first -\n"
 	*/
-	var/msg = "Результаты дебаггинга подсистемы '[name]':\n"
+	var/msg = "Результаты отладки подсистемы '[name]':\n"
 	msg += "- Эта подсистема обрабатывается с хвоста -\n"
 	// End of Bastion of Endeavor Translation
 	if(!currentrun || !mob_list)

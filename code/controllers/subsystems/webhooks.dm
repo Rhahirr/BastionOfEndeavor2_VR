@@ -92,7 +92,7 @@ SUBSYSTEM_DEF(webhooks)
 	set category = "Debug"
 	*/
 	set name = "Перезагрузить вебхуки"
-	set category = "Дебаг"
+	set category = "Отладка"
 	// End of Bastion of Endeavor Translation
 
 	if(!holder)
@@ -121,7 +121,7 @@ SUBSYSTEM_DEF(webhooks)
 	set category = "Debug"
 	*/
 	set name = "Пропинговать вебхук"
-	set category = "Дебаг"
+	set category = "Отладка"
 	// End of Bastion of Endeavor Translation
 
 	if(!holder)

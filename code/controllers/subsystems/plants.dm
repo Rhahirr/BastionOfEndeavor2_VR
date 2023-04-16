@@ -159,7 +159,7 @@ SUBSYSTEM_DEF(plants)
 	set name = "Show Plant Genes"
 	set desc = "Prints the round's plant gene masks."
 	*/
-	set category = "Дебаг"
+	set category = "Отладка"
 	set name = "Показать гены растений"
 	set desc = "Отобразить генетические маски растений в этом раунде."
 	// End of Bastion of Endeavor Translation

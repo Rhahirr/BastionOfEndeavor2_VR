@@ -18,7 +18,7 @@
 	set name = "Set Base Turf"
 	set desc = "Set the base turf for a z-level."
 	*/
-	set category = "Дебаг"
+	set category = "Отладка"
 	set name = "Установить основной тюрф"
 	set desc = "Устанавливает основной тюрф для Z-уровня."
 	// End of Bastion of Endeavor Translation

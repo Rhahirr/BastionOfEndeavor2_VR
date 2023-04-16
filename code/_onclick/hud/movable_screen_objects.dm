@@ -109,7 +109,7 @@
 	set category = "Debug"
 	set name = "Spawn Movable UI Object"
 	*/
-	set category = "Дебаг"
+	set category = "Отладка"
 	set name = "Заспавнить перемещаемый объект UI"
 	// End of Bastion of Endeavor Translation
 
@@ -141,7 +141,7 @@
 	set category = "Debug"
 	set name = "Spawn Snap UI Object"
 	*/
-	set category = "Дебаг"
+	set category = "Отладка"
 	set name = "Заспавнить фиксируемый объект UI"
 	// End of Bastion of Endeavor Translation
 

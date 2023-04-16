@@ -529,7 +529,7 @@ var/global/datum/controller/occupations/job_master
 				/* Bastion of Endeavor Translation
 				to_chat(H, "<span class='critical'>You were unable to be spawned at your chosen late-join spawnpoint. Please verify your job/spawn point combination makes sense, and try another one.</span>")
 				*/
-				to_chat(H, "<span class='critical'>Не удалось заспавнить Вас в выбранной точке позднего спавна. Убедитесь в соответствии работы и точки спавна или попробуйте другие.</span>")
+				to_chat(H, "<span class='critical'>Вам не удалось появиться в выбранной точке позднего появления. Убедитесь в соответствии точки появления Вашей профессии и попробуйте другую.</span>")
 				// End of Bastion of Endeavor Translation
 				return
 			else
@@ -765,7 +765,7 @@ var/global/datum/controller/occupations/job_master
 		/* Bastion of Endeavor Translation
 		to_chat(H, "<span class='filter_notice'><b>You are playing a job that is important for Game Progression. If you have to disconnect, please notify the admins via adminhelp.</b></span>")
 		*/
-		to_chat(H, "<span class='filter_notice'><b>Ваша должность важна для развития игры. Если Вам нужно резко отключиться, просьба сообщить админам через Помощь админа.</b></span>")
+		to_chat(H, "<span class='filter_notice'><b>Ваша должность важна для прогрессии раунда. Если Вам необходимо резко отключиться, просьба предварительно сообщить администраторам через глагол Помощь администратора (F1).</b></span>")
 		// End of Bastion of Endeavor Translation
 
 	// EMAIL GENERATION
@@ -901,10 +901,18 @@ var/global/datum/controller/occupations/job_master
 	if(C && C.prefs.spawnpoint)
 		if(!(C.prefs.spawnpoint in using_map.allowed_spawns))
 			if(fail_deadly)
+				/* Bastion of Endeavor Translation
 				to_chat(C, "<span class='warning'>Your chosen spawnpoint is unavailable for this map and your job requires a specific spawnpoint. Please correct your spawn point choice.</span>")
+				*/
+				to_chat(C, "<span class='warning'>Выбранная Вами точка появления недоступна на текущей карте, и профессия Вашего персонажа требует конкретную точку появления. Пожалуйста, измените точку появления.</span>")
+				// End of Bastion of Endeavor Translation
 				return
 			else
+				/* Bastion of Endeavor Translation
 				to_chat(C, "<span class='warning'>Your chosen spawnpoint ([C.prefs.spawnpoint]) is unavailable for the current map. Spawning you at one of the enabled spawn points instead.</span>")
+				*/
+				to_chat(C, "<span class='warning'>Выбранная Вами точка появления ([C.prefs.spawnpoint]) недоступна на текущей карте. Ваш персонаж появится на одной из доступных точек.</span>")
+				// End of Bastion of Endeavor Translation
 				spawnpos = null
 		else
 			spawnpos = spawntypes[C.prefs.spawnpoint]
@@ -918,13 +926,29 @@ var/global/datum/controller/occupations/job_master
 			.["channel"] = spawnpos.announce_channel
 		else
 			if(fail_deadly)
+				/* Bastion of Endeavor Translation
 				to_chat(C, "<span class='warning'>Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job. Please correct your spawn point choice.</span>")
+				*/
+				to_chat(C, "<span class='warning'>Выбранная Вами точка появления ([spawnpos.display_name]) недоступна при выбранной Вами профессии. Пожалуйста, измените точку появления.</span>")
+				// End of Bastion of Endeavor Translation
 				return
+			/* Bastion of Endeavor Translation
 			to_chat(C, "<span class='filter_warning'>Your chosen spawnpoint ([spawnpos.display_name]) is unavailable for your chosen job. Spawning you at the Arrivals shuttle instead.</span>")
+			*/
+			to_chat(C, "<span class='filter_warning'>Выбранная Вами точка появления ([spawnpos.display_name]) недоступна при выбранной Вами профессии. Ваш персонаж появится у шаттла прибытия.</span>")
+			// End of Bastion of Endeavor Translation
 			var/spawning = pick(latejoin)
 			.["turf"] = get_turf(spawning)
+			/* Bastion of Endeavor Translation
 			.["msg"] = "will arrive at the station shortly"
+			*/
+			.["msg"] = "прибыл;;а;о;и; на станцию"
+			// End of Bastion of Endeavor Translation
 	else if(!fail_deadly)
 		var/spawning = pick(latejoin)
 		.["turf"] = get_turf(spawning)
+		/* Bastion of Endeavor Translation
 		.["msg"] = "has arrived on the station"
+		*/
+		.["msg"] = "прибыл;;а;о;и; на станцию"
+		// End of Bastion of Endeavor Translation

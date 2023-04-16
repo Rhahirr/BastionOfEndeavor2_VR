@@ -64,7 +64,7 @@
 		/* Bastion of Endeavor Translation
 		WRITE_LOG(debug_log, "DEBUG: [sanitize(text)]")
 		*/
-		WRITE_LOG(debug_log, "ДЕБАГ: [sanitize(text)]")
+		WRITE_LOG(debug_log, "ОТЛАДКА: [sanitize(text)]")
 		// End of Bastion of Endeavor Translation
 
 	for(var/client/C in GLOB.admins)
@@ -72,7 +72,7 @@
 			/* Bastion of Endeavor Translation
 			to_chat(C, "<span class='filter_debuglog'>DEBUG: [text]</span>")
 			*/
-			to_chat(C, "<span class='filter_debuglog'>ДЕБАГ: [text]</span>")
+			to_chat(C, "<span class='filter_debuglog'>ОТЛАДКА: [text]</span>")
 			// End of Bastion of Endeavor Translation
 
 /proc/log_game(text)

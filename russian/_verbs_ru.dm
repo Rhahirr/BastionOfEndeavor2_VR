@@ -2,7 +2,7 @@
 // this is incredibly convenient for debugging without having to find objects to click on
 /client/proc/debug_cases_ru(var/object as text)
 	set name = "Проверить падежи"
-	set category = "Дебаг"
+	set category = "Отладка"
 	set desc = "Заспавнить и проверить падежи объекта."
 	var/list/types = typesof(/atom)
 	var/list/matches = new()
@@ -56,7 +56,7 @@
 // the intended application is to see what types within modules aren't localized yet
 /client/proc/type2txt_ru()
 	set name = "Вывести названия подтипов"
-	set category = "Дебаг"
+	set category = "Отладка"
 	var/typepath = tgui_input_text(usr, "Введите тип:", "Вывести названия подтипов")
 	if(!typepath || ispath(typepath)) return
 	var/list/types = typesof(typepath)

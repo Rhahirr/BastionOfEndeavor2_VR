@@ -49,7 +49,8 @@ var/global/list/self_cases_list_ru = list(
 	return input.name
 
 /proc/return_case_ru(atom/input, case = "case", secondary)
-	if(!secondary) secondary = "basic"
+	if(!secondary || !listgetindex(input.cases_ru[secondary])) // returns from the main list if unspecified OR doesn't exist, should fix the annoying bad index runtime
+		secondary = "basic"
 	if(input.cases_ru[secondary][case])
 		return input.cases_ru[secondary][case]
 	return input.name

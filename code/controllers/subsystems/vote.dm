@@ -586,14 +586,14 @@ SUBSYSTEM_DEF(vote)
 					/* Bastion of Endeavor Translation
 					if(tgui_alert(usr, "Are you sure you want to start a RESTART VOTE? You should only do this if the server is dying and no staff are around to investigate.", "RESTART VOTE", list("No", "Yes I want to start a RESTART VOTE")) == "Yes I want to start a RESTART VOTE")
 					*/
-					if(tgui_alert(usr, "Вы действительно хотите начать голосование за ПЕРЕЗАПУСК? Это следует делать только в случаях, когда сервер задыхается при отсутствии админов.", "Голосование за перезапуск", list("Нет", "Да, я хочу начать голосование")) == "Да, я хочу начать голосование")
+					if(tgui_alert(usr, "Вы действительно хотите начать голосование за ПЕРЕЗАПУСК? Это следует делать только в случаях, когда сервер задыхается при отсутствии администраторов.", "Голосование за перезапуск", list("Нет", "Да, я хочу начать голосование")) == "Да, я хочу начать голосование")
 					// End of Bastion of Endeavor Translation
 						initiate_vote(VOTE_RESTART, usr.key)
 				else
 					/* Bastion of Endeavor Translation
 					to_chat(usr, "<span class = 'warning'>You can't start a RESTART VOTE while there are staff around. If you are having an issue with the round, please ahelp it.</span>")
 					*/
-					to_chat(usr, "<span class = 'warning'>Вы не можете начать голосование за перезапуск, когда на сервере присутствуют админы. Если у Вас возникла проблема в раунде, используйте Помощь админа.</span>")
+					to_chat(usr, "<span class = 'warning'>Вы не можете начать голосование за перезапуск, когда на сервере присутствуют администраторы. Если у Вас возникла проблема в раунде, используйте Помощь администратора.</span>")
 					// End of Bastion of Endeavor Translation
 		/* Bastion of Endeavor Edit
 		if(VOTE_GAMEMODE)

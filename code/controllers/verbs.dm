@@ -56,7 +56,7 @@
 	/* Bastion of Endeavor Translation
 	message_admins("Admin [key_name_admin(usr)] is debugging the [target] [class].")
 	*/
-	message_admins("Админ [key_name_admin(usr)] проводит дебаг [class] [target].")
+	message_admins("Админ [key_name_admin(usr)] проводит отладку [class] [target].")
 	// End of Bastion of Endeavor Translation
 
 
@@ -68,7 +68,7 @@
 	set desc = "Restart one of the various periodic loop controllers for the game (be careful!)"
 */
 /client/proc/restart_controller(controller in list("Главный", "Проверочный"))
-	set category = "Дебаг"
+	set category = "Отладка"
 	set name = "Перезапустить контроллер"
 	set desc = "Перезапустить один из контроллеров цикла игры (будьте осторожны!)."
 // End of Bastion of Endeavor Translation
@@ -103,9 +103,9 @@
 	set name = "Debug Antagonist"
 	set desc = "Debug an antagonist template."
 	*/
-	set category = "Дебаг"
-	set name = "Дебаг антагониста"
-	set desc = "Провести дебаггинг шаблона антагониста."
+	set category = "Отладка"
+	set name = "Отладка антагониста"
+	set desc = "Провести отладку шаблона антагониста."
 	// End of Bastion of Endeavor Translation
 
 	var/datum/antagonist/antag = all_antag_types[antag_type]
@@ -114,7 +114,7 @@
 		/* Bastion of Endeavor Translation
 		message_admins("Admin [key_name_admin(usr)] is debugging the [antag.role_text] template.")
 		*/
-		message_admins("Админ [key_name_admin(usr)] проводит дебаг шаблона роли [antag.role_text].")
+		message_admins("Админ [key_name_admin(usr)] проводит отладку шаблона роли [antag.role_text].")
 		// End of Bastion of Endeavor Translation
 
 /client/proc/debug_controller()
@@ -123,9 +123,9 @@
 	set name = "Debug Controller"
 	set desc = "Debug the various subsystems/controllers for the game (be careful!)"
 	*/
-	set category = "Дебаг"
-	set name = "Дебаг контроллера"
-	set desc = "Провести дебаггинг подсистем/контроллеров игры (будьте осторожны!)"
+	set category = "Отладка"
+	set name = "Отладка контроллера"
+	set desc = "Провести отладку подсистем/контроллеров игры (будьте осторожны!)"
 	// End of Bastion of Endeavor Translation
 
 	if(!holder)
@@ -136,9 +136,9 @@
 	options["Failsafe"] = Failsafe
 	options["Configuration"] = config
 	*/
-	options["Дебаг Главного контроллера"] = Master
-	options["Дебаг Проверочного контроллера"] = Failsafe
-	options["Дебаг конфигурации"] = config
+	options["Отладка Главного контроллера"] = Master
+	options["Отладка Проверочного контроллера"] = Failsafe
+	options["Отладка конфигурации"] = config
 	// End of Bastion of Endeavor Translation
 	for(var/datum/controller/subsystem/S as anything in Master.subsystems)
 		if(!istype(S))		//Eh, we're a debug verb, let's have typechecking.
