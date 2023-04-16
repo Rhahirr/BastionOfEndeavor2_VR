@@ -124,7 +124,7 @@
 	/* Bastion of Endeavor Translation
 	global_announcer.autosay("<span class='alert'>[command_name()] - [message_title]:</span> [message]", ANNOUNCER_NAME, channel = "Common", zlevels = zlevels)
 	*/
-	global_announcer.autosay("<span class='alert'>[command_name_ru(NCASE)] - [message_title]:</span> [message]", ANNOUNCER_NAME, channel = "Общий", zlevels = zlevels)
+	global_announcer.autosay("<span class='alert'>[command_name_ru(NCASE)] — [message_title]:</span> [message]", ANNOUNCER_NAME, channel = "Общий", zlevels = zlevels)
 	// End of Bastion of Endeavor Translation
 
 /datum/announcement/priority/security/Message(var/message as text, var/message_title as text, var/list/zlevels)

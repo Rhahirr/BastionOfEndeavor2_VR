@@ -642,7 +642,7 @@ var/global/datum/controller/occupations/job_master
 		/* Bastion of Endeavor Translation
 		to_chat(H, "<span class='filter_notice'>Your job is [rank] and the game just can't handle it! Please report this bug to an administrator.</span>")
 		*/
-		to_chat(H, "<span class='filter_notice'>Ваша должность - [rank], и игра к этому не была готова! Доложите об этом администратору.</span>")
+		to_chat(H, "<span class='filter_notice'>Ваша должность — [rank], и игра к этому не была готова! Доложите об этом администратору.</span>")
 		// End of Bastion of Endeavor Translation
 
 	H.job = rank
@@ -744,7 +744,7 @@ var/global/datum/controller/occupations/job_master
 	/* Bastion of Endeavor Translation
 	to_chat(H, "<span class='filter_notice'><B>You are [job.total_positions == 1 ? "the" : "a"] [alt_title ? alt_title : rank].</B></span>")
 	*/
-	to_chat(H, "<span class='filter_notice'><B>Ваша должность - [alt_title ? alt_title : rank].</B></span>")
+	to_chat(H, "<span class='filter_notice'><B>Ваша должность — [alt_title ? alt_title : rank].</B></span>")
 	// End of Bastion of Endeavor Translation
 
 	if(job.supervisors)
@@ -803,7 +803,7 @@ var/global/datum/controller/occupations/job_master
 		H.mind.store_memory("Your email account address is [EA.login] and the password is [EA.password].")
 		*/
 		to_chat(H, "<span class='filter_notice'>Ваш адрес электронной почты - <b>[EA.login]</b>, пароль - <b>[EA.password]</b>. Эта информация размещена в Заметках.</span>")
-		H.mind.store_memory("Ваш адрес электронной почты - [EA.login], пароль - [EA.password].")
+		H.mind.store_memory("Ваш адрес электронной почты — [EA.login], пароль - [EA.password].")
 		// End of Bastion of Endeavor Translation
 	// END EMAIL GENERATION
 

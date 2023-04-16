@@ -82,12 +82,12 @@
 	company = "Дарксайд (сергал)"
 
 /datum/robolimb/dsi_nevrean
-	company = "Дарксайд - Невреец"
+	company = "Дарксайд - Невреан"
 	desc = "Мягкий и пернатый протез, лёгкий, реалистичный на вид и на ощупь."
 	suggested_species = SPECIES_NEVREAN
 
 /obj/item/weapon/disk/limb/dsi_nevrean
-	company = "Дарксайд (невреец)"
+	company = "Дарксайд (невреан)"
 
 /datum/robolimb/dsi_vulpkanin
 	company = "Дарксайд - Вульпканин"

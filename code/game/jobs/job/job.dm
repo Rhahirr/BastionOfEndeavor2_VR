@@ -105,7 +105,7 @@
 	/* Bastion of Endeavor Translation
 	to_chat(H, "<span class='notice'><b>Your account number is: [M.account_number], your account pin is: [M.remote_access_pin]</b></span>")
 	*/
-	to_chat(H, "<span class='notice'><b>Номер Вашего счёта - [M.account_number], PIN-код - [M.remote_access_pin].</b></span>")
+	to_chat(H, "<span class='notice'><b>Номер Вашего счёта — [M.account_number], PIN-код — [M.remote_access_pin].</b></span>")
 	// End of Bastion of Endeavor Translation
 
 // overrideable separately so AIs/borgs can have cardborg hats without unneccessary new()/qdel()

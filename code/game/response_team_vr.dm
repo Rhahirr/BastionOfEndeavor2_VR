@@ -6,7 +6,7 @@ GLOBAL_VAR(ert_loaded)
 		/* Bastion of Endeavor Translation
 		var/datum/map_template/MT = SSmapping.map_templates["Special Area - ERT"]
 		*/
-		var/datum/map_template/MT = SSmapping.map_templates["Особая область - ОБР"]
+		var/datum/map_template/MT = SSmapping.map_templates["Особая область — ОБР"]
 		// End of Bastion of Endeavor Translation
 		if(!istype(MT))
 			/* Bastion of Endeavor Translation

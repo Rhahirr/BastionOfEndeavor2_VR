@@ -392,7 +392,7 @@
 				/* Bastion of Endeavor Translation
 				fingerprintshidden += "[time_stamp()]: [key_name(M)] (No fingerprints mutation)"
 				*/
-				fingerprintshidden += "[time_stamp()]: [key_name(M)] (мутация - без отпечатков)"
+				fingerprintshidden += "[time_stamp()]: [key_name(M)] (мутация — без отпечатков)"
 				// End of Bastion of Endeavor Translation
 				fingerprintslast = M.key
 			return 0		//Now, lets get to the dirty work.

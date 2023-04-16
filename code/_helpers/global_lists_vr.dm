@@ -239,8 +239,8 @@ var/global/list/global_vore_egg_types = list(
 	"Spotted pink")
 	*/
 	"Унати",
-	"Таджара",
-	"Акула",
+	"Таджар",
+	"Акул",
 	"Скрелл",
 	"Сергал",
 	"Невреан",
@@ -310,8 +310,8 @@ var/global/list/tf_vore_egg_types = list(
 	"Spotted pink"	= /obj/item/weapon/storage/vore_egg/pinkspots)
 	*/
 	"Унати"							= /obj/item/weapon/storage/vore_egg/unathi,
-	"Таджара"						= /obj/item/weapon/storage/vore_egg/tajaran,
-	"Акула"							= /obj/item/weapon/storage/vore_egg/shark,
+	"Таджар"						= /obj/item/weapon/storage/vore_egg/tajaran,
+	"Акул"							= /obj/item/weapon/storage/vore_egg/shark,
 	"Скрелл"						= /obj/item/weapon/storage/vore_egg/skrell,
 	"Сергал"						= /obj/item/weapon/storage/vore_egg/sergal,
 	"Невреан"						= /obj/item/weapon/storage/vore_egg/nevrean,

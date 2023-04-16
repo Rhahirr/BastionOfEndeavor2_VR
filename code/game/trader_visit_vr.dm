@@ -6,7 +6,7 @@ GLOBAL_VAR(trader_loaded)
 		/* Bastion of Endeavor Translation
 		var/datum/map_template/MT = SSmapping.map_templates["Special Area - Salamander Trader"] //was: "Special Area - Trader"
 		*/
-		var/datum/map_template/MT = SSmapping.map_templates["Особая область - Торговое судно"]
+		var/datum/map_template/MT = SSmapping.map_templates["Особая область — Торговое судно"]
 		// End of Bastion of Endeavor Translation
 		if(!istype(MT))
 			/* Bastion of Endeavor Translation

@@ -180,7 +180,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 		/* Bastion of Endeavor Translation
 		to_world("<span class='notice'><B>The current game mode is - Secret!</B></span>")
 		*/
-		to_world("<span class='notice'><B>Текущий режим игры - секретный!</B></span>")
+		to_world("<span class='notice'><B>Текущий режим игры — секретный!</B></span>")
 		// End of Bastion of Endeavor Translation
 		if(runnable_modes.len)
 			var/list/tmpmodes = new
