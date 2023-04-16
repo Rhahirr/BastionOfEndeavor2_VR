@@ -405,7 +405,7 @@ or something covering your eyes."
 	desc = "You're paralyzed! This could be due to drugs or serious injury. You'll be unable to move or perform actions."
 	*/
 	name = "Паралич"
-	desc = "Вы парализованы! Это может быть вывано препаратами или серьёзной травмой. Вы не можете двигаться или выполнять действия."
+	desc = "Вы парализованы! Это может быть вызвано препаратами или серьёзной травмой. Вы не можете двигаться или выполнять действия."
 	// End of Bastion of Endeavor Translation
 	icon_state = "paralysis"
 
