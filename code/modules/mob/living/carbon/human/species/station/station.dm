@@ -13,7 +13,7 @@
 	species_language = LANGUAGE_SOL_COMMON
 	secondary_langs = list(LANGUAGE_SOL_COMMON, LANGUAGE_TERMINUS)
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
-	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_SKRELLIAN, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX)
+	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_SKRELLIAN, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX, LANGUAGE_PROMETHEAN)
 
 	min_age = 17
 	max_age = 130
@@ -72,6 +72,7 @@
 	species_language = LANGUAGE_UNATHI
 	health_hud_intensity = 2.5
 	chem_strength_alcohol = 0.75
+	throwforce_absorb_threshold = 10
 
 	min_age = 32
 	max_age = 260
@@ -298,7 +299,7 @@
 	secondary_langs = list(LANGUAGE_SKRELLIAN, LANGUAGE_SCHECHI)
 	name_language = LANGUAGE_SKRELLIAN
 	species_language = LANGUAGE_SKRELLIAN
-	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_TERMINUS, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX)
+	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX, LANGUAGE_PROMETHEAN)
 	health_hud_intensity = 2
 	chem_strength_alcohol = 5
 
@@ -373,6 +374,13 @@
 		O_INTESTINE =	/obj/item/organ/internal/intestine/skrell
 		)
 
+	default_emotes = list(
+		/decl/emote/audible/warble,
+		/decl/emote/audible/lwarble,
+		/decl/emote/audible/croon,
+		/decl/emote/audible/croak
+	)
+
 /datum/species/skrell/can_breathe_water()
 	return TRUE
 
@@ -392,10 +400,11 @@
 	taste_sensitivity = TASTE_SENSITIVE
 	num_alternate_languages = 3
 	secondary_langs = list(LANGUAGE_ZADDAT, LANGUAGE_UNATHI)
-	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_TERMINUS, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX, LANGUAGE_SOL_COMMON, LANGUAGE_AKHANI, LANGUAGE_SIIK, LANGUAGE_GUTTER) //limited vocal range; can talk Unathi and magical Galcom but not much else
+	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX, LANGUAGE_PROMETHEAN) //limited vocal range; can talk Unathi and magical Galcom but not much else
 	name_language = LANGUAGE_ZADDAT
 	species_language = LANGUAGE_ZADDAT
 	health_hud_intensity = 2.5
+	throwforce_absorb_threshold = 5
 
 	minimum_breath_pressure = 20 //have fun with underpressures. any higher than this and they'll be even less suitible for life on the station
 
@@ -511,6 +520,7 @@
 	health_hud_intensity = 2.5
 	item_slowdown_mod = 0.1
 	chem_strength_alcohol = 0
+	throwforce_absorb_threshold = 5
 
 	num_alternate_languages = 3
 	name_language = LANGUAGE_ROOTLOCAL
@@ -557,7 +567,8 @@
 
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/diona_split_nymph,
-		/mob/living/carbon/human/proc/regenerate
+		/mob/living/carbon/human/proc/regenerate,
+		/mob/proc/adjust_hive_range	//VOREStation Add
 		)
 
 	warning_low_pressure = 50

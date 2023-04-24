@@ -458,9 +458,9 @@ SUBSYSTEM_DEF(vote)
 		. += "</table><hr>"
 		if(admin)
 			/* Bastion of Endeavor Translation
-			. += "(<a href='?src=\ref[src];vote=cancel'>Cancel Vote</a>) "
+			. += "(<a href='?src=\ref[src];[HrefToken()];vote=cancel'>Cancel Vote</a>) "
 			*/
-			. += "(<a href='?src=\ref[src];vote=cancel'>Отменить голосование</a>) "
+			. += "(<a href='?src=\ref[src];[HrefToken()];vote=cancel'>Отменить голосование</a>) "
 			// End of Bastion of Endeavor Translation
 	else
 		/* Bastion of Endeavor Translation
@@ -497,9 +497,9 @@ SUBSYSTEM_DEF(vote)
 
 		if(admin)
 			/* Bastion of Endeavor Translation
-			. += "\t(<a href='?src=\ref[src];vote=toggle_restart'>[config.allow_vote_restart ? "Allowed" : "Disallowed"]</a>)"
+			. += "\t(<a href='?src=\ref[src];[HrefToken()];vote=toggle_restart'>[config.allow_vote_restart ? "Allowed" : "Disallowed"]</a>)"
 			*/
-			. += "\t(<a href='?src=\ref[src];vote=toggle_restart'>[config.allow_vote_restart ? "разрешено" : "запрещено"]</a>)"
+			. += "\t(<a href='?src=\ref[src];[HrefToken()];vote=toggle_restart'>[config.allow_vote_restart ? "разрешено" : "запрещено"]</a>)"
 			// End of Bastion of Endeavor Translation
 		. += "</li><li>"
 
@@ -518,9 +518,9 @@ SUBSYSTEM_DEF(vote)
 
 		if(admin)
 			/* Bastion of Endeavor Translation
-			. += "\t(<a href='?src=\ref[src];vote=toggle_gamemode'>[config.allow_vote_mode ? "Allowed" : "Disallowed"]</a>)"
+			. += "\t(<a href='?src=\ref[src];[HrefToken()];vote=toggle_gamemode'>[config.allow_vote_mode ? "Allowed" : "Disallowed"]</a>)"
 			*/
-			. += "\t(<a href='?src=\ref[src];vote=toggle_gamemode'>[config.allow_vote_mode ? "разрешено" : "запрещено"]</a>)"
+			. += "\t(<a href='?src=\ref[src];[HrefToken()];vote=toggle_gamemode'>[config.allow_vote_mode ? "разрешено" : "запрещено"]</a>)"
 			// End of Bastion of Endeavor Translation
 		. += "</li><li>"
 
@@ -540,9 +540,9 @@ SUBSYSTEM_DEF(vote)
 
 		if(admin)
 			/* Bastion of Endeavor Translation
-			. += "<li><a href='?src=\ref[src];vote=custom'>Custom</a></li>"
+			. += "<li><a href='?src=\ref[src];[HrefToken()];vote=custom'>Custom</a></li>"
 			*/
-			. += "<li><a href='?src=\ref[src];vote=custom'>Особый</a></li>"
+			. += "<li><a href='?src=\ref[src];[HrefToken()];vote=custom'>Особый</a></li>"
 			// End of Bastion of Endeavor Translation
 		. += "</ul><hr>"
 

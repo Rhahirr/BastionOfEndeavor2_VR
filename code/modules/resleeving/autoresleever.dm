@@ -165,13 +165,19 @@
 	for(var/lang in ghost_client.prefs.alternate_languages)
 		var/datum/language/chosen_language = GLOB.all_languages[lang]
 		if(chosen_language)
-			if(is_lang_whitelisted(src,chosen_language) || (new_character.species && (chosen_language.name in new_character.species.secondary_langs)))
+			if(is_lang_whitelisted(ghost,chosen_language) || (new_character.species && (chosen_language.name in new_character.species.secondary_langs)))
 				new_character.add_language(lang)
 	for(var/key in ghost_client.prefs.language_custom_keys)
 		if(ghost_client.prefs.language_custom_keys[key])
 			var/datum/language/keylang = GLOB.all_languages[ghost_client.prefs.language_custom_keys[key]]
 			if(keylang)
 				new_character.language_keys[key] = keylang
+	// VOREStation Add: Preferred Language Setting;
+	if(ghost_client.prefs.preferred_language) // Do we have a preferred language?
+		var/datum/language/def_lang = GLOB.all_languages[ghost_client.prefs.preferred_language]
+		if(def_lang)
+			new_character.default_language = def_lang
+	// VOREStation Add End
 
 	//If desired, apply equipment.
 	if(equip_body)

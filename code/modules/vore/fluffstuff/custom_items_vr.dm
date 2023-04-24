@@ -1556,3 +1556,26 @@
 		playsound(src, 'sound/items/drop/plushie.ogg', 25, 0)
 		visible_message("[src] says, \"[pokephrase]\"")
 	last_message = world.time
+
+//Yeehawguvnah - Cephyra
+
+/obj/item/weapon/dice/loaded/ceph
+	name = "engraved d6"
+	desc = "A die with six sides. It's fairly well-made, made of an unclear black material with silver pips. If you were to touch it, your hands tingle slightly as though from static. On closer inspection, it's finely engraved with curving, fractal patterns."
+	icon_state = "ceph_d66"
+
+/obj/item/weapon/dice/loaded/ceph/rollDice(mob/user, silent)
+	..()
+	icon_state = "ceph_d6[result]"
+
+/obj/item/weapon/dice/loaded/ceph/New()
+	icon_state = "ceph_d6[rand(1,sides)]"
+
+
+//abc123: Mira Nesyne
+/obj/item/clothing/accessory/medal/silver/fluff/abc314
+	name = "Health Service Achievement medal"
+	desc = "A small silver medal with the inscription \"For going above and beyond in the field.\" on it, along with the name Mira Nesyne."
+
+	icon = 'icons/inventory/accessory/item.dmi'
+	icon_state = "silver"

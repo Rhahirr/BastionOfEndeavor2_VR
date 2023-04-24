@@ -28,7 +28,7 @@
 	var/radial_state = null	// Icon state for the augment's radial icon.
 
 	var/aug_cooldown = 30 SECONDS
-	var/last_activate = null
+	var/cooldown = null
 
 /obj/item/organ/internal/augment/Initialize()
 	. = ..()
@@ -59,13 +59,17 @@
 		return
 
 	if(aug_cooldown)
-		if(last_activate <= world.time + aug_cooldown)
-			last_activate = world.time
+		if(cooldown <= world.time)
+			cooldown = world.time + aug_cooldown
 		else
 			return
 
 	if(robotic && owner.get_restraining_bolt())
+		/* Bastion of Endeavor Translation
 		to_chat(owner, "<span class='warning'>\The [src] doesn't respond.</span>")
+		*/
+		to_chat(owner, "<span class='warning'>[cap_ru(src)] не [verb_ru(src, "отвеча;ет;ет;ет;ют;")].</span>")
+		// End of Bastion of Endeavor Translation
 		return
 
 	var/item_to_equip = integrated_object
@@ -103,9 +107,15 @@
 // The next two procs simply handle the radial menu for augment activation.
 
 /mob/living/carbon/human/proc/augment_menu()
+	/* Bastion of Endeavor Translation
 	set name = "Open Augment Menu"
 	set desc = "Toggle your augment menu."
 	set category = "Augments"
+	*/
+	set name = "Открыть меню аугментаций"
+	set desc = "Показать меню Ваших аугментаций."
+	set category = "Аугментации"
+	// End of Bastion of Endeavor Translation
 
 	enable_augments(usr)
 
@@ -153,11 +163,19 @@
 	if(buckled)
 		var/obj/Ob = buckled
 		if(Ob.buckle_lying)
+			/* Bastion of Endeavor Translation
 			to_chat(M, "<span class='notice'>You cannot use your augments when restrained.</span>")
+			*/
+			to_chat(M, "<span class='notice'>Вы не можете использовать аугментации в текущем положении.</span>")
+			// End of Bastion of Endeavor Translation
 			return 0
 
 	if((slot == slot_l_hand && l_hand) || (slot == slot_r_hand && r_hand))
+		/* Bastion of Endeavor Translation
 		to_chat(M,"<span class='warning'>Your hand is full.  Drop something first.</span>")
+		*/
+		to_chat(M,"<span class='warning'>Сперва освободите руку, чтобы использовать аугментацию.</span>")
+		// End of Bastion of Endeavor Translation
 		return 0
 
 	var/del_if_failure = destroy_on_drop

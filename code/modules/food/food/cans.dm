@@ -4,6 +4,7 @@
 	flags = 0 //starts closed
 	drop_sound = 'sound/items/drop/soda.ogg'
 	pickup_sound = 'sound/items/pickup/soda.ogg'
+	cant_chance = 1 //arbitrarily high for april fools; if it's not reverted in its entirety I suggest rolling it down to 2% or something
 
 //DRINKS
 
@@ -36,6 +37,7 @@
 	center_of_mass = list("x"=16, "y"=8)
 	drop_sound = 'sound/items/drop/disk.ogg'
 	pickup_sound = 'sound/items/pickup/disk.ogg'
+	cant_chance = 0
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle/Initialize()
 	. = ..()
@@ -87,7 +89,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/cans/starkist
 	name = "\improper Star-kist"
 	desc = "The taste of a star in liquid form. And, a bit of tuna...? Contains caffeine."
-	description_fluff = "Brought back by popular demand in 2515 after a limited-run release in 2510, the cult success of this bizarre tasting soda has never truly been accounted for by economists."
+	description_fluff = "Brought back by popular demand in 2275 after a limited-run release in 2270, the cult success of this bizarre tasting soda has never truly been accounted for by economists."
 	icon_state = "starkist"
 	center_of_mass = list("x"=16, "y"=8)
 
@@ -198,7 +200,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/cans/kvass
 	name = "\improper Kvass"
 	desc = "A true Slavic soda."
-	description_fluff = "A classic slavic beverage which many Space Russians still enjoy to this day. Fun fact, it is actually considered a weak beer by non-russians."
+	description_fluff = "A classic slavic beverage which many space-faring slavs still enjoy to this day. Fun fact, it is actually considered a weak beer by non-russians."
 	icon_state = "kvass"
 	center_of_mass = list("x"=16, "y"=10)
 

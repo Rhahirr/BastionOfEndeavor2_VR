@@ -96,7 +96,7 @@ var/global/datum/ErrorViewer/ErrorCache/error_cache = null
 		back_to_param = ";viewruntime_backto=\ref[back_to]"
 	if(linear)
 		back_to_param += ";viewruntime_linear=1"
-	return "<A HREF='?src=\ref[src];viewruntime=\ref[src][back_to_param]'>[html_encode(linktext)]</A>"
+	return "<A HREF='?src=\ref[src];[HrefToken()];viewruntime=\ref[src][back_to_param]'>[html_encode(linktext)]</A>"
 
 /datum/ErrorViewer/Topic(href, href_list)
 	if(..())
@@ -245,43 +245,43 @@ var/global/datum/ErrorViewer/ErrorCache/error_cache = null
 	html += "<div class='runtime'>[html_encode(name)]<br>[desc]</div>"
 	if(srcRef)
 		/* Bastion of Endeavor Translation
-		html += "<br>src: <a href='?_src_=vars;Vars=[srcRef]'>VV</a>"
+		html += "<br>src: <a href='?_src_=vars;[HrefToken()];Vars=[srcRef]'>VV</a>"
 		*/
-		html += "<br>src: <a href='?_src_=vars;Vars=[srcRef]'>ПП</a>"
+		html += "<br>src: <a href='?_src_=vars;[HrefToken()];Vars=[srcRef]'>РП</a>"
 		// End of Bastion of Endeavor Translation
 		if(ispath(srcType, /mob))
 			/* Bastion of Endeavor Translation
-			html += " <a href='?_src_=holder;adminplayeropts=[srcRef]'>PP</a>"
-			html += " <a href='?_src_=holder;adminplayerobservefollow=[srcRef]'>Follow</a>"
+			html += " <a href='?_src_=holder;[HrefToken()];adminplayeropts=[srcRef]'>PP</a>"
+			html += " <a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[srcRef]'>Follow</a>"
 			*/
-			html += " <a href='?_src_=holder;adminplayeropts=[srcRef]'>ПИ</a>"
-			html += " <a href='?_src_=holder;adminplayerobservefollow=[srcRef]'>Следовать</a>"
+			html += " <a href='?_src_=holder;[HrefToken()];adminplayeropts=[srcRef]'>ПИ</a>"
+			html += " <a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[srcRef]'>Следовать</a>"
 			// End of Bastion of Endeavor Translation
 		if(istype(srcLoc))
 			/* Bastion of Endeavor Translation
-			html += "<br>src.loc: <a href='?_src_=vars;Vars=\ref[srcLoc]'>VV</a>"
-			html += " <a href='?_src_=holder;adminplayerobservecoodjump=1;X=[srcLoc.x];Y=[srcLoc.y];Z=[srcLoc.z]'>JMP</a>"
+			html += "<br>src.loc: <a href='?_src_=vars;[HrefToken()];Vars=\ref[srcLoc]'>VV</a>"
+			html += " <a href='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[srcLoc.x];Y=[srcLoc.y];Z=[srcLoc.z]'>JMP</a>"
 			*/
-			html += "<br>src.loc: <a href='?_src_=vars;Vars=\ref[srcLoc]'>ПП</a>"
-			html += " <a href='?_src_=holder;adminplayerobservecoodjump=1;X=[srcLoc.x];Y=[srcLoc.y];Z=[srcLoc.z]'>Прыгнуть</a>"
+			html += "<br>src.loc: <a href='?_src_=vars;[HrefToken()];Vars=\ref[srcLoc]'>РП</a>"
+			html += " <a href='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[srcLoc.x];Y=[srcLoc.y];Z=[srcLoc.z]'>ПРЫГ</a>"
 			// End of Bastion of Endeavor Translation
 	if(usrRef)
 		/* Bastion of Endeavor Translation
-		html += "<br>usr: <a href='?_src_=vars;Vars=[usrRef]'>VV</a>"
-		html += " <a href='?_src_=holder;adminplayeropts=[usrRef]'>PP</a>"
-		html += " <a href='?_src_=holder;adminplayerobservefollow=[usrRef]'>Follow</a>"
+		html += "<br>usr: <a href='?_src_=vars;[HrefToken()];Vars=[usrRef]'>VV</a>"
+		html += " <a href='?_src_=holder;[HrefToken()];adminplayeropts=[usrRef]'>PP</a>"
+		html += " <a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[usrRef]'>Follow</a>"
 		*/
-		html += "<br>usr: <a href='?_src_=vars;Vars=[usrRef]'>ПП</a>"
-		html += " <a href='?_src_=holder;adminplayeropts=[usrRef]'>ПИ</a>"
-		html += " <a href='?_src_=holder;adminplayerobservefollow=[usrRef]'>Следовать</a>"
+		html += "<br>usr: <a href='?_src_=vars;[HrefToken()];Vars=[usrRef]'>РП</a>"
+		html += " <a href='?_src_=holder;[HrefToken()];adminplayeropts=[usrRef]'>ПИ</a>"
+		html += " <a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[usrRef]'>Следовать</a>"
 		// End of Bastion of Endeavor Translation
 		if(istype(usrLoc))
 			/* Bastion of Endeavor Translation
-			html += "<br>usr.loc: <a href='?_src_=vars;Vars=\ref[usrLoc]'>VV</a>"
-			html += " <a href='?_src_=holder;adminplayerobservecoodjump=1;X=[usrLoc.x];Y=[usrLoc.y];Z=[usrLoc.z]'>JMP</a>"
+			html += "<br>usr.loc: <a href='?_src_=vars;[HrefToken()];Vars=\ref[usrLoc]'>VV</a>"
+			html += " <a href='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[usrLoc.x];Y=[usrLoc.y];Z=[usrLoc.z]'>JMP</a>"
 			*/
-			html += "<br>usr.loc: <a href='?_src_=vars;Vars=\ref[usrLoc]'>ПП</a>"
-			html += " <a href='?_src_=holder;adminplayerobservecoodjump=1;X=[usrLoc.x];Y=[usrLoc.y];Z=[usrLoc.z]'>Прыгнуть</a>"
+			html += "<br>usr.loc: <a href='?_src_=vars;[HrefToken()];Vars=\ref[usrLoc]'>РП</a>"
+			html += " <a href='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[usrLoc.x];Y=[usrLoc.y];Z=[usrLoc.z]'>ПРЫГ</a>"
 			// End of Bastion of Endeavor Translation
 	browseTo(user, html)
 

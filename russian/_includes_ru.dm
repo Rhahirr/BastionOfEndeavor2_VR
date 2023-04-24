@@ -10,9 +10,18 @@
 #include "_overridden_procs_ru.dm"
 #include "_verbs_ru.dm"
 #include "_buckling_ru.dm"
+
 // Begin modular includes
 #include "defines\defines_ru.dm"
 #include "defines\obj_ru.dm"
 #include "game\shuttle_engines_ru.dm"
 #include "game\jobs_ru.dm"
+
+// Organ localization
+#include "modules\organs\organs_ru.dm"
+#include "modules\organs\subtypes_ru.dm"
+#include "modules\organs\internal\augment_ru.dm"
+#include "modules\organs\internal\robotic_ru.dm"
+#include "modules\organs\internal\internal_ru.dm"
+
 // End includes

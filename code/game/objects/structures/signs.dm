@@ -256,12 +256,12 @@
 
 /obj/structure/sign/redcross
 	name = "medbay"
-	desc = "The Intergalactic symbol of Medical institutions. You'll probably get help here."
+	desc = "An interstellar symbol of medical institutions. You'll probably get help here."
 	icon_state = "bluecross"
 
 /obj/structure/sign/greencross
 	name = "medbay"
-	desc = "The Intergalactic symbol of Medical institutions. You'll probably get help here."
+	desc = "An interstellar symbol of medical institutions. You'll probably get help here."
 	icon_state = "bluecross2"
 
 /obj/structure/sign/goldenplaque
@@ -817,6 +817,16 @@
 	desc = "A pictographic direction sign with a knife, plate, and fork, stating the level to find the nearest dining establishment on."
 	icon_state = "level_kitchen"
 
+/obj/structure/sign/directions/shuttle_bay
+	name = "\improper Shuttle Bay"
+	desc = "A direction sign, pointing out the way to the nearest shuttle bay."
+	icon_state = "direction_bay"
+
+/obj/structure/sign/levels/shuttle_bay
+	name = "\improper Shuttle Bay"
+	desc = "A direction sign, stating the level to find the nearest shuttle bay on."
+	icon_state = "level_bay"
+
 /obj/structure/sign/directions/tram
 	name = "\improper Public Transit Station"
 	desc = "A direction sign, pointing out the way to the nearest public transit station."
@@ -948,12 +958,15 @@
 	desc = "Flashy and pretty."
 	icon = 'icons/obj/christmas.dmi'
 	icon_state = "xmaslights"
+	layer = 4.9
+	plane = PLANE_LIGHTING_ABOVE
 
 /obj/structure/sign/christmas/wreath
 	name = "wreath"
 	desc = "Prickly and festive."
 	icon = 'icons/obj/christmas.dmi'
 	icon_state = "doorwreath"
+	layer = 5
 
 /obj/structure/sign/hostilefauna
 	icon = 'icons/obj/decals_vr.dmi'

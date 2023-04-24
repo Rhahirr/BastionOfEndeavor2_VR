@@ -16,8 +16,8 @@ var/global/list/self_cases_list_ru = list(
 	ICASE = "собой", \
 	PCASE = "себе")
 /datum
-	var/list/case_blueprint_ru = list()
-	var/list/cases_ru = list()
+	var/list/case_blueprint_ru
+	var/list/cases_ru
 	var/number_lock_ru
 	var/always_plural_ru
 
@@ -26,6 +26,7 @@ var/global/list/self_cases_list_ru = list(
 /proc/case_ru(atom/input, case = "case", self_check = null, secondary = null, force_mode="normal")
 	if(!input)
 		return
+	if(isnull(input.cases_ru)) return input.name // I'm so fucking done with the bad index runtime, just don't bother with it if for some nebulous reason it decides to just skip our New() code
 	if(input == self_check)
 		if(case == NCASE) // I can't think of a situation where this happens, but if it does, something is seriously fucked.
 			log_grammar_ru("ОШИБКА: self_check с именительным падежом! Ввод: [input]")

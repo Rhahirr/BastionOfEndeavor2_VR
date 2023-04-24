@@ -15,7 +15,7 @@
 					  "Интерн-лаборант" = /datum/alt_title/intern_sci,
 					  "Кадет службы безопасности" = /datum/alt_title/intern_sec,
 					  "Младший грузчик" = /datum/alt_title/intern_crg,
-					  "Младший исследователь" = /datum/alt_title/intern_exp,
+					  // "Младший исследователь" = /datum/alt_title/intern_exp,
 					  "Официант" = /datum/alt_title/server,
 					  "Ассистент" = /datum/alt_title/assistant)
 	job_description = "Стажёр делает то, что от него попросят, чаще всего в процессе обучения определённой работе. \
@@ -46,10 +46,13 @@
 	title_blurb = "Младший грузчик обязан выполнять поручения грузового отдела. Он пока не является полноценным грузчиком, \
 					но набирает знания, чтобы им стать. Младший грузчик не обладает никакой реальной властью на станции."
 
+// upstream deleted explo so here we are
+/*
 /datum/alt_title/intern_exp
 	title = "Младший разведчик"
 	title_blurb = "Младший разведчик обязан выполнять поручения службы безопасности. Он пока не является полноценным разведчиком, \
 					но набирает знания, чтобы им стать. Младший исследователь не обладает никакой реальной властью на станции."
+*/
 
 /datum/alt_title/server
 	title = "Официант"
@@ -558,6 +561,8 @@
 	desc = "Карта, символизирующая тягу к неизведанному."
 	case_blueprint_ru = list("жен#идентификационн;adj1*a карт;n1a")
 
+// upstream removed explo, good riddance
+/*
 /datum/job/pathfinder
 	title = "Первопроходец"
 	faction = "Станция"
@@ -599,6 +604,7 @@
 
 /datum/alt_title/offsite_medic
 	title = "Экспедиционный санитар"
+*/
 
 // Medical Roles
 /datum/job/cmo

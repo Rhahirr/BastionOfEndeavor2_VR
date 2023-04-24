@@ -499,6 +499,7 @@ var/list/possible_cable_coil_colours = list(
 	amount = MAXCOIL
 	max_amount = MAXCOIL
 	color = COLOR_RED
+	gender = NEUTER
 	desc = "A coil of power cable."
 	throwforce = 10
 	w_class = ITEMSIZE_SMALL
@@ -509,6 +510,7 @@ var/list/possible_cable_coil_colours = list(
 	item_state = "coil"
 	attack_verb = list("whipped", "lashed", "disciplined", "flogged")
 	stacktype = /obj/item/stack/cable_coil
+	singular_name = "length"
 	drop_sound = 'sound/items/drop/accessory.ogg'
 	pickup_sound = 'sound/items/pickup/accessory.ogg'
 	tool_qualities = list(TOOL_CABLE_COIL)
@@ -561,7 +563,11 @@ var/list/possible_cable_coil_colours = list(
 
 		var/use_amt = min(src.amount, CEILING(S.burn_dam/5, 1), 5)
 		if(can_use(use_amt))
+			/* Bastion of Endeavor Translation
 			if(S.robo_repair(5*use_amt, BURN, "some damaged wiring", src, user))
+			*/
+			if(S.robo_repair(5*use_amt, BURN, "повреждённые провода", src, user))
+			// End of Bastion of Endeavor Translation
 				src.use(use_amt)
 
 	else

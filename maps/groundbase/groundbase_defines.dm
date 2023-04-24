@@ -26,6 +26,7 @@
 	..()
 	var/choice = pickweight(list(
 		"virgo3C" = 200,
+		"rp2" = 200,
 		"logo1" = 20,
 		"logo2" = 20,
 		"gateway" = 5
@@ -40,8 +41,8 @@
 
 	use_overmap = TRUE
 	overmap_z = Z_LEVEL_MISC
-	overmap_size = 25
-	overmap_event_areas = 15
+	overmap_size = 62
+	overmap_event_areas = 100
 	usable_email_tlds = list("virgo.nt")
 
 	zlevel_datum_type = /datum/map_z_level/groundbase
@@ -322,7 +323,7 @@
 	skybox_pixel_x = 0
 	skybox_pixel_y = 0
 
-	initial_generic_waypoints = list("groundbase", "gb_excursion_pad")
+	initial_generic_waypoints = list("groundbase", "gb_excursion_pad","omship_axolotl")
 	initial_restricted_waypoints = list()
 
 	extra_z_levels = list(
