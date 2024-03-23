@@ -157,4 +157,9 @@ package-lock.json
 # named byond versions config
 /tools/build/dm_versions.json
 
+#Bastion of Endeavor Stuff
+tools/ru-merge-upstream-pull-request.sh
+russian/_modular/*
+!russian/_modular/icons
+
 config/jobwhitelist.txt
